@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- link tailwindcss cdn to this html file-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
+
+  <title>weebly</title>{% load static %}
+</head>
+
+<body>
+  <nav class="container mx-auto p-3 flex justify-between items-center">
+    <img src="{{dynamic.bcb_website_builder_logo.url}}" class="w-28" alt="" />
+    <a href="https://bcbcrmsoftware.com/login" class="bg-gray-700 text-white rounded text-xl font-bold px-5 py-2">
+      Login
+    </a>
+  </nav>
+  <main class="container mx-auto h-full flex justify-center items-center mt-32">
+    <div class="flex flex-col items-center">
+      <h1 class="text-6xl font-black text-center">
+        {{dynamic.bcb_website_builder_heading}}
+      </h1>
+      <p>
+        {{dynamic.bcb_website_builder_text}}
+      </p>
+      <a href="https://bcbcrmsoftware.com/login" class="
+            mt-10
+            bg-blue-500
+            text-white text-xl
+            font-semibold
+            px-4
+            py-3
+            rounded-xl
+          ">
+        Create Your Website
+      </a>
+      <div><img src="{% static 'assets/img/weebly.webp' %}" alt="" /></div>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Your Paypal Information To Accept Payments</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/cwkO0KyI0UI" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Paypal Information
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Paypal Email</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+                            {% for paypal in paypals %}
+                            <tr>
+                                <td>{{ paypal.paypal_email }}</td>
+                                <td><a class="btn btn-primary" href="/whitelabelpartnerportal/addpaypalinfo/edit/{{ paypal.id }}">Edit</a></td>
+                                    <td>  <form method="post" id="delete" name="delete" action="">
+                                            {% csrf_token %}
+                                            <input type="text" name="delete" value="{{ paypal.id }}" hidden/>
+                                            <input type="submit" value="Delete" class="btn btn-primary"/>
+                                        </form></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <div class="form-group">
+                            <a class="btn btn-primary" href="/whitelabelpartnerportal/addpaypalinfo_form">New Paypal</a>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <a class="btn btn-primary" href="/whitelabelpartnerportal/addbankinfo/">Click Here To Use Your Bank
+                                Account Information Instead</a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

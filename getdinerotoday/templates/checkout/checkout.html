@@ -1,0 +1,25 @@
+{% extends "pages/base-business.html" %}
+{#{% extends request.resolver_match.page_template %}#}
+{% load static %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Check Out</h2>
+
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card text-center" style="width: 25rem">
+                    <div class="card-header">Checkout complete</div>
+                    <div class="card-body">Successfully paid ${{ amount }}<br></div>
+                    <div class="card-footer"><a class="btn btn-primary" href="{% url "homepage" %}">Go to homepage</a></div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

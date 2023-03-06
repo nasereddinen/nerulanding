@@ -1,0 +1,35 @@
+{% extends "pages/base-marketingcourse.html" %}
+{% load static %}
+
+{% block extrastyle %}
+<script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous" data-cfasync="false">
+</script>
+<script>
+    var chatPal = new ChatPal({
+        embedId: 'DfT7BnTm5dGn',
+        remoteBaseUrl: 'https://chatterpal.me/',
+        version: '7.23'
+    });
+</script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+<div class="row page-header">
+</div>
+<section class="main-content">
+   <div class="row">
+      <div class="col-md-12">
+        <iframe width="100%" height="515" src="https://www.youtube.com/embed/itROFNE9lWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <div class="card-body">
+          <center> <h3>Watch The Video Above To Get An Introduction Of The Marketing Portal</h3>
+      </div>
+   </div>
+</section>
+
+{% endblock %}

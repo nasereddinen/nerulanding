@@ -1,0 +1,82 @@
+{% extends "FinancingPortalNavigationBase.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <script>
+
+        function setFrameUrl(url) {
+            document.getElementById('softwareEmbed').src = url
+        }
+    </script>
+
+    <style>
+        iframe {
+            border: 0;
+        }
+
+    </style>
+
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center">
+            <h2>Products Purchased</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Products Purchased
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Payments Left</th>
+                                    <th>Amount Left</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Link</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for prod in products %}
+                                    <tr>
+                                        <td>{{ prod.product }}</td>
+                                        <td>${{ prod.product.price }}</td>
+                                        <td>{{ prod.payments_left }}</td>
+                                        <td>${{ prod.amount_left }}</td>
+                                        <td>{% if prod.username %}{{ prod.username }}{% endif %}</td>
+                                        <td>{% if prod.password %}{{ prod.password }}{% endif %}</td>
+                                        <td>
+                                            {% if prod.product.link %}
+                                                <a class="btn btn-primary" href="{{ prod.product.link }}">Dashboard</a>
+                                                <a class="btn btn-primary" href="{{ prod.product.link }}">Main site</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <iframe id="softwareEmbed" width="100%" height="800"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

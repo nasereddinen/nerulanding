@@ -1,0 +1,75 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Your Invoices</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/Yaqm81Dhe8k" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Invoices
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Invoice Amount</th>
+                                <th>Invoice Due Date</th>
+                                <th>Status</th>
+                                <th>Pay Now</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for invoice in invoices %}
+                                <tr>
+                                    <td>{{ invoice.product }}</td>
+                                    <td>${{ invoice.invoiceamount }}</td>
+                                    <td>{{ invoice.invoiceduedate }}</td>
+                                    <td>{{ invoice.status }}</td>
+                                    <td><a target="_blank" class="btn btn-primary"
+                                           href="{{ invoice.paynow }}">Pay Invoice</a></td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

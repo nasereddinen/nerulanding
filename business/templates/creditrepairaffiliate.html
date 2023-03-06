@@ -1,0 +1,29 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Credit Repair Affiliate</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ dynamic.credit_repair_service_image }}" height="200px" width="100%" alt="">
+                        <br><br>
+                        <h5 class="card-title" style="white-space: pre;">{{ dynamic.credit_repair_service_text }}</h5>
+                        <a class="btn btn-primary" href="{{ dynamic.credit_repair_consultation_link }}" target="_blank">
+                            {{ dynamic.credit_repair_service_button_text }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

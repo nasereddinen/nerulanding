@@ -1,0 +1,85 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Make Extra Money With Our White Label Partner Program</h2>
+            </div>
+    </div>
+
+    <section class="main-content">
+
+{#        <div class="row">#}
+{#            <div class="col-md-12">#}
+{#                <iframe width="100%" height="515" src="https://www.youtube.com/embed/B_I2hV_HWMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+{#            </div>#}
+{#        </div>#}
+        <style media="screen">
+            .card-body {
+                text-align: center;
+            }
+
+            .btn-group a {
+                text-align: center;
+            }
+
+
+        </style>
+        <br>
+        <b><h2 style="text-align:center;">Make Extra Money Today By {% if dynamic.show_affiliate %}Joining Our Affiliate Program Or {% endif %}<br> White Label Partner Program.{% if dynamic.show_affiliate %} (Both Are Free To Join){% endif %}</h2></b>
+        <br><br>
+        <div class="row">
+            {% if dynamic.show_affiliate %}
+            <div class="col-md-6 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="370px" width="100%" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Click The Button Below To Enter The Affiliate Portal</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="https://getdinerotoday1.leaddyno.com/" target="_blank" class="btn btn-primary">Enter Affiliate
+                                    Portal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-6 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="370px" width="100%" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Click The Button Below To Become A White Label Partner</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'whitelabelpartnerportal:home-whitelabel' %}" class="btn btn-primary">Enter White Label Partner
+                                    Portal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+{% endblock %}

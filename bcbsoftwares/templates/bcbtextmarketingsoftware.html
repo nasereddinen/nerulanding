@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slick Text</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      width: 100%;
+      height: 100vh;
+      background-image: url('https://www.slicktext.com/images/homepage/hero_bkg.jpg?nocache=1');
+      background-position: 35% 0%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    "
+  >
+    <nav class="container mx-auto flex justify-between items-center h-24">
+      <img
+        class="h-23 w-24"
+        src="{{dynamic.bcb_text_marketing_logo.url}}"
+        alt=""
+      />
+      <a href="https://bcbcrmsoftware.com/login" 
+        class="text-white font-semibold border-2 rounded px-8 py-2 border-white"
+      >
+        Sign Up
+      </a>
+    </nav>
+    <main
+      class="container mx-auto flex justify-between h-screen overflow-hidden"
+    >
+      <div class="left flex items-start flex-col justify-center">
+        <h1 class="text-white font-bold text-7xl">
+          {{dynamic.bcb_text_marketing_heading}}
+        </h1>
+        <br />
+        <h2 class="text-white font-semibold text-2xl text-left">
+          {{dynamic.bcb_text_marketing_text}}
+        </h2>
+        <a href="https://bcbcrmsoftware.com/login" 
+          class="
+            mt-10
+            text-white
+            font-semibold
+            border-2
+            rounded
+            px-8
+            py-2
+            border-white
+          "
+        >
+          Login
+        </a>
+      </div>
+      <div class="right overflow-hidden">
+        <img
+          class="h-full w-full"
+          src="https://www.slicktext.com/images/homepage/hero_phone.svg"
+          alt=""
+        />
+      </div>
+    </main>
+  </body>
+</html>

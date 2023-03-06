@@ -1,0 +1,142 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+
+    <style>
+        .btn {
+            white-space: normal !important;
+            word-wrap: break-word;
+        }
+    </style>
+
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Normal Life Events</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For Holiday Shopping?</div>
+                    <img src="https://images.pexels.com/photos/919436/pexels-photo-919436.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money While In College Or For Books?</div>
+                    <img src="https://images.pexels.com/photos/3059745/pexels-photo-3059745.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For Rent?</div>
+                    <img src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Buying A Home & Need Extra Money For A Down Payment?</div>
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For A Wedding?</div>
+                    <img src="https://images.pexels.com/photos/3292697/pexels-photo-3292697.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 "
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For A New Kid?</div>
+                    <img src="https://images.pexels.com/photos/421884/pexels-photo-421884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 "
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money To Pay For A Funeral?</div>
+                    <img src="{% static "assets/img/additional/funreal.jpg" %}"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For A Car?</div>
+                    <img src="https://images.pexels.com/photos/2710043/pexels-photo-2710043.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 "
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Need Extra Money For An Engagement Ring?</div>
+                    <img src="https://images.pexels.com/photos/1927264/pexels-photo-1927264.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500 "
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="{% url "business:lifeeventsfinancialproducts" %}">View The Best
+                            Financing Products</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+{% endblock %}

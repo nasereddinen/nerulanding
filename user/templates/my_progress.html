@@ -1,0 +1,367 @@
+{% extends "pages/base-business.html" %}
+{#{% extends request.resolver_match.page_template %}#}
+{% load static %}
+{% block title %}
+
+{% endblock title %}
+
+{% block extrastyle %}
+    <style>
+        body {
+            background-image: -webkit-linear-gradient(-30deg, #052157 0%, #91039f 100%) !important;
+        }
+
+        a {
+
+        }
+    </style>
+    <script>
+
+        var showForm = function () {
+            $("#user_info").hide()
+            $("#user_edit").show();
+        };
+
+        var addCard = function () {
+            $("#list-of-cards").toggle()
+            $("#add_new_card").toggle();
+        };
+    </script>
+{% endblock extrastyle %}
+
+{% block content %}
+    <section class="main-content">
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="widget white-bg">
+                    <div class="padding-20 text-center">
+                        <p class="lead font-500 margin-b-0">
+                            {{ request.user.get_full_name|title }}
+                        </p>
+                        <p class="text-sm margin-b-0">Check All Of Your Portal Information</p>
+                    </div>
+                </div>
+                <div class='widget white-bg friends-group clearfix' id="user_info" style="display:block;">
+                    <div class="widget-title"><p>My Details</p></div>
+
+                    <small class="text-muted">Email address </small>
+                    <p>{{ request.user.email }}</p>
+                    <small class="text-muted">Phone</small>
+                    <p>{{ request.user.profile.phone_number }}</p>
+                    <p>
+                        <a href="#" onclick="showForm()">Edit</a>
+                    </p>
+                </div>
+                <div class="widget white-bg friends-group clearfix" id="user_edit" style="display:none;">
+                    <div class="widget-title">My Details</div>
+
+                    <form action="{% url 'user:myprogress' %}" accept-charset="UTF-8" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="user_email">Email</label>
+                            <div class="group-icon">
+                                <input autocomplete="email" placeholder="Email" class="form-control" required="required"
+                                       type="email" value="{{ request.user.email }}" name="email" id="user_email">
+                                <span class="icon-user text-muted icon-input"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="user_phone">Phone</label>
+                            <div class="group-icon">
+                                <input placeholder="Phone" class="form-control" required="required" type="text"
+                                       value="{{ request.user.profile.phone_number }}" name="phone" id="user_phone">
+                                <span class="icon-user text-muted icon-input"></span>
+                            </div>
+                        </div>
+                        <input type="submit" name="commit" value="Save" class="btn btn-block btn-primary"
+                               data-disable-with="Save">
+                    </form>
+                </div>
+                <div class='widget white-bg friends-group clearfix' id="credit-cards">
+                    <div class="widget-title mb-2"><p>My Subscriptions</p></div>
+                    <div class="widget-content">
+                        <ul class="list-group">
+                            {% for subscription in subscriptions %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>{{ subscription.name }}</span>
+                                    <span>{{ subscription.total }}/{{ subscription.interval }}</span>
+                                    <form method="post">{% csrf_token %}<input class="btn btn-link" type="submit"
+                                                                               name="cancel_subscription"
+                                                                               value="Unsubscribe">
+                                        <input type="hidden" name="subscription_id"
+                                               value="{{ subscription.subscription_id }}"></form>
+                                </div>
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class='widget white-bg friends-group clearfix' id="credit-cards">
+                    <div class="widget-title mb-2">My Credit Cards</div>
+                    <div class="widget-content" id="list-of-cards">
+
+                        <ul class="list-group">
+                            {% for card in source_cards %}
+                                <li class="list-group-item d-flex align-items-center justify-content-between">
+                                    <strong>XXXX-XXXX-XXXX-{{ card.last4 }} {{ card.brand }}</strong>
+                                    {% if card.is_default %}<small class="text-muted">Default</small>{% endif %}
+                                    <form style="float: right" method="post">{% csrf_token %}<input
+                                            class="btn btn-sm btn-primary" type="submit"
+                                            name="delete_card" value="Delete">
+                                        <input type="hidden" name="card" value="{{ card.id }}"></form>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <span class="btn btn-link" onclick="addCard()">Add</span>
+                    </div>
+
+
+                    <div class="widget-content" id="add_new_card" style="display: none">
+                        <form method="post">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="ccnumber">Credit Card Number</label>
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" placeholder="0000 0000 0000 0000"
+                                                   name="cc_number" maxlength="16">
+                                            <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="mdi mdi-credit-card"></i>
+                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <label for="ccmonth">Month</label>
+                                    <select class="form-control" id="ccmonth" name="exp_month">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="ccyear">Year</label>
+                                    <select class="form-control" id="ccyear" name="exp_year">
+                                        <option>2020</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                        <option>2029</option>
+                                        <option>2030</option>
+                                        <option>2031</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="cvv">CVV/CVC</label>
+                                        <input class="form-control" id="cvv" type="text" placeholder="123" name="cvc">
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="btn btn-sm btn-primary" type="submit" name="create_card" value="Add">
+                            <span class="btn btn-link" onclick="addCard()">Cancel</span>
+
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div class='widget white-bg friends-group clearfix' id="credit-cards">
+                    <div class="widget-title">Actions</div>
+                    <div class="widget-content" id="add_new_card">
+                        <div class="row" >
+                            <div class="col">
+                                <a class="btn btn-primary" style="width: 100%" href="{% url 'business:user_data' %}">
+                                    Edit my personal data
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-8">
+
+                <div class='widget white-bg clearfix' id="user_info" style="display:block;">
+                    <div class="widget-title"><p>My Ordered Services</p></div>
+                    <div class="widget-content">
+
+                        <table class="table table-sm table-responsive">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Product</th>
+                                <th scope="col" style="width: 1%">Dashboard</th>
+                            </tr>
+                            </thead>
+                            {% for service in services %}
+                                <tr>
+                                    <td>{{ service.name }}</td>
+                                    <td>{{ service.status }}</td>
+                                    <td>{{ service.product }}</td>
+                                    <td>{% if service.dashboard %}
+                                        <a class="btn btn-primary btn-sm" href="{{ service.dashboard }}">Go To
+                                            Dashboard</a>{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+
+                <div class='widget white-bg clearfix'>
+                    <div class="widget-title"><p>My Tradelines</p></div>
+                    <div class="widget-content">
+                        <table class="table table-responsive d-table table-sm">
+                            <thead class="thead-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Product</th>
+                                <th>Tradeline Amount</th>
+                                <th>Price</th>
+                                <th>Fee</th>
+
+                            </tr>
+                            </thead>
+                            {% for tradeline in tradelines %}
+                                <tr class="bg-white">
+                                    <td>{{ tradeline.tradeline.company_name }}</td>
+                                    <td>{{ tradeline.tradeline.product }}</td>
+                                    <td>{{ tradeline.tradeline.tradeline_amount }}</td>
+                                    <td>{{ tradeline.tradeline.price }}$</td>
+                                    <td>{{ tradeline.tradeline.charge }}$</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Portal Information
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    {% if on_payment_plan %}
+                        <div class="card mx-2 text-center" style="width: 21rem;">
+                            <div class="card-body">
+                                <p>Your Payment Plan Portal</p>
+                                <a class="btn btn-primary" href="{% url 'yourplan:yourplan' %}">Click
+                                    Here To Go To <br> Your Payment Plan Portal</a>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Apply For Loans</p>
+                            <a class="btn btn-primary" href="{% url 'loanportal:loanapplication' %}">Click
+                                Here To Login To Your <br> Portal To Apply For Loans</a>
+                        </div>
+                    </div>
+
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Google Chrome Extension Portal</p>
+                            <a class="btn btn-primary" href="{% url 'chromeextension:chromeextensionindex' %}"
+                            >Click
+                                Here To Go To The <br>Google Chrome Extension Portal</a>
+                        </div>
+                    </div>
+
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Create Your Specific Portal / <br> View Saved Portals</p>
+                            <a class="btn btn-primary" href="{% url 'business:create_specific_portal' %}"
+                            >
+                                Click Here To Create Your Specific <br>Portal & View Your Saved Portals
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Choose Your Goal With This Platform</p>
+                            <a class="btn btn-primary" href="{% url 'business:goals' %}">
+                                Click Here To Choose <br>Your Goal With This Platform
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Go To Affiliate Agent Portal</p>
+                            <a class="btn btn-primary" href="https://getdinerotoday1.leaddyno.com/" target="_blank">
+                                Click Here To Go To The <br> Affiliate Agent Portal
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Purchase Dunn & Bradstreet Products</p>
+                            <a class="btn btn-primary" href="{% url 'products:dnbproducts' %}">
+                                Click Here To Go Purchase <br> Dunn & Bradstreet Products <br>To Grow Your Business
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Get The Online Tools To Grow Your Business</p>
+                            <a class="btn btn-primary" href="{% url 'onlinetools:onlinetoolshome' %}">
+                                Click Here To Go To <br>The Online Tools Portal
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Go To Marketing Couse</p>
+                            <a class="btn btn-primary" href="{% url 'marketingcourse:mainfile' %}">
+                                Click Here To Go To Marketing Course
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Go To Business Credit Building Course</p>
+                            <a class="btn btn-primary" href="{% url 'businesscreditcourse:home' %}">
+                                Click Here To Go To The Business <br> Credit Building Course
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card mx-2 text-center" style="width: 21rem;">
+                        <div class="card-body">
+                            <p>Go To White Label Partner Portal</p>
+                            <a class="btn btn-primary" href="{% url 'whitelabelpartnerportal:home-whitelabel' %}">
+                                Click Here To Go To The White <br> Label Partner Portal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block javascriptblock %}
+
+{% endblock javascriptblock %}

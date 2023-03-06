@@ -1,0 +1,79 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Primary Tradelines</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/d1orlaf11PE" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Primary Tradelines You Can Add To Your Report
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Lender Name</th>
+                                <th>Hard Credit Check?</th>
+                                <th>Description</th>
+                                <th>Strategy</th>
+                                <th>Application Link</th>
+                            </tr>
+                            </thead>
+
+                            </tbody>
+                            {% for data in data_list %}
+                                <tr>
+                                    <td>{{ data.lender_name }}</td>
+                                    <td>{{ data.hard_check }}</td>
+                                    <td>{{ data.description }}</td>
+                                    <td>{{ data.strategy }}</td>
+                                    <td><a href="{{ data.get_url }}" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup"
+                                                value="Click Here For A Better Description">Apply Now
+                                        </button>
+                                    </a></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

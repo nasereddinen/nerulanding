@@ -1,0 +1,78 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Add Bank Account Information To Receive Payments</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/yWYSuOq1B7E" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Bank Account Information
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Routing Number</th>
+                                <th>Name Of Bank</th>
+                                <th>Account Number</th>
+                                <th>Name On Bank Account</th>
+                                <th>Your Address</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for bank in banks %}
+                                <tr>
+                                    <td>{{ bank.routing_number }}</td>
+                                    <td>{{ bank.name_of_bank }}</td>
+                                    <td>{{ bank.account_number }}</td>
+                                    <td>{{ bank.name_on_bank_account }}</td>
+                                    <td>{{ bank.your_address }}</td>
+                                    <td><a class="btn btn-primary" href="/whitelabelpartnerportal/addbankinfo/edit/{{ bank.id }}">Edit</a></td>
+                                    <td>  <form method="post" id="delete" name="delete" action="">
+                                            {% csrf_token %}
+                                            <input type="text" name="delete" value="{{ bank.id }}" hidden/>
+                                            <input type="submit" value="Delete" class="btn btn-primary"/>
+                                        </form></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <div class="form-group">
+                            <a class="btn btn-primary" href="/whitelabelpartnerportal/addbankinfo_form">Enter In New Payment
+                                Information</a>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <a class="btn btn-primary" href="/whitelabelpartnerportal/addpaypalinfo">Click Here To Use Your Paypal Information
+                                Instead</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="zxx">
+    <head>{% load static %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/bootstrap.min.css' %}">
+        <!-- Animate CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/animate.min.css' %}">
+        <!-- Meanmenu CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/meanmenu.css' %}">
+        <!-- Boxicons CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/boxicons.min.css' %}">
+        <!-- Flaticon CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/flaticon.css' %}">
+        <!-- Nice Select CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/nice-select.min.css' %}">
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.carousel.min.css' %}">
+        <!-- Owl Carousel Default CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.theme.default.min.css' %}">
+        <!-- Odometer CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/odometer.min.css' %}">
+        <!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/magnific-popup.min.css' %}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/style.css' %}">
+        <!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'banking/assets/css/responsive.css' %}">
+		
+		<title>Leve - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'banking/assets/img/favicon.png' %}">
+    </head>
+
+    <body>
+        
+        <!-- Start Preloader Area -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader Area -->
+
+        <!-- Start Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <ul class="top-header-information">
+                            <li>
+                                <i class='bx bx-envelope'></i>
+                                <a href="mailto:hello@gmail.com">hello@gmail.com</a>
+                            </li>
+
+                            <li>
+                                <i class='bx bxs-phone'></i>
+                                <a href="tel:15143125678">+1 (514) 312-5678</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <ul class="top-header-others">
+                            <li>
+                                <i class='bx bxs-map'></i>
+                                <a href="atm-and-bank-locations.html">ATMs location</a>
+                            </li>
+
+                            <li class="languages-list">
+                                <select>
+                                    <option value="1">English</option>
+                                    <option value="2">العربيّة</option>
+                                    <option value="3">Deutsch</option>
+                                    <option value="3">Português</option>
+                                    <option value="3">简体中文</option>
+                                </select>
+                            </li>
+
+                            <li>
+                                <i class='bx bx-user'></i>
+                                <a href="my-account.html">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Header Area -->
+
+        {% include "banking/navbar.html" %}
+
+        <!-- Start Page Banner -->
+        <div class="page-banner-area item-bg1"
+        style="
+        position: relative;
+            z-index: 1;
+            background-image: url({% static 'banking/assets/images/page-banner-2.jpg' %});
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            padding-top: 150px;
+            padding-bottom: 150px;
+            background-attachment: fixed;
+        "
+        >
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Services</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url 'banking_home' %}">Home</a>
+                        </li>
+                        <li>Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+
+        <!-- Start Top Services Area -->
+        <section class="top-services-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="top-services-item">
+                            <div class="icon">
+                                <i class="flaticon-protection"></i>
+                            </div>
+                            <h3>
+                                <a href="#">Protect your card</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="#" class="link-btn">Get started <i class="flaticon-right-arrow"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="top-services-item">
+                            <div class="icon">
+                                <i class="flaticon-online-banking"></i>
+                            </div>
+                            <h3>
+                                <a href="#">Online banking</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="#" class="link-btn">See more details <i class="flaticon-right-arrow"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="top-services-item">
+                            <div class="icon">
+                                <i class="flaticon-mobile-app"></i>
+                            </div>
+                            <h3>
+                                <a href="#">Discover new features</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="#" class="link-btn">Download the app <i class="flaticon-right-arrow"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Top Services Area -->
+
+        <!-- Start Services Area -->
+        <section class="services-area pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <span>Banking services</span>
+                    <h2>Our bank has been provided various banking services to our customers.</h2>
+                </div>
+
+                <div class="services-slider owl-carousel owl-theme">
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-mobile-banking"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Mobile banking</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-credit-card"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Credit cards</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-payment-security"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Secure payment</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-savings"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Saving account</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-protection"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Business banking</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-online-banking"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Personal savings</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-positive-vote"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Personal loans</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+
+                    <div class="single-services-item">
+                        <div class="icon">
+                            <i class="flaticon-bank"></i>
+                        </div>
+                        <h3>
+                            <a href="services-details.html">Business loans</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="services-details.html" class="learn-btn">Learn more <i class="flaticon-right-arrow"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Services Area -->
+
+        <!-- Start App Area -->
+        <section class="app-area ptb-100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="app-content">
+                            <h3>Download our App to get all kinds of banking benefits from anywhere</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="app-btn">
+                            <a href="#" class="app-store-btn">
+                                <i class="flaticon-apple"></i>
+                                Download on
+                                <span>App store</span>
+                            </a>
+
+                            <a href="#" class="play-store-btn">
+                                <i class="flaticon-google-play"></i>
+                                Download on
+                                <span>Google play</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End App Area -->
+
+        <!-- Start FAQ Area -->
+        <section class="faq-area bg-ffffff ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <span>FAQs</span>
+                    <h2>Find your answers faster in our popular FAQs topics</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="faq-accordion">
+                            <ul class="accordion">
+                                <li class="accordion-item">
+                                    <a class="accordion-title active" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        What is bank account?
+                                    </a>
+        
+                                    <p class="accordion-content show">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+                                
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I activate my card?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I change my password?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I transfer funds another account?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="faq-accordion">
+                            <ul class="accordion">
+                                <li class="accordion-item">
+                                    <a class="accordion-title active" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I verify my identity?
+                                    </a>
+        
+                                    <p class="accordion-content show">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+                                
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I download the App?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I set up a new user?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+
+                                <li class="accordion-item">
+                                    <a class="accordion-title" href="javascript:void(0)">
+                                        <i class='bx bx-plus'></i>
+                                        How do I change my previous information?
+                                    </a>
+        
+                                    <p class="accordion-content">
+                                        Lorem ipsum dolor consectetur adipiscing Fusce varius euismod lacus eget feugiat rorem lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor massa sociis natoque penatibus. varius euismod lacus eget feugiat.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End FAQ Area -->
+
+        {% include "banking/footer.html" %}
+
+        <!-- Start Copy Right Area -->
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-area-content">
+                    <p>
+                        Copyright © 2021 Leve. All Rights Reserved by
+                        <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Copy Right Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="go-top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </div>
+        <!-- End Go Top Area -->
+        
+        <!-- Jquery Slim JS -->
+        <script src="{% static 'banking/assets/js/jquery.min.js' %}"></script>
+        <!-- Popper JS -->
+        <script src="{% static 'banking/assets/js/popper.min.js' %}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{% static 'banking/assets/js/bootstrap.min.js' %}"></script>
+        <!-- Meanmenu JS -->
+        <script src="{% static 'banking/assets/js/jquery.meanmenu.js' %}"></script>
+        <!-- Nice Select JS -->
+        <script src="{% static 'banking/assets/js/jquery.nice-select.min.js' %}"></script>
+        <!-- Owl Carousel JS -->
+        <script src="{% static 'banking/assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Magnific Popup JS -->
+        <script src="{% static 'banking/assets/js/jquery.magnific-popup.min.js' %}"></script>
+        <!-- Odometer JS -->
+        <script src="{% static 'banking/assets/js/odometer.min.js' %}"></script>
+        <!-- Jquery Appear JS -->
+        <script src="{% static 'banking/assets/js/jquery.appear.min.js' %}"></script>
+        <!-- Ajaxchimp JS -->
+		<script src="{% static 'banking/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator JS -->
+		<script src="{% static 'banking/assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+        <script src="{% static 'banking/assets/js/contact-form-script.js' %}"></script>
+        <!-- Wow JS -->
+        <script src="{% static 'banking/assets/js/wow.min.js' %}"></script>
+        <!-- Custom JS -->
+        <script src="{% static 'banking/assets/js/main.js' %}"></script>
+    </body>
+</html>

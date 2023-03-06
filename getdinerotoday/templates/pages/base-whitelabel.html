@@ -1,0 +1,172 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block navigation %}
+
+    <!-- ============================================================== -->
+    <!--                        Right Side End                          -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!--            Navigation Start            -->
+    <!-- ============================================================== -->
+    <div class="main-sidebar-nav dark-navigation">
+        <div class="nano">
+            <div class="nano-content sidebar-nav">
+                <div class="card-body border-bottom text-center nav-profile">
+                    <!--<img src='{% static "images/avtar-2.png" %}' width="90" class="rounded-circle mar-btm margin-b-10 box-shadow"> -->
+                    <br>
+                    <p class="lead margin-b-0 toggle-none">
+                        {{ request.user.get_full_name }}
+                    </p>
+                    <p class="text-muted mv-0 toggle-none">Welcome White Label Partner</p>
+                </div>
+                <ul class="metisMenu nav flex-column" id="menu">
+                 <input type="text"   onkeyup="Search()" id="search"placeholder="Search" style="width:90%;margin-left:5%;background-color:#131C23;color:white;" class="nav-link    form-control " name="search-box" >
+                    <li class="nav-item"><a href="/dashboard" class="nav-link">Go Back To Main Portal</a></li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:home-whitelabel' %}" class="nav-link">Dashboard</a>
+                    </li>
+                    <!--
+                    {% if dynamic.is_main_site and dynamic.show_becoming_whitelabel_partner %}
+                        <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:becomingapartner' %}"
+                                                class="nav-link">Becoming A White Label Partner</a></li>
+                    {% endif %} -->
+
+                       <li class="nav-item"><a href="{% url "whitelabelpartnerportal:wholesales" %}" class="nav-link">Wholesale Packages</a></li>
+                       <li class="nav-item"><a href="{% url "whitelabelpartnerportal:clients-on-wholesale" %}" class="nav-link">Clients That Are On Your Wholesale Package</a></li>
+                       <li class="nav-item"><a href="{% url "whitelabelpartnerportal:partner_resources" %}" class="nav-link">Partner Resources</a></li>
+<li class="nav-item"><a href="{% url 'whitelabelpartnerportal:create_account' %}" class="nav-link">Create Accounts for your users</a></li>
+<li class="nav-item"><a href="{% url 'whitelabelpartnerportal:clients-created-by-you' %}" class="nav-link">Accounts Created By You</a></li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:marketingroi' %}" class="nav-link">Your
+                       Marketing Return On Investment</a></li>
+
+                    {% if dynamic.is_paid_for_whitelabel %}
+                        <!-- Point: 5 Done -->
+                        <!-- <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:manageportal' %}" class="nav-link">Manage Portal</a></li> -->
+                    {% endif %}
+
+                    {% if dynamic.is_paid_for_whitelabel %}
+                        <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:myresiduals' %}" class="nav-link">My
+                            Residuals</a></li>
+                    {% endif %}
+
+                    {% if iswhitelabeladmin %}
+                        <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:clientProgress' %}" class="nav-link">Client Progress</a></li>
+                    {% endif %}
+
+
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:enternewleads' %}" class="nav-link">Enter
+                        New Leads</a></li>
+
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:leadoverview' %}" class="nav-link">Lead
+                        Overview</a></li>
+
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:mysales' %}" class="nav-link">My
+                        Sales</a></li>
+
+                    {% if iswhitelabeladmin %}
+                        <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:productmanagement' %}"
+                                                class="nav-link">Manage Products</a></li>
+                    {% endif %}
+
+                    {% if iswhitelabeladmin %}
+                        <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:manageportal' %}"
+                                                class="nav-link">Manage Portal</a></li>
+                    {% endif %}
+
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:networkmarketing' %}"
+                                            class="nav-link">How To Leverage Your Network</a></li>
+
+                    <!-- <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:enteraffiliates' %}" class="nav-link">Enter Affiliate Agents</a></li> -->
+                    <!--  <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:salesaffiliates' %}" class="nav-link">Sales Affiliates Overview</a></li> -->
+                    <!--  <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:residualsfromaffiliates' %}" class="nav-link">Residual Payments From Your Affiliates</a></li> -->
+                    <!--  <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:freesignup' %}" class="nav-link">Clients Who Have Signed Up For Forever Free Program</a></li> -->
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:paidsignup' %}" class="nav-link">Clients
+                        Who Have Signed Up Under Your Portal</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                class="toggle-none"> Finance <span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:orders' %}" class="nav-link">
+                                Orders </a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:invoices' %}"
+                                                    class="nav-link"> Invoices </a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:payments' %}"
+                                                    class="nav-link"> Payments </a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:credits' %}" class="nav-link">
+                                Credits</a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:offeringfinancing' %}"
+                                                    class="nav-link"> Financing You Can Offer Clients </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                class="toggle-none"> Marketing Information <span class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:whitelabelwebinar' %}"
+                                                    class="nav-link"> White Label Webinar</a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:buywhitelabelwebsite' %}"
+                                                    class="nav-link"> Buy White Label Website </a></li>
+                            <li class="nav-item"><a
+                                    href="{% url 'whitelabelpartnerportal:buywhitelabelbusinesspackage' %}"
+                                    class="nav-link"> Buy White Label Business Package </a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:viewportals' %}"
+                                                    class="nav-link"> View Your White Label Portal</a></li>
+                            <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:viewwhitelabelwebsite' %}"
+                                                    class="nav-link"> View Your White Label Website (Only For Those Who
+                                Have Purchased)</a></li>
+                            <li class="nav-item"><a
+                                    href="{% url 'whitelabelpartnerportal:viewwhitelabelbusinesspackage' %}"
+                                    class="nav-link"> View Your White Label Business Package (Only For Those Who Have
+                                Purchased)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:partnercommisssions' %}"
+                                            class="nav-link">Your Residual Commissions On Products</a></li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:addbankinfo' %}" class="nav-link">Add
+                        Bank Account Information To Receive Payments *Or You Can Add Paypal Information*</a></li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:addpaypalinfo' %}" class="nav-link">Add
+                        Paypal Information To Receive Payments</a></li>
+                    <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:addzelleinfo' %}" class="nav-link">Add
+                        Zelle Information To Receive Payments</a></li>
+                    <!-- Point: 6 Done -->
+                    <!-- <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:merchant' %}" class="nav-link">Sign Up
+                        For Merchant Account</a></li> -->
+                  <!--  <li class="nav-item"><a href="https://apps.apple.com/us/app/white-label-partner-gdt/id1530824382"
+                                            target="_blank" class="nav-link">Download Partner App For Iphone</a></li> -->
+                  <li class="nav-item"><a href="https://creator.us.uneeq.io/try/052654b4-2cc9-4660-b3c9-8a7b3abf290e"
+                    target="_blank" class="nav-link">Your AI Customer Success Agent</a></li>
+                    <li class="nav-item"><a
+                            href="https://play.google.com/store/apps/details?id=com.millenialbusiness.nerulending"
+                            target="_blank" class="nav-link">Download Partner App For Android</a></li>
+                  <li class="nav-item"><a
+                            href="https://apps.apple.com/us/app/neru-white-label/id1603841410"
+                            target="_blank" class="nav-link">Download Partner App For IOS</a></li>
+                    <br><br>
+                    <!--  <li class="nav-item"><a href="{% url 'whitelabelpartnerportal:merchant' %}" class="nav-link">Download Partner App For Android</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+     <script>
+    function Search() {
+
+var input,filter,ul,li,a,i,txtValue;
+input = document.getElementById("search");
+filter = input.value.toUpperCase();
+ul=document.getElementById('menu');
+li = ul.getElementsByTagName('li');
+
+//loop through all the list items, and hide those who don't match the search query
+for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+    </script>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

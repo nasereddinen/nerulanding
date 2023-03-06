@@ -1,0 +1,112 @@
+{% extends "pages/base-business.html" %}
+{#{% extends request.resolver_match.page_template %}#}
+{% load static %}
+{% block title %}
+
+{% endblock title %}
+
+{% block extrastyle %}
+    <style>
+        body {
+            background-image: -webkit-linear-gradient(-30deg, #052157 0%, #91039f 100%) !important;
+        }
+    </style>
+    <script>
+        var showForm = function () {
+            $("#user_info").hide()
+            $("#user_edit").show();
+        };
+    </script>
+{% endblock extrastyle %}
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="widget white-bg">
+                    <div class="padding-20 text-center">
+                        <img src="{% static 'images/avtar-2.png' %}"
+                             class="rounded-circle mar-btm margin-b-10 box-shadow" width="140">
+                        <p class="lead font-500 margin-b-0">
+                            {{ request.user.get_full_name|title }}
+                        </p>
+                        <p class="text-sm margin-b-0">Check All Of Your Portal Information</p>
+                    </div>
+                </div>
+                <div class='widget white-bg friends-group clearfix' id="user_info" style="display:block;">
+                    <small class="text-muted">Email address </small>
+                    <p>{{ request.user.email }}</p>
+                    <small class="text-muted">Phone</small>
+                    <p>{{ request.user.profile.phone_number }}</p>
+                    <p>
+                        <a href="#" onclick="showForm()">Edit</a>
+                    </p>
+                </div>
+                <div class="widget white-bg friends-group clearfix" id="user_edit" style="display:none;">
+                    <form action="{% url 'user:myprogress' %}" accept-charset="UTF-8" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="user_email">Email</label>
+                            <div class="group-icon">
+                                <input autocomplete="email" placeholder="Email" class="form-control" required="required"
+                                       type="email" value="{{ request.user.email }}" name="email" id="user_email">
+                                <span class="icon-user text-muted icon-input"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="user_phone">Phone</label>
+                            <div class="group-icon">
+                                <input placeholder="Phone" class="form-control" required="required" type="text"
+                                       value="{{ request.user.profile.phone_number }}" name="phone" id="user_phone">
+                                <span class="icon-user text-muted icon-input"></span>
+                            </div>
+                        </div>
+                        <input type="submit" name="commit" value="Save" class="btn btn-block btn-primary"
+                               data-disable-with="Save">
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Portal Information
+                    </div>
+                </div>
+                <div class="col-md-8 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Apply For Loans</p>
+                            <a class="btn btn-primary" href="{% url 'loanportal:loanapplication' %}" >Click
+                                Here To Login To Your Portal To Apply For Loans</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Go To Marketing Couse</p>
+                            <a class="btn btn-primary" href="{% url 'marketingcourse:mainfile' %}" >
+                                Click Here To Go To Marketing Course
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Go To Business Credit Building Course</p>
+                            <a class="btn btn-primary" href="{% url 'businesscreditcourse:home' %}">
+                                Click Here To Go To The Business Credit Building Course
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block javascriptblock %}
+
+{% endblock javascriptblock %}

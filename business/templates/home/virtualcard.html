@@ -1,0 +1,46 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+
+{% block extrastyle %}
+
+{% endblock extrastyle %}
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Virtual Card</h2>
+        </div>
+    </div>
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/Dw_4bMU1-ts" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.seb.ee/sites/default/files/styles/product_detail_thumb/public/field/image/product/virtuaalkaart_4.png?itok=-Vz70k2S"
+                         class="card-img-top" width="100%" height="250px">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Card Number: {{ virtual_card.card_number }}</h5>
+                        <h5 class="card-title">MM/YY: {{ virtual_card.mm_yy }}</h5>
+                        <h5 class="card-title">CVC: {{ virtual_card.cvc }}</h5>
+                        <h5 class="card-title">Zip Code: {{ virtual_card.zip_code }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block javascriptblock %}
+
+{% endblock javascriptblock %}

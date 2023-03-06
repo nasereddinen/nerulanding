@@ -1,0 +1,49 @@
+{% extends "pages/base-affiliate.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Network Marketing</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/nTWur64idcY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+        <h2 style="text-align:center;">Training Videos</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/sdUKkjxq_QU" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <p class="card-text">Watch Video Above On Leveraging Your Network</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

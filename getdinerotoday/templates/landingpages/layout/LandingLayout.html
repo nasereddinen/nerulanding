@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="{{ dynamic.seo_description }}"/>
+    <meta name="description" content="{{ dynamic.seo_description }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>{{ dynamic.favicon_title }}</title>
+    {% include "landingpages/components/StylesBlock.html" %}
+    {% block extrastyle %}
+    {% endblock extrastyle %}
+</head>
+<body class="home-4">
+
+{% include "landingpages/components/Loader.html" %}
+{% include "landingpages/components/Header.html" %}
+
+
+{% block content %}
+{% endblock content %}
+
+
+{% include "landingpages/components/Footer.html" %}
+{% include "landingpages/components/JavaScripts.html" %}
+{% block javascriptblock %}
+{% endblock javascriptblock %}
+{% if dynamic.sub_name == "www" %}
+    <script>
+        !function(w,d){function e(e,i){w.ServiceBell.q=w.ServiceBell.q||[],w.ServiceBell.q.push([e,i])}w.ServiceBell=w.ServiceBell||["init","identify","dial","alert","bookMeeting","hide","show","expand","collapse","connect","disconnect"].reduce((function(i,n){return i[n]=function(){e(n,arguments)},i}),{});var s=d.createElement("script");s.id="service-bell-script",s.src="https://cdn.servicebell.com/main.js",s.async=1;var i=d.getElementsByTagName("script")[0];i.parentNode.insertBefore(s,i)}(window,document);
+        ServiceBell.init("41169769349c466c86fc2cd591f5d63d", { mode: "iframe-jit" });
+      </script>
+    {% endif %}
+</body>
+</html>
+
+

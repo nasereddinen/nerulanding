@@ -1,0 +1,46 @@
+<div class="row page-header">
+    <div class="col-lg-6 align-self-center ">
+        <h2>Settings</h2>
+    </div>
+</div>
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/UIhEadwwMW0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <%= form_for @settings, url: set_settings_path, class: "form-horizontal", id: "signupForm" do |f| %>
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="Address">Fax Number</label>
+                    <%= f.select :fax_number, options_for_select([["Yes", true], ["No",false]]),{:prompt=>"Select Fax
+                    Number"}, :class => 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <label for="Address">411 Listing</label>
+                    <%= f.select :listing, options_for_select([["Yes", true], ["No",false]]),{:prompt=>"Select 411
+                    Listing"}, :class => 'form-control' %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="Address">Do you have Professional Email Address?</label>
+                    <%= f.select :professional_email_address, options_for_select([["Yes", true],
+                    ["No",false]]),{:prompt=>"Do you have Professional Email Address?"}, :class => 'form-control' %>
+                </div>
+                <div class="form-group">
+                    <%= f.submit "Save Settings",:class=>"btn btn-primary" %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <% end %>
+</section>

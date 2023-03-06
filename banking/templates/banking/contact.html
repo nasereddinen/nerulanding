@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zxx">
+    <head>{% load static %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/bootstrap.min.css' %}">
+        <!-- Animate CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/animate.min.css' %}">
+        <!-- Meanmenu CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/meanmenu.css' %}">
+        <!-- Boxicons CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/boxicons.min.css' %}">
+        <!-- Flaticon CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/flaticon.css' %}">
+        <!-- Nice Select CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/nice-select.min.css' %}">
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.carousel.min.css' %}">
+        <!-- Owl Carousel Default CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.theme.default.min.css' %}">
+        <!-- Odometer CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/odometer.min.css' %}">
+        <!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/magnific-popup.min.css' %}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/style.css' %}">
+        <!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'banking/assets/css/responsive.css' %}">
+		
+		<title>Leve - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'banking/assets/img/favicon.png' %}">
+    </head>
+
+    <body>
+        
+        <!-- Start Preloader Area -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader Area -->
+
+        <!-- Start Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <ul class="top-header-information">
+                            <li>
+                                <i class='bx bx-envelope'></i>
+                                <a href="mailto:hello@gmail.com">hello@gmail.com</a>
+                            </li>
+
+                            <li>
+                                <i class='bx bxs-phone'></i>
+                                <a href="tel:15143125678">+1 (514) 312-5678</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="top-header-others">
+                            <li>
+                                <i class='bx bxs-map'></i>
+                                <a href="atm-and-bank-locations.html">ATMs location</a>
+                            </li>
+                            <li class="languages-list">
+                                <select>
+                                    <option value="1">English</option>
+                                    <option value="2">العربيّة</option>
+                                    <option value="3">Deutsch</option>
+                                    <option value="3">Português</option>
+                                    <option value="3">简体中文</option>
+                                </select>
+                            </li>
+                            <li>
+                                <i class='bx bx-user'></i>
+                                <a href="my-account.html">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Header Area -->
+        {% include "banking/navbar.html" %}
+        <!-- Start Page Banner -->
+        <div class="page-banner-area item-bg3" style="
+        position: relative;
+        z-index: 1;
+        background-image: url({% static 'banking/assets/images/page-banner-4.jpg' %});
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        background-attachment: fixed;
+        ">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url 'banking_home' %}">Home</a>
+                        </li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+
+        <!-- Start Contact Info Area -->
+        <section class="contact-info-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info-box">
+                            <div class="icon">
+                                <i class="flaticon-office"></i>
+                            </div>
+
+                            <h3>Office</h3>
+                            <p>Leve Banking Corporation 6890 Blvd, The Bronx, NY 1058 New York, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info-box">
+                            <div class="icon">
+                                <i class="flaticon-contact"></i>
+                            </div>
+
+                            <h3>Contact</h3>
+                            <p><a href="tel:15143125678">+1(514)312-5678</a></p>
+                            <p><a href="mailto:hello@leve.com">hello@leve.com</a></p>
+                            <p><a href="mailto:fax@leve.com">fax@leve.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="contact-info-box">
+                            <div class="icon">
+                                <i class="flaticon-time"></i>
+                            </div>
+
+                            <h3>Open hours</h3>
+                            <p>Mon–Fri: 8 AM - 9 PM</p>
+                            <p>Saturday: 8 AM - 8 PM</p>
+                            <p>Sunday: 8 AM - 5 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Info Area -->
+
+        <!-- Start Contact Area -->
+        <section class="contact-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Drop us message for any query</h2>
+                    <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Full name</label>
+
+                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="Full name">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+
+                                    <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Email">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Phone</label>
+
+                                    <input type="text" name="phone_number" id="phone_number" required data-error="Please enter your number" class="form-control" placeholder="Phone">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6">
+                                <div class="form-group">
+                                    <label>Subject</label>
+
+                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required data-error="Please enter your subject" placeholder="Subject">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <label>Your message</label>
+
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="5" required data-error="Write your message" placeholder="Message here."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkme">
+                                    <label class="form-check-label" for="checkme">
+                                        Accept <a href="{% url 'banking_terms-of-service' %}">Terms of Services</a> and <a href="{% url 'banking_privacy-policy' %}">Privacy Policy.</a>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn">Send Message</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- End Contact Area -->
+
+        <!-- Start Map Area -->
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.8443973418493!2d-73.78427048433998!3d40.919157532852445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28d85a1e3ed25%3A0xa4274d173ef7563b!2sThe%20Blvd%2C%20New%20Rochelle%2C%20NY%2010801%2C%20USA!5e0!3m2!1sen!2sbd!4v1601545414990!5m2!1sen!2sbd"></iframe>
+        </div>
+        <!-- End Map Area -->
+
+        {% include "banking/footer.html" %}
+
+        <!-- Start Copy Right Area -->
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-area-content">
+                    <p>
+                        Copyright © 2021 Leve. All Rights Reserved by
+                        <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Copy Right Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="go-top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </div>
+        <!-- End Go Top Area -->
+        
+        <!-- Jquery Slim JS -->
+        <script src="{% static 'banking/assets/js/jquery.min.js' %}"></script>
+        <!-- Popper JS -->
+        <script src="{% static 'banking/assets/js/popper.min.js' %}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{% static 'banking/assets/js/bootstrap.min.js' %}"></script>
+        <!-- Meanmenu JS -->
+        <script src="{% static 'banking/assets/js/jquery.meanmenu.js' %}"></script>
+        <!-- Nice Select JS -->
+        <script src="{% static 'banking/assets/js/jquery.nice-select.min.js' %}"></script>
+        <!-- Owl Carousel JS -->
+        <script src="{% static 'banking/assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Magnific Popup JS -->
+        <script src="{% static 'banking/assets/js/jquery.magnific-popup.min.js' %}"></script>
+        <!-- Odometer JS -->
+        <script src="{% static 'banking/assets/js/odometer.min.js' %}"></script>
+        <!-- Jquery Appear JS -->
+        <script src="{% static 'banking/assets/js/jquery.appear.min.js' %}"></script>
+        <!-- Ajaxchimp JS -->
+		<script src="{% static 'banking/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator JS -->
+		<script src="{% static 'banking/assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+        <script src="{% static 'banking/assets/js/contact-form-script.js' %}"></script>
+        <!-- Wow JS -->
+        <script src="{% static 'banking/assets/js/wow.min.js' %}"></script>
+        <!-- Custom JS -->
+        <script src="{% static 'banking/assets/js/main.js' %}"></script>
+    </body>
+</html>

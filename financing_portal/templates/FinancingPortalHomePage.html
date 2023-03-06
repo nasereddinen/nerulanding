@@ -1,0 +1,57 @@
+{% extends "FinancingPortalNavigationBase.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center">
+            <h2>Dashboard</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Account Overview
+                    </div>
+                    <div class="card-body">
+                        <p>Available Credit Limit For Our Products: ${{ profile.available_credit_limit }}</p>
+                        <p>Credit Line: ${{ profile.credit_line }}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="{% url "financing_portal:purchase-products" %}">Purchase
+                            Products</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                      <a href="{% url 'financing_portal:payments' %}" class="btn btn-primary">View Terms +</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

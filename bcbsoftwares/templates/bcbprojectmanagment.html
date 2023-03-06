@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>bcbvideosoftware</title>
+  </head>
+  <body class="bg-gradient-to-b from-purple-100 to-white h-screen">
+    <nav class="flex justify-between m-4">
+      <section class="">
+        <a href="{{dynamic.bcb_projectmanagment_software_logo_link}}">
+          <img
+            class="h-24 w-24 object-contain"
+            src="{{dynamic.bcb_projectmanagment_software_logo.url}}"
+            alt=""
+            srcset=""
+          />
+        </a>
+      </section>
+      <section class="">
+        <button
+          onclick="window.location.href='https://bcbprojectmanagement.com/login'"
+          class="border-rounded bg-blue-500 text-white p-2 font-bold"
+        >
+          Login
+        </button>
+      </section>
+    </nav>
+    <main class="container mx-auto lg:flex md:flex-row flex-col">
+      <section class="heading flex flex-col justify-center">
+        <h1
+          class="font-black"
+          style="
+            font-size: 3rem;
+            line-height: 1.25;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-family: 'Charlie Display', sans-serif;
+            font-weight: 600;
+          "
+        >
+          {{dynamic.bcb_projectmanagment_software_heading}}
+        </h1>
+        <p
+          class=""
+          style="
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #091e42;
+          "
+        >
+          {{dynamic.bcb_projectmanagment_software_text}}
+        </p>
+      </section>
+      <section class="svg">
+        <img
+          style="vertical-align: middle; max-width: 100%; height: auto"
+          src="https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/spirit/hero/6a3ccd8e5c9a0e8ebea4235d12da6b24/hero.png"
+          alt="svg"
+        />
+      </section>
+    </main>
+  </body>
+</html>

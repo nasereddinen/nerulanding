@@ -1,0 +1,106 @@
+
+{% extends "pages/base-freewhitelabelprogramonboarding.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Partner Resources</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div id="app">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4" v-for="product in displayProducts" :key="product.id">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <img class="mb-2" style="height: 100px"
+                                         src="https://s3-us-east-2.amazonaws.com/suitelogin-production/wp-content/uploads/2017/05/03205352/Gathering-Intelligence-and-Closing-the-Sale-180X180.jpg">
+                                    <h3>${product.name}</h3>
+                                    <a class="btn btn-primary btn-block" v-bind:href="product.url" target="_blank">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header card-default">
+                            Category
+                        </div>
+                        <div class="card-body">
+                            <div v-for="category in categories" :key="category">
+                                <input type="checkbox" v-bind:id="category" @change="check(category)">
+                                <label v-bind:for="category" on:>${category}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}
+
+
+{% block javascriptblock %}
+    <script>
+        const app = new Vue({
+            el: '#app',
+            delimiters: ['${', '}'],
+
+            data: {
+                currentPage: {
+                    id: 0,
+                    title: "",
+                },
+                checkedCategories: [],
+                categories: [
+                    {% for i in categories %}
+                        '{{ i }}',
+                    {% endfor %}
+                ],
+                products: [
+                    {% for i in resources %}
+                        {
+                            name: '{{ i.name }}',
+                            url: '{% if  i.document %} {{ i.document.url }} {% endif %}',
+                            category: '{{ i.category }}',
+                            id: '{{ i.id }}',
+                        },
+                    {% endfor %}],
+                displayProducts: [],
+            },
+            mounted: function () {
+                this.displayProducts = [...this.products]
+            },
+            methods: {
+                check: function (category) {
+                    if (this.checkedCategories.includes(category)) {
+                        this.checkedCategories.splice(this.checkedCategories.indexOf(category), 1);
+                    } else {
+                        this.checkedCategories.push(category)
+                    }
+
+                    if (this.checkedCategories.length > 0) {
+                        this.displayProducts = this.products.filter(i => this.checkedCategories.includes(i.category))
+                    } else {
+                        this.displayProducts = [...this.products]
+                    }
+
+                }
+            },
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,37 @@
+<div class="row page-header">
+    <div class="col-lg-6 align-self-center ">
+        <h2>Toll-Free Number</h2>
+    </div>
+</div>
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/ZWFWUWY3Z4Q" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <br><br>
+    <center>
+        <center><h3>Choose The Option Below So We Can Direct You To The Right Page</h3></center>
+        <br><br>
+        <div class="row">
+            <div class="col-md-12">
+                <%= link_to "Click Here If You Haven't Upgraded To The Paid Toll Free Number Plan",toll_free_number_path
+                ,:class=>"btn btn-primary" %>
+            </div>
+            <br><br>
+            <br><br>
+            <div class="col-md-12">
+                <%= link_to "Click Here If You Have Upgraded To The Paid Toll Free Number Plan",
+                toll_free_number_paid_path ,:class=>"btn btn-primary" %>
+            </div>
+        </div>
+    </center>
+</section>
+
+<style media="screen">
+    .btn {
+        font-size: 18px;
+    }
+</style>

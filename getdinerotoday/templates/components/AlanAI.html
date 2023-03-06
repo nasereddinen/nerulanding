@@ -1,0 +1,38 @@
+{% load static %}
+<!-- <div class="alan-btn"></div>
+
+
+<script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+<script>
+    var alanBtnInstance = alanBtn({
+        key: "d2430b915c6ca49037224e6c859c00b22e956eca572e1d8b807a3e2338fdd0dc/stage",
+        authData: {data: "your auth data if needed"},
+        onCommand: function (commandData) {
+            console.log(commandData)
+            if (commandData.command === "goto") {
+                switch (commandData.location) {
+                    case "dashboard":
+                        window.location.href = '/'
+                        break
+                    default:
+                        window.location.href = commandData.location
+                        break
+                }
+            } else if (commandData.command === "order") {
+                switch (commandData.product) {
+                }
+            } else if (commandData.command === "addProduct") {
+                var prod = commandData.product
+                $(`input[name="${prod}"]`).closest("form").submit()
+            } else if (commandData.command === "addUserStep") {
+                var prod = commandData.product
+                var element = $(`input[id="${prod}"]`)
+                element.prop("checked", true);
+                calculateAmount()
+            } else if (commandData.command === "goToCheckout") {
+                $('#steps-form').submit()
+            }
+        },
+        rootEl: document.getElementById("alan-btn"),
+    });
+</script> -->

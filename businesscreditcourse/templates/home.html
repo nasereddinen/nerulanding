@@ -1,0 +1,30 @@
+{% extends "pages/base-businesscreditcourse.html" %}
+{% load static %}
+{% block content %}
+
+{% if dynamic.show_business_credit_course %}
+<div class="row page-header">
+        <h3></h3>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+{{dynamic.business_credit_course_video_link|safe}}
+  
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h3>{{dynamic.business_credit_course_video_link_text}}</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif %}
+ 
+
+   
+
+{% endblock %}

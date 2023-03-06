@@ -1,0 +1,67 @@
+{% extends "pages/base-business.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Establish Business Reports</h2>
+        </div>
+    </div>
+    <div id="app">
+        <section class="main-content">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">Click On The Button Below To Get Established With Experian Business
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url "business:experian" %}" class="btn btn-primary btn-block">Experian
+                                Business</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">Click On The Button Below To Get Established With Dunn &
+                            Bradstreet
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url "business:dunn-brad" %}" class="btn btn-primary btn-block">Dunn &
+                                Bradstreet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-header">Click On The Button Below To Get Established With Equifax
+                            Business
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url "business:equifax" %}" class="btn btn-primary btn-block">Equifax
+                                Business</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <form method="post">{% csrf_token %}
+                        <button class="btn btn-success btn-block">Mark As Complete</button>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+
+
+{% endblock %}
+

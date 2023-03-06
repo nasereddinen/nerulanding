@@ -1,0 +1,53 @@
+from django.conf.urls import url
+from django.contrib.auth.decorators import login_required
+
+from .views import *
+
+app_name = 'creditcourse'
+urlpatterns = [
+
+    url('maincreditfile', login_required(MainFileView.as_view(), login_url='/user/login'),
+            name='maincreditfile'),
+    url('carloanone', login_required(CarDealOneView.as_view(), login_url='/user/login'),
+        name='carloanone'),
+    url('creditrepairdoneforyou', login_required(CreditRepairDoneView.as_view(), login_url='/user/login'),
+        name='creditrepairdoneforyou'),
+    url('carloantwo', login_required(CarDealTwoView.as_view(), login_url='/user/login'),
+        name='carloantwo'),
+    url('mortgageone', login_required(MortgageOneView.as_view(), login_url='/user/login'),
+        name='mortgageone'),
+    url('mortgagetwo', login_required(MortgageTwoView.as_view(), login_url='/user/login'),
+        name='mortgagetwo'),
+    url('mortgagethree', login_required(MortgageThreeView.as_view(), login_url='/user/login'),
+        name='mortgagethree'),
+    url('mortgagefour', login_required(MortgageFourView.as_view(), login_url='/user/login'),
+        name='mortgagefour'),
+    url('repaircreditone', login_required(RepairCreditOneView.as_view(), login_url='/user/login'),
+        name='repaircreditone'),
+    url('repaircredittwo', login_required(RepairCreditTwoView.as_view(), login_url='/user/login'),
+        name='repaircredittwo'),
+    url('personalcreditone', login_required(PersonalCreditOneView.as_view(), login_url='/user/login'),
+        name='personalcreditone'),
+    url('personalcredittwo', login_required(PersonalCreditTwoView.as_view(), login_url='/user/login'),
+        name='personalcredittwo'),
+    url('personalcreditthree', login_required(PersonalCreditThreeView.as_view(), login_url='/user/login'),
+        name='personalcreditthree'),
+    url('personalcreditfour', login_required(PersonalCreditFourView.as_view(), login_url='/user/login'),
+        name='personalcreditfour'),
+    url('personalcreditfive', login_required(PersonalCreditFiveView.as_view(), login_url='/user/login'),
+        name='personalcreditfive'),
+    url('personalcreditsix', login_required(PersonalCreditSixView.as_view(), login_url='/user/login'),
+        name='personalcreditsix'),
+    url('personalcreditseven', login_required(PersonalCreditSevenView.as_view(), login_url='/user/login'),
+        name='personalcreditseven'),
+    url('personalcrediteight', login_required(PersonalCreditEightView.as_view(), login_url='/user/login'),
+        name='personalcrediteight'),
+    url('personalcreditnine', login_required(PersonalCreditNineView.as_view(), login_url='/user/login'),
+        name='personalcreditnine'),
+    url('personalcreditten', login_required(PersonalCreditTenView.as_view(), login_url='/user/login'),
+        name='personalcreditten'),
+    url('personalcrediteleven', login_required(PersonalCreditElevenView.as_view(), login_url='/user/login'),
+        name='personalcrediteleven'),
+    url('personalcredittwelve', login_required(PersonalCreditTwelveView.as_view(), login_url='/user/login'),
+        name='personalcredittwelve'),
+]

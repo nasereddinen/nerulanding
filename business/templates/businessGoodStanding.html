@@ -1,0 +1,399 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>How To Check If Your Business Is In Good Standing</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/6bkyWwSff_A" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h2 style="text-align:center;">All states have an online location where you can check the status of
+                        any corporation registered in that state. Information provided can include the name, date of
+                        incorporation, registered number or ID, and current standing. To check the status of a company,
+                        click the link next to the state in which it is incorporated.</h2>
+
+                    <div class="card-header card-default">
+                        Choose The State Your Business Is Registered In To Check If Your Business Is In Good Standing
+                        Below
+                    </div>
+
+
+                    <div class="card-body">
+                        <table id="datatable2" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>States</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://arc-sos.state.al.us/CGI/CORPNAME.MBR/INPUT">Alabama</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.commerce.alaska.gov/web/cbpl/Corporations.aspx">Alaska</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary" href="https://azsos.gov/business">Arizona</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sos.arkansas.gov/corps/search_all.php">Arkansas</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sos.ca.gov/business-programs/business-entities/cbs-search-tips/">California</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.colorado.gov/search?tid=llc">Colorado</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.concord-sots.ct.gov/CONCORD/online?sn=InquiryServlet&amp;eid=99">Connecticut</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://corp.delaware.gov/directweb/">Delaware</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://business.dc.gov/research_business_info">D.C.</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://dos.myflorida.com/sunbiz/search/">Florida</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://ecorp.sos.ga.gov/BusinessSearch">Georgia</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://hbe.ehawaii.gov/documents/search.html;jsessionid=9148585DCF650B5F22DD05E291E3ECCF.liona">Hawaii</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://sosbiz.idaho.gov/search/business">Idaho</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.ilsos.gov/corporatellc/">Illinois</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://bsd.sos.in.gov/publicbusinesssearch">Indiana</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://www.sos.state.ia.us/search/index.html">Iowa</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.kansas.gov/bess/flow/main?execution=e1s1">Kansas</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sos.ky.gov/Pages/default.aspx">
+                                    Kentucky</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://coraweb.sos.la.gov/CommercialSearch/CommercialSearch.aspx">Louisiana</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://icrs.informe.org/nei-sos-icrs/ICRS?MainPage=x">Maine</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://egov.maryland.gov/businessexpress/entitysearch">Maryland</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://corp.sec.state.ma.us/corpweb/corpsearch/CorpSearch.aspx">Massachusetts</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://startabusiness.org/mi/business-search/">Michigan</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://mblsportal.sos.state.mn.us/Business/Search">Minnesota</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://corp.sos.ms.gov/corp/portal/c/page/corpBusinessIdSearch/portal.aspx?#clear=1">Mississippi</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://bsd.sos.mo.gov/businessentity/besearch.aspx?searchtype=0">Missouri</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://sosmt.gov/business/">Montana</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.nebraska.gov/sos/corp/corpsearch.cgi">Nebraska</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://esos.nv.gov/EntitySearch/OnlineEntitySearch">Nevada</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://sos.nh.gov/nhbuslookup.aspx">New Hampshire</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.njportal.com/DOR/businessrecords/Maintenance.aspx">New
+                                    Jersey</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://portal.sos.state.nm.us/BFS/online/CorporationBusinessSearch">New
+                                    Mexico</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.dos.ny.gov/corps/bus_entity_search.html">New York</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sosnc.gov/search/index/corp">North Carolina</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://sos.nd.gov/business/business-services">North Dakota</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://businesssearch.ohiosos.gov/">Ohio</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sos.ok.gov/corp/corpinquiryfind.aspx">Oklahoma</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://sos.oregon.gov/business/Pages/find.aspx">Oregon</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.corporations.pa.gov/search/corpsearch">Pennsylvania</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://sos.ri.gov/divisions/Business-Portal/databases">Rhode Island</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://businessfilings.sc.gov/BusinessFiling/Entity/Search">South
+                                    Carolina</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://sosenterprise.sd.gov/BusinessServices/Business/FilingSearch.aspx">South
+                                    Dakota</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://tnbear.tn.gov/ecommerce/default.aspx">Tennessee</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://secretaryofstates.com/texas/">Texas</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://startabusiness.org/ut/business-search/">Utah</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://www.sec.state.vt.us/">Vermont</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="http://www.scc.virginia.gov/clk/bussrch.aspx">Virginia</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary" href="https://ccfs.sos.wa.gov/">Washington</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://sos.wv.gov/Pages/default.aspx">West Virginia</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://startabusiness.org/wi/business-search/">Wisconsin</a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td><a target="_blank" class="btn btn-sm btn-primary"
+                                       href="https://wyobiz.wy.gov/business/filingsearch.aspx">Wyoming</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e0518eb7e39ea1242a1ea79/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

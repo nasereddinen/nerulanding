@@ -1,0 +1,77 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+        </div>
+    </div>
+    <section class="main-content">
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header">
+                    Edit Bank Account Information
+                </div>
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+
+                            <div class="btn-toolbar">
+                                <input type="submit" value="Submit" class="btn btn-primary mr-1"/>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+
+            <div class="card">
+                <div class="card-header">
+                    Enter In New Payment Information
+                </div>
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form action="/whitelabelpartnerportal/addbankinfo_form" accept-charset="UTF-8"
+                              method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <label for="routing_number">Routing Number</label>
+                                <input type="text" name="routing_number" id="routing_number"/>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="name_of_bank">Name Of Bank</label>
+                                <input type="text" name="name_of_bank" id="name_of_bank"/>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="account_number">Account Number</label>
+                                <input type="text" name="account_number" id="account_number"/>
+                            </div>
+                            <div class="form-group">
+
+                                <label for="name_on_bank_account">Name On Bank Account</label>
+                                <input type="text" name="name_on_bank_account" id="name_on_bank_account"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_address">Your Address</label>
+                                <input type="text" name="your_address" id="your_address"/>
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" class="btn btn-primary mr-1">Submit</button>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        {% endif %}
+
+
+    </section>
+{% endblock %}

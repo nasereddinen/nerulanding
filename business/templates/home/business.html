@@ -1,0 +1,71 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block extrastyle %}
+
+{% endblock extrastyle %}
+
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2> Create My Corporate Business Credit Plan</h2></div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            {% if dynamic.is_main_site %}
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/cW3SMdOtbJw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            {% endif %}
+        </div>
+        <h2 style="text-align:center;">My Corporate Business Credit Solution</h2><br>
+{#        <form accept-charset="UTF-8" action="{% url 'business:business-credit-plan' %}" method="post">#}
+        <form accept-charset="UTF-8" action="business-credit-plan/" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="form-group">
+                        <label for="businessname">How Long Have You Been In Incorporated In Your Business?</label>
+                        <select class="form-control" id="business_time" name="business_time">
+                            <option value="1">Less Than 1 year</option>
+                            <option value="2">1 Year - 2 Years</option>
+                            <option value="3">3 years Or More</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">How Many Tradelines Do You Currently Have Reporting To All Three
+                            Business Credit Bureaus (Dunn & Bradstreet, Business Equifax, And/Or Business Experian)
+                        </label>
+                        <select class="form-control" id="trade_lines" name="trade_lines">
+                            <option value="1">4 Or Less Tradelines Reporting</option>
+                            <option value="2">5-9 Tradelines Reporting</option>
+                            <option value="3">10 or More Tradelines Reporting</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">See Your Business Credit Building Plan</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+    </section>
+
+{% endblock content %}
+
+
+{% block javascriptblock %}
+
+{% endblock javascriptblock %}

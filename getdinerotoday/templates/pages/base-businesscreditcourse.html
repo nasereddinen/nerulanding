@@ -1,0 +1,187 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block navigation %}
+<div class="main-sidebar-nav dark-navigation">
+    <div class="nano">
+        <div class="nano-content sidebar-nav">
+            <div class="card-body border-bottom text-center nav-profile">
+                <br>
+                <p class="lead margin-b-0 toggle-none">
+                    {{ request.user.get_full_name }}
+                </p>
+                <p class="text-muted mv-0 toggle-none">Welcome</p>
+            </div>
+            <ul class="metisMenu nav flex-column" id="menu">
+                <li class="nav-heading"><span>MAIN</span></li>
+                <li class="nav-item">
+                    <a href="/dashboard" class="nav-link"><span class="toggle-none">Go Back To Main Portal</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><span class="toggle-none">Your Business Needs To Be An Entity<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column " aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:one' %}" class="nav-link">Select the
+                            Entity Structure of Your Business</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:2' %}" class="nav-link">Form a
+                            Corporation or LLC</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:3' %}" class="nav-link">File for
+                            Foreign Corporation status</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none"> Your Business Address <span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:4' %}" class="nav-link"> Your
+                            Business Address</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:5' %}" class="nav-link"> Set Up a
+                            True Business Address</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Business Phone, 411 Directory Listing, & Fax<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:6' %}" class="nav-link">Business
+                            Phone Number</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:7' %}" class="nav-link">Business Fax
+                            Number</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:8' %}" class="nav-link">Submitting
+                            Your Number to 411 Directory</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:9' %}" class="nav-link">Submit Your
+                            Business to Online Business Directories</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Business Website & Professional Email Address<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:10' %}" class="nav-link">Set Up
+                            Business Website</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:11' %}" class="nav-link">Set Up
+                            Professional Email Address</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Federal EIN & Business Licenses: City, Country, State<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:twelve' %}" class="nav-link">Obtain a
+                            Federal Employer Identification Number (EIN)</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:13' %}" class="nav-link">Obtain
+                            Required Business Licenses</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Your Business Bank Account<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:14' %}" class="nav-link">Set Up
+                            Business Bank Account</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:15' %}" class="nav-link">Set Up
+                            Merchant Credit Card Processing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">All Agency Listings Must Be Identical<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:16' %}" class="nav-link">Verify Each
+                            Agency Has Your Business Listed the Same</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:17' %}" class="nav-link">Verify
+                            Business Listings Match</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Your Business Plan<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:18' %}" class="nav-link">Create a
+                            Business Plan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Leverage Your Assets<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:19' %}" class="nav-link">List
+                            Personal Assets</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:20' %}" class="nav-link">List
+                            Business Assets</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Optimize Your Personal Credit<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:21' %}" class="nav-link">Check Your
+                            Personal Credit</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Bank Ratings<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:22' %}" class="nav-link">Establish a
+                            Low 5 Business Bank Rating</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:23' %}" class="nav-link">Establish a
+                            Low 5 Business Balance Rating</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Obtaining Your First Bank Business Loan<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:24' %}" class="nav-link">Secure a
+                            Business Loan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Experian Smart Business Credit Reports<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:25' %}" class="nav-link">Task Number
+                            1</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Equifax Small Business Report<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:26' %}" class="nav-link">Search for
+                            Your Business on Equifax</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:27' %}" class="nav-link">Order Your
+                            Equifax Small Business Credit Report</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Dunn & Bradstreet<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:28' %}" class="nav-link">Search for
+                            Your Business on D&B</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:29' %}" class="nav-link">If Your
+                            Company Shows Up in Search</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:30' %}" class="nav-link">If Your
+                            Company Does Not Show Up in Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Business Credit Scores<span
+                            class="fa arrow"></span></span></a>
+                    <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:31' %}" class="nav-link">Equifax
+                            Small Business Credit Risk Score</a></li>
+                        <li class="nav-item"><a href="{% url 'businesscreditcourse:32' %}" class="nav-link">Dun &
+                            Bradstreet Paydex® Score</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

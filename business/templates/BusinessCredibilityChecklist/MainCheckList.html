@@ -1,0 +1,235 @@
+{% extends "pages/base-business.html" %}
+{% load static %}
+{% block extrastyle %}
+    <style>
+        button {
+            -webkit-tap-highlight-color: transparent;
+            background: none !important;
+            border: none;
+            text-align: left;
+            font-family: "Montserrat", sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+            box-sizing: border-box;
+            background-color: transparent;
+            touch-action: manipulation;
+            text-decoration: none;
+            transition: all 0.3s;
+            color: #4b71fa;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Business Credit Checklist</h2>
+        </div>
+    </div>
+    <div id="app">
+        <section class="main-content">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-header">Overview</div>
+                        <div class="card-body">
+
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if steps_done %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business_credibility_checklist1" %}">Step 1: Business
+                                        Credibility</a>
+                                </div>
+                            </div>
+
+
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.established %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business_credibility_establishing" %}">Step 2: Establish
+                                        Business Reports</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.established %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="2">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="2">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.tier1 %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business-credit-builder-tracker" %}">Step
+                                        3: Start Building -
+                                        Tier 1</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.tier1 %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="3">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="3">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.monitor %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+                                    <a class="font-weight-bold" href="{% url "business:business-credit-monitoring" %}">Step
+                                        4: Monitor Business
+                                        Reports</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.monitor %}
+
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="4">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="4">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.tier2 %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business-credit-builder-tracker" %}">Step
+                                        5: Building Credit -
+                                        Tier 2</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.tier2 %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="5">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="5">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.tier3 %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business-credit-builder-tracker" %}">Step
+                                        6: Advanced Building
+                                        - Tier 3</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.tier3 %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="6">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="6">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="my-2 d-flex justify-content-between">
+                                <div>
+                                    {% if othersteps.tier4 %}
+                                        <i v-if="page.done" class="icon-check bg-success"
+                                           style="border-radius: 10px"></i>
+                                    {% else %}
+                                        <i v-if="!page.done" class="icon-check"></i>
+                                    {% endif %}
+                                    <a class="font-weight-bold"
+                                       href="{% url "business:business-credit-builder-tracker" %}">Step
+                                        7: Revolving
+                                        Accounts - Tier 4</a>
+                                </div>
+                                <div>
+                                    {% if not othersteps.tier4 %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="step" value="7">
+                                            <button href="#" type="submit">Mark As Complete</button>
+                                        </form>
+                                    {% else %}
+                                        <form method="post">{% csrf_token %}
+                                            <input type="hidden" name="undo" value="7">
+                                            <button href="#" type="submit">Mark As Not Complete</button>
+                                        </form>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+
+
+{% endblock %}
+

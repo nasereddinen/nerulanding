@@ -1,0 +1,628 @@
+{% extends "pages/base-business.html" %} {% load static %} {% block content %}
+<div class="row page-header no-background no-shadow margin-b-0">
+  <div class="col-lg-6 align-self-center">
+    <h2>Dashboard</h2>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </div>
+</div>
+<section class="main-content">
+  <div class="row w-no-padding margin-b-30"></div>
+  <!--  <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/QiyNd2W7RGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div> -->
+  <br />
+  <h2 style="text-align: center">Choose Your Industry Below</h2>
+  <br />
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/416778/pexels-photo-416778.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          alt=""
+          style="object-fit: contain"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Fitness Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/fitness" class="btn btn-primary"> Enter Portal </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Medical Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/medical" class="btn btn-primary"> Enter Portal </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Real Estate Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/real_estate" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Restaurant &amp; Catering Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/restaurant_catering" class="btn btn-primary"
+                >Enter Portal</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/65623/vehicle-chrome-technology-automobile-65623.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Automotive Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/automotive" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          style="object-fit: contain"
+          height="270px"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Car Dealership Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/automotive" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          alt=""
+          style="object-fit: contain"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Trucking Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/trucking" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/853427/pexels-photo-853427.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Hair Salon Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/hair_salon" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Lawyer Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/lawyer" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/368893/pexels-photo-368893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Photography Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/photography" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/34239/pexels-photo.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Transportation Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/transportation" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/2898199/pexels-photo-2898199.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Electrician Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/handy_man" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/414160/pexels-photo-414160.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Landscaping Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/handy_man" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          style="object-fit: contain"
+          width="100%"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The eCommerce Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/ecommerce" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Musician Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/musician" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/684385/pexels-photo-684385.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Insurance Agent Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/insurance_agent" class="btn btn-primary"
+                >Enter Portal</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Handy Man Services Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/handy_man" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          alt=""
+          style="object-fit: contain"
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Accountant Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/accountant" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Dentist Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/medical" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1388944/floor-flooring-hand-man-1388944.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Carpet &amp; Flooring Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/handy_man" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/2731667/pexels-photo-2731667.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Cannabis Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/cannabis" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Wholesaler Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/ecommerce" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Barber Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/hair_salon" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/56884/wellness-massage-relax-relaxing-56884.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Spa Business Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/hair_salon" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/2640427/pexels-photo-2640427.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Physcial Therapist Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/medical" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/919436/pexels-photo-919436.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Credit Repair Company Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/credit_repair" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Wedding Planner Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/wedding_planner" class="btn btn-primary"
+                >Enter Portal</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <div class="card mb-4 shadow-sm">
+        <img
+          src=" https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+          height="270px"
+          width="100%"
+          style="object-fit: contain"
+          alt=""
+        />
+        <div class="card-body">
+          <p class="card-text">
+            Click The Button Below To Enter The Construction Portal
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="/construction" class="btn btn-primary">Enter Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ANCHOR_FOR_NEW_CARDS -->
+    <!-- Dont remove this comment -->
+  </div>
+</section>
+{% endblock content %}

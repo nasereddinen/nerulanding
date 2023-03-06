@@ -1,0 +1,186 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2> Create My Financing Plan</h2></div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            {% if dynamic.is_main_site %}
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/M0YRRVOslM0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            {% endif %}
+        </div>
+        <div class="container-header">
+            <h2 style="margin-top:2.5%" ;>Put Your Information Below To See The Lenders You Qualify For</h2>
+        </div>
+        <form accept-charset="UTF-8" action="." method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Experian Score)</label>
+                        <select class="form-control" id="experian" name="experian">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Equifax Score)</label>
+                        <select class="form-control" id="equifax" name="equifax">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Transunion Score)</label>
+                        <select class="form-control" id="transunion" name="transunion">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Monthly Revenue (Over Last 3 Months)</label>
+                        <select class="form-control" id="monthly_revenue_3" name="monthly_revenue_3">
+                            <option value="1">$3499 or below</option>
+                            <option value="2">$3500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Daily Balance (Over Last 3 Months)</label>
+                        <select class="form-control" id="daily_balance_3" name="daily_balance_3">
+                            <option value="1">$499 or below</option>
+                            <option value="2">$500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Monthly Ending Balance (Over Last 3 Months)</label>
+                        <select class="form-control" id="monthlty_ending_balance_3" name="monthlty_ending_balance_3">
+                            <option value="1">$499 or below</option>
+                            <option value="2">$500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Monthly Revenue (Over Last 6 Months)</label>
+                        <select class="form-control" id="monthly_revenue_6" name="monthly_revenue_6">
+                            <option value="1">$3499 or below</option>
+                            <option value="2">$3500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Daily Balance (Over Last 6 Months)</label>
+                        <select class="form-control" id="daily_balance_6" name="daily_balance_6">
+                            <option value="1">$499 or below</option>
+                            <option value="2">$500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Average Monthly Ending Balance (Over Last 6 Months)</label>
+                        <select class="form-control" id="monthlty_ending_balance_6" name="monthlty_ending_balance_6">
+                            <option value="1">$499 or below</option>
+                            <option value="2">$500 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Your Businesses Revenue Over The Past 12 Months</label>
+                        <select class="form-control" id="business_revenue" name="business_revenue">
+                            <option value="1">$41,999 or below</option>
+                            <option value="2">$42,000 - $99,000</option>
+                            <option value="3">$100,000 or above</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Any Nonsufficient Funds In The Last 3 Months?</label>
+                        <select class="form-control" id="nonsufficient_6" name="nonsufficient_6">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Any Nonsufficient Funds In The Last 6 Months?</label>
+                        <select class="form-control" id="nonsufficient_12" name="nonsufficient_12">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Do You Have Any Current Liens Against The Business?</label>
+                        <select class="form-control" id="current_liens" name="current_liens">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Do You Have A Business Bank Account? (That Is Only For Business
+                            Use)</label>
+                        <select class="form-control" id="business_account" name="business_account">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">Do You Currently Have A Business Loan?</label>
+                        <select class="form-control" id="business_loan" name="business_loan">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessname">The Age Of Your Business (When You Truly Registered As An
+                            Entity)</label>
+                        <select class="form-control" id="business_age" name="business_age">
+                            <option value="1">Less Than 3 Months Ago</option>
+                            <option value="2">3 Months - 8 Months</option>
+                            <option value="3">9 Months - 11 Months</option>
+                            <option value="4">1 Year - 2 Years</option>
+                            <option value="5">3 years Or More</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">See What Lenders You Qualify For</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+{% endblock %}

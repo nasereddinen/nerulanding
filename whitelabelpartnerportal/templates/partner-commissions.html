@@ -1,0 +1,122 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+<script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous" data-cfasync="false">
+</script>
+<script>
+    var chatPal = new ChatPal({
+        embedId: 'DfT7BnTm5dGn',
+        remoteBaseUrl: 'https://chatterpal.me/',
+        version: '7.23'
+    });
+</script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+<div class="row page-header">
+    <div class="col-lg-6 align-self-center ">
+        <h2>Your Commission On Products</h2></div>
+</div>
+
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/j8stLoUhS-M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header card-default">
+            Commission Per Product
+        </div>
+    <div class="card-body">
+        <table id="datatable" class="table table-striped dt-responsive nowrap">
+            <thead>
+              <tr>
+                  <th>Product Name</th>
+                  <th>Price Of Product</th>
+                  <th>Commission On Product</th>
+                  <th>Your Payment</th>
+                  <th>Payout Date</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Business Builder Annual Package</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price/td>
+                    <td>40%</td>
+                    <td>40% Of Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Business Builder Monthly Package</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>40%</td>
+                    <td>40% Of Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Toll Free Number</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>40%</td>
+                    <td>40% Of Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Fax Number</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>40%</td>
+                    <td>40% Of Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Professional Email Address</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>10%</td>
+                      <td>10% Of Whatever You Charge</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Domain Name</td>
+                    <td>Whatever You Would Like To Charge Over Our Minimum Price</td>
+                    <td>10%</td>
+                    <td>10% Of Whatever You Charge</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Merchant Account</td>
+                    <td>Free - $10 per month per product</td>
+                    <td>Variable Bonus</td>
+                    <td>$100-$200</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Merchant Account Residual Payments</td>
+                    <td>40% Residual Commission Split With Our Company</td>
+                    <td>Variable Amount</td>
+                    <td>40% Residual Commission Split With Our Company</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Autodialer</td>
+                    <td>0.035 per message</td>
+                    <td>40%</td>
+                    <td>40% Of What They Purchase</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+                  <tr>
+                    <td>Business Loans</td>
+                    <td>No Charge For Them</td>
+                    <td>40%</td>
+                    <td>40% Commission Split With Our Company</td>
+                    <td>14 days from Purchase</td>
+                  </tr>
+              </tbody>
+        </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,500 @@
+{% extends "landingpages/layout/LandingLayout.html" %}
+{% load static %}
+
+{% block content %}
+
+    <section class="fullscreen-banner banner" data-bg-img="/static/images/pattern/01.png"
+             style="height: 1131px; background-image: url('/static/images/pattern/01.png');">
+        <div class="hero-bg">
+            <img class="img-fluid" src="/static/images/bg/04.png" alt="">
+        </div>
+        <div class="align-center p-0" style="padding-top: 80px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 img-side my-btn-in-desktopd">
+                        <div class="video-btn"
+                             style="position: absolute; left: 42%; top: 47%; width: auto !important; z-index: 99;">
+                            <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=gj-YdMA9XKU"><i
+                                    class="la la-play"></i>
+                            </a>
+
+                            <div class="spinner-eff">
+                                <div class="spinner-circle circle-1"></div>
+                                <div class="spinner-circle circle-2"></div>
+                            </div>
+                        </div>
+                        <img class="img-center" src="/static/images/mackbook/01.png" alt="">
+                    </div>
+                    <!--  <div class="col-lg-7 col-md-12 ml-auto mr-auto my-ifram-in-mobile">-->
+                    <!--    <div class="video-responsive my-ifram-in-mobile">-->
+                    <!--    <iframe width="100%" height="250" src="https://www.youtube.com/embed/gj-YdMA9XKU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <!--</div>-->
+                    <!--  </div>-->
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-12 md-mt-5 ml-auto">
+                        {% if dynamic %}
+                            <h1 class="mb-4 font-weight-normal wow fadeInUp" data-wow-duration="1.5s"
+                                style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">{{ dynamic.title }}</h1>
+                        {% endif %}
+                        <p class="lead mb-4 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s"
+                           style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            {{ dynamic.frontpage_text }}</p>
+                        <a class="btn btn-theme wow fadeInUp" data-wow-duration="3s" data-wow-delay="0.5s"
+                           href="{{ dynamic.webinar }}" target="_blank"
+                           data-text="Watch Our Webinar"
+                           style="visibility: visible; animation-duration: 3s; animation-delay: 0.5s; animation-name: fadeInUp; margin-top: 5px;">
+                            <span>W</span><span>a</span><span>t</span><span>c</span><span>h</span>
+                            <span> </span><span>O</span><span>u</span><span>r</span>
+                            <span>W</span><span>e</span><span>b</span><span>i</span><span>n</span><span>a</span><span>r</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="round-shape"></div>
+    </section>
+
+
+    <!--body content start-->
+
+
+    <div class="page-content">
+
+        <section class="pt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 my-btn-in-desktopd">
+                        <div class="video-btn video-btn-pos"><a class="play-btn popup-youtube"
+                                                                href="https://www.youtube.com/watch?v=dAdSU6r5jPc"><i
+                                class="la la-play"></i></a>
+                            <div class="spinner-eff">
+                                <div class="spinner-circle circle-1"></div>
+                                <div class="spinner-circle circle-2"></div>
+                            </div>
+                        </div>
+                        <img class="img-fluid w-100" src="/static/images/Screenshot.png" alt="">
+                    </div>
+                    <!--  <div class="col-lg-6 col-md-12 my-ifram-in-mobile">-->
+                    <!--    <div class="video-responsive my-ifram-in-mobile">-->
+                    <!--    <iframe width="100%" height="250" src="https://www.youtube.com/embed/dAdSU6r5jPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <!--</div>-->
+                    <!--  </div>-->
+                    <div class="col-lg-6 col-md-12 md-mt-5">
+                        <div class="section-title mb-3">
+                            <div class="title-effect title-effect-2">
+                                <div class="ellipse"></div>
+                                <i class="la la-info"></i>
+                            </div>
+                            <h2>We're Helping Clients Build Business Credit</h2>
+                        </div>
+                        <p class="lead">Click The Play Button To The Left To See Our Software Demo</p>
+                        <a class="btn btn-theme btn-circle" href="/pricing" data-text="">Sign Up Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <style media="screen">
+            @media all and (min-width: 1025px) {
+                the_name_of_the_button_class_or_id {
+                    display: none;
+                }
+            }
+        </style>
+
+        <section class="pt-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 my-btn-in-desktopd text-center">
+                        {% if dynamic.appImage %}
+                            <img class="img-fluid w-250" src="{{ dynamic.appImage }}" style="height: 400px" alt="">
+                        {% endif %}
+                    </div>
+                    <!--  <div class="col-lg-6 col-md-12 my-ifram-in-mobile">-->
+                    <!--    <div class="video-responsive my-ifram-in-mobile">-->
+                    <!--    <iframe width="100%" height="250" src="https://www.youtube.com/embed/dAdSU6r5jPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <!--</div>-->
+                    <!--  </div>-->
+                    <div class="col-lg-6 col-md-12 md-mt-5">
+                        <div class="section-title mb-3">
+                            <div class="title-effect title-effect-2">
+                                <div class="ellipse"></div>
+                                <i class="la la-info"></i>
+                            </div>
+                            <h4>Download Our Free Iphone & Android App</h4>
+                            {% if dynamic.iphoneApp %}
+                                <a href="{{ dynamic.iphoneApp }}" target="_blank" class="btn btn-theme btn-circle">Click
+                                    Here To
+                                    Download On Iphone Store</a> <br> <br>
+                            {% endif %}
+                            {% if dynamic.androidApp %}
+                                <a href="{{ dynamic.androidApp }}" target="_blank" class="btn btn-theme btn-circle">Click
+                                    Here To
+                                    Download On Google Play Store</a> <br> <br>
+                                </div>
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--about start-->
+
+        <section class="text-center" data-bg-img="/static/images/pattern/01.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-12 ml-auto mr-auto">
+                        {% if dynamic.home_page_cards_heading %}
+                            <h3 class="text-black font-weight-normal line-h-2">{{dynamic.home_page_cards_heading}}</h3>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-data"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>No Charge For Business Loans</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We help you get access to business loans at the lowest rates in the industry. While
+                                    also
+                                    making your business look more credible to lenders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-collaboration"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Create My Financing Plan</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We use artificial intelligence in our software to craft the best financing plan for
+                                    you
+                                    based on your current business situation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-market"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Create My Business Credit Building Plan</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We use artificial intelligence to help you build the best business credit building
+                                    plan
+                                    for your current stage in business.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if dynamic.show_credit_repair_plan %}
+                        <div class="col-lg-4 col-md-12">
+                            <div class="featured-item style-2">
+                                <div class="featured-icon"><i class="flaticon-data"></i>
+                                    <span class="rotateme"></span>
+                                </div>
+                                <div class="featured-title">
+                                    <h5>Create My Credit Repair Plan</h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>We use artificial intelligence to craft a credit repair plan for you based off of
+                                        your
+                                        current personal credit situation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-collaboration"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Website Design & Free Web Hosting For The Entire Year</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We use our AI website builder to help you build a website in less than 1 minute & pay
+                                    for
+                                    your web hosting for the entire year.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-market"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>We Buy Your Fax Number For Entire Year</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We purchase your fax number for the entire year with our program as well.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-data"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>We Buy Your Professional Email For Entire Year</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We purchase your professional email address for the entire year with our program as
+                                    well.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-collaboration"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Toll-Free Number Purchase For The Entire Year</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We purchase your toll free number for the entire year with our program as well.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-market"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Business Credit Building Course</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>You Get Free Access To Our Business Credit Building Course Where We Show You How To
+                                    Build
+                                    Business Credit Fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 md-mt-5">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-collaboration"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>$1,500 in Free Advertising & Marketing Course </h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We Give You $1,500 In Free Advertising Coupons To Grow Your Business & Teach You How
+                                    To
+                                    Market Your Business With Our Marketing Course. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-data"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>0% Business Credit Cards</h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>We Help You Get 0% Business Credit Cards In Our Software</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="featured-item style-2">
+                            <div class="featured-icon"><i class="flaticon-data"></i>
+                                <span class="rotateme"></span>
+                            </div>
+                            <div class="featured-title">
+                                <h5>Get Exclusive Access To Our 15+ Softwares <br>That Help Grow Your Business </h5>
+                            </div>
+                            <div class="featured-desc">
+                                <p>Get Access To Our 15+ Softwares. </p> <br>
+                                <b><p>Here Are A Few Examples Of Our Softwares That You Would Get Access Too:</p></b><br>
+                                <p>1) Website Builder</p>
+                                <p>2) File Sharing Software</p>
+                                <p>3) Accounting Software</p>
+                                <p>4) Customer Relationship Management Software</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if dynamic.show_why_buy_from_us %}
+            <section class="pos-r pt-0">
+                <div class="hexagon-bg style-2">
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                    <div class="hexagon"></div>
+                </div>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-lg-12 col-md-12 ml-auto mr-auto">
+                            <div class="section-title">
+                                <div class="title-effect">
+                                    <div class="bar bar-top"></div>
+                                    <div class="bar bar-right"></div>
+                                    <div class="bar bar-bottom"></div>
+                                    <div class="bar bar-left"></div>
+                                </div>
+                                <h2 class="title">Why Buy From Us?</h2>
+                                {% if dynamic %}
+                                    <iframe width="100%" height="515" src="{{ dynamic.why_buy_link }}" frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+
+        <section class="pos-r">
+            <div class="hexagon-bg style-2">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 col-md-12 ml-auto mr-auto">
+                        <div class="section-title">
+                            <div class="title-effect title-effect-2">
+                                <div class="ellipse"></div>
+                                <i class="la la-money"></i>
+                            </div>
+                            <h2 class="title">Our Different Payment Options</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                
+                {% if dynamic.display_first_package %}
+                    <div class="col-lg-6 col-md-6">
+                        <div class="forever">
+                            <div class="price-table">
+                                <div class="price-inside">Starter</div>
+                                <div class="price-header mb-3">
+                                    <h2 class="price-title">{{dynamic.first_package}}</h2>
+                                    <br>
+                                </div>
+                                <div class="price-list">
+                                    <ul class="list-unstyled">
+                                        <li>{{dynamic.first_package_1_bullet_point}}</li>
+                                         <li>{{dynamic.first_package_2_bullet_point}}</li>
+                                          <li>{{dynamic.first_package_3_bullet_point}}</li>
+                                           <li>{{dynamic.first_package_4_bullet_point}}</li>
+                                            <li>{{dynamic.first_package_5_bullet_point}}</li>
+                                             <li>{{dynamic.first_package_6_bullet_point}}</li>
+                                              <li>{{dynamic.first_package_7_bullet_point}}</li>
+                                               <li>{{dynamic.first_package_8_bullet_point}}</li>
+                                       
+                                    </ul>
+                                    <br>
+                                    
+                                    {% if dynamic.first_package_1_show_button %}
+                                          <div class="col-md-12 mt-2">
+                                        <a href="{{dynamic.first_package_1_button_link}}" target="_blank"
+                                           class="btn btn-theme btn-circle">
+                                           {{dynamic.first_package_1_button_text |safe}}
+</a>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if dynamic.first_package_2_show_button %}
+
+                                                                                  <div class="col-md-12 mt-2">
+                                        <a href="{{dynamicfirst_package_2_button_link}}" target="_blank"
+                                           class="btn btn-theme btn-circle">
+                                           {{dynamic.first_package_2_button_text |safe}}
+</a>
+                                    </div>
+                                    {% endif %}
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                    
+                    {% if dynamic.display_second_package %}
+                    <div class="col-lg-6 col-md-6 md-mt-5">
+                        <div class="price-table active">
+                            <div class="price-header">
+                                <h3 class="price-title">{{dynamic.second_package}}</h3>
+                            </div>
+                            <br>
+                            <div class="price-list">
+                                <ul class="list-unstyled">
+                                    <li>{{dynamic.second_package_1_bullet_point}}
+                                    </li>
+                                    <li>{{dynamic.second_package_2_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_3_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_4_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_5_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_6_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_7_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_8_bullet_point}}</li>
+                                    
+                                </ul>
+                                <br>
+
+                                    {% if dynamic.second_package_1_show_button %}
+                                          <div class="col-md-12 mt-2">
+                                        <a href="{{dynamic.second_package_1_button_link}}" target="_blank"
+                                           class="btn btn-theme btn-circle">
+                                           {{dynamic.second_package_1_button_text|safe}}
+</a>
+                                    </div>
+                                    {% endif %}
+                                    
+                                    {% if dynamic.second_package_2_show_button %}
+
+                                                                                  <div class="col-md-12 mt-2">
+                                        <a href="{{dynamic.second_package_2_button_link}}" target="_blank"
+                                           class="btn btn-theme btn-circle">
+                                           {{dynamic.second_package_2_button_text|safe}}
+</a>
+                                    </div>
+                                    {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="scroll-top"><a class="smoothscroll" href="#top"><i class="flaticon-go-up-in-web"></i></a></div>
+
+{% endblock %}

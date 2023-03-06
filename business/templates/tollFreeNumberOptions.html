@@ -1,0 +1,79 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Toll-Free Number</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/ZWFWUWY3Z4Q" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <br><br>
+        <center>
+            <center><h3>Choose The Option Below So We Can Direct You To The Right Page</h3></center>
+            <br><br>
+            <div class="row">
+                <div class="col-md-12">
+                    <a class="btn btn-primary" href="{% url 'business:toll-free' %}">Click Here If You Haven&#39;t
+                        Upgraded To The Paid Toll Free Number Plan</a>
+                </div>
+                <br><br>
+                <br><br>
+                <div class="col-md-12 lastButton">
+                    <a class="btn btn-primary" href="{% url 'business:toll-free-paid' %}">Click Here If You Have
+                        Upgraded To The Paid Toll Free Number Plan</a>
+                </div>
+            </div>
+        </center>
+    </section>
+
+    <style media="screen">
+        .btn {
+            font-size: 18px;
+        }
+
+        .lastButton {
+            margin-bottom: 26px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e0518eb7e39ea1242a1ea79/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

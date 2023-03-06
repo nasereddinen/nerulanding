@@ -1,0 +1,228 @@
+{% extends "landingpages/layout/LandingLayout.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!--page title start-->
+
+    <section class="page-title o-hidden pos-r md-text-center" data-bg-color="#fbf3ed">
+        <canvas id="confetti"></canvas>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 col-md-12">
+                    <h1 class="title"><span>P</span>ricing</h1>
+                    <p>We're Helping Clients Build Business Credits</p>
+                </div>
+                <div class="col-lg-5 col-md-12 text-lg-right md-mt-3">
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="page-title-pattern"><img class="img-fluid" src="/static/images/bg/11.png" alt=""></div>
+    </section>
+
+    <!--page title end-->
+
+
+    <!--body content start-->
+
+    <div class="page-content">
+
+        <!--price table style-1 start-->
+
+        <!--pricing start-->
+
+        <section class="pos-r">
+            <div class="hexagon-bg style-2">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-8 col-md-12 ml-auto mr-auto">
+                        <div class="section-title">
+                            <div class="title-effect title-effect-2">
+                                <div class="ellipse"></div>
+                                <i class="la la-money"></i>
+                            </div>
+                            <h2 class="title">Payment Options</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                   {% if dynamic.display_first_package %}
+                    <div class="col-lg-6 col-md-6">
+                        <div class="forever">
+                            <div class="price-table">
+                                <div class="price-inside">Starter</div>
+                                <div class="price-header mb-3">
+                                    <h2 class="price-title">{{dynamic.first_package}}</h2>
+                                    <br>
+                                </div>
+                                <div class="price-list">
+                                    <ul class="list-unstyled">
+                                        <li>{{dynamic.first_package_1_bullet_point}}</li>
+                                         <li>{{dynamic.first_package_2_bullet_point}}</li>
+                                          <li>{{dynamic.first_package_3_bullet_point}}</li>
+                                           <li>{{dynamic.first_package_4_bullet_point}}</li>
+                                            <li>{{dynamic.first_package_5_bullet_point}}</li>
+                                             <li>{{dynamic.first_package_6_bullet_point}}</li>
+                                              <li>{{dynamic.first_package_7_bullet_point}}</li>
+                                               <li>{{dynamic.first_package_8_bullet_point}}</li>
+                                       
+                                    </ul>
+                                    <br>
+                                    <div class="col-md-12 mt-2">
+                                        <a href="{% url "user:signup" %}" target="_blank"
+                                           class="btn btn-theme btn-circle">
+                                            {% if dynamic.is_paid %}${{ dynamic.portal_price }} One Time Payment
+                                                Option{% else %}
+                                                Sign Up For {{dynamic.first_package}}{% endif %}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                    
+                    {% if dynamic.display_second_package %}
+                    <div class="col-lg-6 col-md-6 md-mt-5">
+                        <div class="price-table active">
+                            <div class="price-header">
+                                <h3 class="price-title">{{dynamic.second_package}}</h3>
+                            </div>
+                            <br>
+                            <div class="price-list">
+                                <ul class="list-unstyled">
+                                    <li>{{dynamic.second_package_1_bullet_point}}
+                                    </li>
+                                    <li>{{dynamic.second_package_2_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_3_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_4_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_5_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_6_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_7_bullet_point}}</li>
+                                    <li>{{dynamic.second_package_8_bullet_point}}</li>
+                                    
+                                </ul>
+                                <br>
+                                <div class="col-md-12 mt-2">
+                                    <a href="{% url "user:login" %}"
+                                       class="btn btn-theme btn-circle">${{ yearly }} Annual Payment Option</a><br><br>
+                                    <a href="{% url "user:login" %}"
+                                       class="btn btn-theme btn-circle">${{ monthly }} Monthly Payment Option</a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <!--pricing end-->
+
+        <!-- <section>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-4 col-md-12">
+                <div class="price-table">
+                  <div class="price-inside">Starter</div>
+                  <div class="price-header">
+                    <div class="price-value">
+                      <h2><span>$</span>33</h2>
+                      <span>Monthly Package</span>
+                    </div>
+                    <h3 class="price-title">Starter</h3>
+                  </div>
+                  <a class="btn btn-theme btn-circle my-4" href="#" data-text="Purchase Now"> <span>P</span><span>u</span><span>r</span><span>c</span><span>h</span><span>a</span><span>s</span><span>e</span>
+                    <span> </span><span>N</span><span>o</span><span>w</span>
+                  </a>
+                  <div class="price-list">
+                    <ul class="list-unstyled">
+                      <li>15 Analytics Compaign</li>
+                      <li>Unlimited Site licenses</li>
+                      <li>1 Database</li>
+                      <li>10 Free Optimization</li>
+                      <li>Html5 + Css3</li>
+                      <li>24/7 Customer Support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 md-mt-5">
+                <div class="price-table active">
+                  <div class="price-inside">Premium</div>
+                  <div class="price-header">
+                    <div class="price-value">
+                      <h2><span>$</span>55</h2>
+                      <span>Monthly Package</span>
+                    </div>
+                    <h3 class="price-title">Premium</h3>
+                  </div>
+                  <a class="btn btn-theme btn-circle my-4" href="#" data-text="Purchase Now"> <span>P</span><span>u</span><span>r</span><span>c</span><span>h</span><span>a</span><span>s</span><span>e</span>
+                    <span> </span><span>N</span><span>o</span><span>w</span>
+                  </a>
+                  <div class="price-list">
+                    <ul class="list-unstyled">
+                      <li>15 Analytics Compaign</li>
+                      <li>Unlimited Site licenses</li>
+                      <li>1 Database</li>
+                      <li>10 Free Optimization</li>
+                      <li>Html5 + Css3</li>
+                      <li>24/7 Customer Support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 md-mt-5">
+                <div class="price-table">
+                  <div class="price-inside">Professional</div>
+                  <div class="price-header">
+                    <div class="price-value">
+                      <h2><span>$</span>99</h2>
+                      <span>Monthly Package</span>
+                    </div>
+                    <h3 class="price-title">Professional</h3>
+                  </div>
+                  <a class="btn btn-theme btn-circle my-4" href="#" data-text="Purchase Now"> <span>P</span><span>u</span><span>r</span><span>c</span><span>h</span><span>a</span><span>s</span><span>e</span>
+                    <span> </span><span>N</span><span>o</span><span>w</span>
+                  </a>
+                  <div class="price-list">
+                    <ul class="list-unstyled">
+                      <li>15 Analytics Compaign</li>
+                      <li>Unlimited Site licenses</li>
+                      <li>1 Database</li>
+                      <li>10 Free Optimization</li>
+                      <li>Html5 + Css3</li>
+                      <li>24/7 Customer Support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+    </div>
+
+    <!--body content end-->
+
+    <!-- page wrapper end -->
+
+
+    <!--back-to-top start-->
+
+    <div class="scroll-top"><a class="smoothscroll" href="#top"><i class="flaticon-go-up-in-web"></i></a></div>
+
+    <!--back-to-top end-->
+{% endblock %}

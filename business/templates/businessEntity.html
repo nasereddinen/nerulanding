@@ -1,0 +1,105 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Business Entssity</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/nussKt3CTzY" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <h2>Overview</h2>
+                    <p>It’s important that you have a strong business foundation and it all starts with filing your
+                        business entity with your Secretary of State. Each stage has a different filing and fee
+                        structure. Like a birth certificate is to an individual a business entity is the birth of a
+                        business.</p>
+                    <br><br>
+                    <h1>ENTITY TYPE</h1>
+                    <h2>DATE INCORPORATED <br>
+                        ON YOUR BUSINESS ENTITY DOCUMENTS, ARE THE BUSINESS ADDRESS & OWNERSHIP CORRECT?</h2>
+                    <br>
+                    <p>Make sure they are correct and in a commercial area.​</p>
+                    <p>Your business name, address, contact information, and ownership should be 100% correct. Lenders
+                        and others will pull these records to verify the business information​. Please don't move
+                        forward until all information listed on your entity filing is correct.</p>
+                    <p>It’s important that you have a strong business foundation and it all starts with filing your
+                        business entity with your Secretary of State. Each stage has a different filing and fee
+                        structure. Like a birth certificate is to an individual a business entity is the birth of a
+                        business.</p>
+                    <br><br>
+                    <h2>IS YOUR BUSINESS ADDRESS IN THE SAME STATE YOUR ENTITY IS FILED?</h2>
+                    <h4>YES, Great!</h4>
+                    <h4>If not:</h4>
+                    <h4>If your business entity isn't filed in the same state as your business address please foreign
+                        file your entity in the same state as your business address. Lenders will verify this listing
+                        during the underwriting process. Please don't move forward until foreign filing is
+                        completed.</h4>
+                    <br> <br>
+                    <h2>FILE A BUSINESS ENTITY</h2>
+                    <h4>It’s important that you have a strong business foundation and it all starts with filing your
+                        business entity with your Secretary of State. Each stage has a different filing and fee
+                        structure. Like a birth certificate is to an individual a business entity is the birth of a
+                        business.</h4>
+                    <div class="btn-group">
+                        <a target="_blank" class="btn btn-primary" href="https://www.mycorporation.com/?kbid=11145">Click
+                            Here To File As A Corporation</a>
+                    </div>
+                    <br> <br>
+                    <div class="btn-group">
+                        <a target="_blank" class="btn btn-primary" href="/home/restricted">View Restricted
+                            Industries</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <style>
+        a:not([href]):not([tabindex]) {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e0518eb7e39ea1242a1ea79/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

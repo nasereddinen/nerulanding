@@ -1,0 +1,556 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block extrastyle %}
+<style>
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+ }
+ .form-control {
+     width:90%;
+     margin-left:5%;
+ }
+</style>
+{% endblock extrastyle %}
+{% block navigation %}
+
+    <div class="full-menu">
+        <div class="main-sidebar-nav dark-navigation">
+            <div class="nano">
+                <div class="nano-content sidebar-nav">
+                    <div class="card-body border-bottom text-center nav-profile">
+                        <br>
+                        <p class="lead margin-b-0 toggle-none">
+                            {{ request.user.get_full_name }}
+                        </p>
+                        <p class="text-muted mv-0 toggle-none">Welcome</p>
+                    </div>
+                    <ul class="metisMenu nav flex-column" id="menu">
+
+                        {% if request.resolver_match.app_name != 'business' %}
+                            <li class="nav-item"><a href="/dashboard" class="nav-link">Go Back To Main Portal</a></li>
+                        {% endif %}
+
+
+                        <input type="text"   onkeyup="Search()" id="search"placeholder="Search" style="width:90%;margin-left:5%;background-color:#131C23;color:white;" class="nav-link    form-control " name="search-box" >
+
+                        <li class="nav-item">
+                            {% if request.resolver_match.app_name == 'business' %}
+                                <a href="/dashboard" class="nav-link"><span class="toggle-none">Dashboard</span></a>
+                            {% else %}
+                                <a href="/{{ request.resolver_match.app_name }}" class="nav-link"><span
+                                        class="toggle-none">{{ verbose_portal_name }} Dashboard</span></a>
+                            {% endif %}
+                        </li>
+
+                        {% if request.user.profile.virtual_access_card_paid %}
+                            <li class="nav-item">
+                                <a href="/{{ request.resolver_match.app_name }}/virtual-card" class="nav-link"><span
+                                        class="toggle-none">Virtual Card Access</span></a>
+                            </li>
+                        {% endif %}
+                        {% if dynamic.is_main_site %}
+                            <li class="nav-item">
+                                <a href="/{{ request.resolver_match.app_name }}/business-credit-steps-guided"
+                                   class="nav-link"> Guided Business Creation</a>
+                            </li>
+                        {% endif %}
+                        {% if dynamic.is_main_site %}
+                            <li class="nav-item">
+                                <a href="{% url 'business:create_specific_portal' %}" class="nav-link"> Create My
+                                    Specific
+                                    Portal </a>
+                            </li>
+                        {% endif %}
+                        {% if dynamic.is_main_site %}
+                            <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/goals"
+                                                    class="nav-link">My
+                                Goals With The
+                                Platform</a></li>
+                        {% endif %}
+                        {#                <li class="nav-item">#}
+                        {#                    <a href="/{{ request.resolver_match.app_name }}/upgrade" class="nav-link">Upgrade to Full Business Builder Program#}
+                        {#                        with No Money Down</a>#}
+                        {#                </li>#}
+                        <li class="nav-item">
+                            <a href="{% url 'business:business-credit-builder-tracker' %}"
+                               class="nav-link"> Business Credit Builder Tracker </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'business:business_credibility_checklist' %}"
+                               class="nav-link"> Business Credibility Checklist </a>
+                        </li>
+                        <!-- Removed -->
+                       <!-- <li class="nav-item">
+                           <a href="{% url 'business:tradelines' %}"
+                               class="nav-link"> Add Business Tradelines </a>
+                      </li> -->
+                    <!--    <li class="nav-item">
+                           <a href="{% url 'business:signupforconcierge' %}"#}
+                               class="nav-link"> Sign Up For Concierge Program </a>
+                       </li> -->
+
+                       {% if links %}
+                            {% for link in links %}
+                                <li class="nav-item">
+                                    <a href="{{link.link}}" class="nav-link" target="_blank">
+                                        <span class="toggle-none">
+                                            {{link.name}}
+                                        </span>
+                                    </a>
+                                </li>  
+                            {% endfor %}   
+                       {% endif %}
+
+                        {% if request.user.external_resources.all %}
+                            <li class="nav-item">
+                                <a href="{% url "business:external_credentials" %}" class="nav-link"><span
+                                        class="toggle-none">External Credentials</span></a>
+                            </li>
+                        {% endif %}
+                        <!-- Point: 14 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="{{ dynamic.webinar }}" target="_blank"
+                               class="nav-link"> Watch Webinar On Building Business Credit </a>
+                        </li> -->
+                        {% if dynamic.is_main_site %}
+                        <!-- Point: 13 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'financing_portal:purchase-products' %}"
+                               class="nav-link"> Purchase Our Other Software Products *(Not Linked To Business
+                                Credit)* </a>
+                        </li> -->
+                    {% endif %}
+                        <!-- Removed -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'financing_portal:financing-portal-home' %}"
+                               class="nav-link"> Financing Our Products & Softwares Portal </a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/financing" class="nav-link"> Create
+                                My {{ verbose_portal_name }} Business Financing Plan </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/business-credit-plan" class="nav-link">
+                                Create My {{ verbose_portal_name }} Business Credit
+                                Building Plan </a>
+                        </li>
+                        {% if dynamic.show_credit_repair_plan %}
+                            <li class="nav-item">
+                                <a href="/{{ request.resolver_match.app_name }}/credit-situation" class="nav-link">
+                                    Create
+                                    My Credit Repair Plan </a>
+                            </li>
+                        {% endif %}
+
+                        {% if dynamic.show_life_insurance %}
+                            <li class="nav-item">
+                                <a href="{{ dynamic.life_insurance_link }}" class="nav-link" target="_blank"> Life
+                                    Insurance</a>
+                            </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><span
+                                    class="toggle-none">Business Credit Building <span
+                                    class="fa arrow"></span></span></a>
+                            <ul class="nav-second-level nav flex-column " aria-expanded="false">
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/business-entity"
+                                                        class="nav-link">Business
+                                    Entity</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/ein"
+                                                        class="nav-link">EIN Number</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/business-license"
+                                                        class="nav-link">Business
+                                    License</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/website-creation-options"
+                                        class="nav-link">Website
+                                    Creation</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/fax-number-options"
+                                                        class="nav-link">Fax
+                                    Number</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/four-eleven"
+                                                        class="nav-link">411
+                                    Listings</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/professional-email"
+                                                        class="nav-link">Professional
+                                    Email Address</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/domain"
+                                                        class="nav-link">Domain</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/toll-free-options"
+                                                        class="nav-link">Toll Free
+                                    Number</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/virtual-address"
+                                                        class="nav-link">Virtual
+                                    Address</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-bank-account"
+                                        class="nav-link">Business
+                                    Bank Account</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/merchant-account"
+                                                        class="nav-link">Merchant
+                                    Account</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/duns"
+                                                        class="nav-link">Duns Number</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/sic"
+                                                        class="nav-link">SIC & NAISC Codes</a>
+                                </li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-good-standing"
+                                        class="nav-link">Checking
+                                    If Your Business Is In Good Standing </a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-in-good-standing"
+                                        class="nav-link">How
+                                    To Get Your Business Back In Good Standing</a></li>
+                            </ul>
+                        </li>
+                    {% if dynamic.is_main_site %}
+                        <!-- Removed -->
+                        <!-- <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/business-credit-steps-onlyprograms"
+                               class="nav-link"> Choose Business Credit
+                                Building Steps You Need Done For You </a>
+                        </li> -->
+                    {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                    class="toggle-none"> Business Credit Bureaus To Become Established With  <span
+                                    class="fa arrow"></span></span></a>
+                            <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/experian"
+                                                        class="nav-link"> Experian
+                                    Business </a></li>
+                                <!-- Point: 12 Done -->
+                                <!-- <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/dunn-brad"
+                                                        class="nav-link"> Dunn &
+                                    Bradstreet </a></li> -->
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/equifax"
+                                                        class="nav-link"> Equifax
+                                    Business </a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                    class="toggle-none">Corporate Credit List<span
+                                    class="fa arrow"></span></span></a>
+                            <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/vendor-list"
+                                                        class="nav-link">Starter Vendor
+                                    List</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/store-credit-vendor-list"
+                                        class="nav-link">Store
+                                    Credit Vendor List</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-credit-vendor"
+                                        class="nav-link">Revolving
+                                    Business Credit Vendor List</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/cc-credit-vendor"
+                                                        class="nav-link">Credit
+                                    Card No Personal Gaurantee Vendor List</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                    class="toggle-none">Full List Of Financing Products<span
+                                    class="fa arrow"></span></span></a>
+                            <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/personal-credit-card"
+                                        class="nav-link">Personal
+                                    Credit Cards</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-credit-card"
+                                        class="nav-link">Business
+                                    Credit Cards</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/short-term-loan"
+                                                        class="nav-link">Short Term
+                                    Loans</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/business-term-loan"
+                                                        class="nav-link">Business
+                                    Term Loans</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/small-business-loan"
+                                        class="nav-link">Small
+                                    Business Adminstration Loans</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/personal-loan"
+                                                        class="nav-link">Personal
+                                    Loans</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-line-credit"
+                                        class="nav-link">Business
+                                    Lines Of Credit</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/nocredit-financings"
+                                        class="nav-link">No
+                                    Credit Check Loans</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/invoice-factoring"
+                                                        class="nav-link">Invoice
+                                    Factoring</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/invoice-financings"
+                                                        class="nav-link">Invoice
+                                    Financing</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/equipment-financings"
+                                        class="nav-link">Equipment
+                                    Financing</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                    class="toggle-none">Earn Business Crypto & Grow Your Business<span
+                                    class="fa arrow"></span></span></a>
+                            <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/personal-credit-card"
+                                        class="nav-link">Enter Business Crypto World</a></li>
+                                <li class="nav-item"><a
+                                        href="/{{ request.resolver_match.app_name }}/business-credit-card"
+                                        class="nav-link">Go To Business Crytpo Exchange</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/short-term-loan"
+                                                        class="nav-link">Short Term
+                                    Loans</a></li>
+                                <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/business-term-loan"
+                                                        class="nav-link">Business
+                                    Term Loans</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/marketing-business" class="nav-link">
+                                Marketing Your {{ verbose_portal_name }} Business </a>
+                        </li>
+                        <!-- Removed -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'businesscreditcourse:home' %}" class="nav-link"> Business Credit Building
+                                Course </a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a href="{% url 'business:lifeevents' %}" class="nav-link"> Normal Life Events </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'business:ecredable' %}" class="nav-link"> Ecredable (Add Multiple Business Tradelines At Once) </a>
+                        </li>
+
+                        {% if dynamic.show_credit_repair_plan %}
+                            <!-- Removed -->
+                            <!-- <li class="nav-item">
+                                <a href="{% url 'creditcourse:maincreditfile' %}" class="nav-link"> Personal Credit
+                                    Course </a>
+                            </li> -->
+                            <!-- Removed -->
+                            <!-- <li class="nav-item">
+                                {% if dynamic and dynamic.creditRepairLink %}
+                                    <a href="{{ dynamic.creditRepairLink }}" class="nav-link">Personal Credit Repair
+                                        Done
+                                        For You Services {{ verbose_portal_name }} </a>
+                                {% else %}
+                                    <a href="/{{ request.resolver_match.app_name }}/credit-affiliate" class="nav-link">Personal
+                                        Credit Repair Done For You Services {{ verbose_portal_name }} </a>
+                                {% endif %}
+                            </li> -->
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/customer-financing-offer" class="nav-link">
+                                Offering Financing To Your
+                                Customers </a>
+                        </li>
+                    {% if dynamic.is_main_site %}
+                        <li class="nav-item">
+                            <!-- Point: 10 Done -->
+                            <!-- <a href="/{{ request.resolver_match.app_name }}/apply-loans" class="nav-link">  -->
+                            <a href="https://cryptobusinessbank.com" target="_blank" class="nav-link"> 
+                                Apply For Business Loans </a>
+                        </li>
+                    {% endif %}
+                        <!-- Point: 9 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'covid19:homeone' %}" class="nav-link"> Covid-19 Business Loan Section</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                      <a href="/{{ request.resolver_match.app_name }}/credit-repair-options" class="nav-link"> Sign Up For Credit Repair </a>
+                    </li>-->
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/credit-trade-lines" class="nav-link">
+                                Personal Credit Primary
+                                Tradelines </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/business-credit-repair-new"
+                               class="nav-link"> Business Credit
+                                Repair </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/business-credit-monitoring"
+                               class="nav-link"> Sign Up For Business
+                                Credit Monitoring </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/business-credit-strategy" class="nav-link">
+                                0% Business Credit Card
+                                Strategy </a>
+                        </li>
+                  <!--  {% if dynamic.is_main_site %}
+                        {% if dynamic.is_paid_for_whitelabel %}
+                            <li class="nav-item">
+                                <a href="/{{ request.resolver_match.app_name }}/refer" class="nav-link"> Make Extra
+                                    Money
+                                    Referring Friends! </a>
+                            </li>
+                        {% endif %}
+                    {% endif %} -->
+
+                <!--    {% if dynamic.is_main_site %}
+                            <li class="nav-item">
+                                <a href="https://kleui1.leaddyno.com/" target="_blank" class="nav-link"> Make Extra
+                                    Money
+                                    Referring Friends! </a>
+                            </li>
+                    {% endif %} -->
+
+                        {% if dynamic.show_affiliate %}
+                            <li class="nav-item">
+                                <a href="{% url 'affiliate:home-affiliate' %}" class="nav-link">Go To
+                                    Affiliate Agent
+                                    Portal</a>
+                            </li>
+                        {% endif %}
+                        {% if dynamic.is_paid_for_whitelabel%}
+                            <li class="nav-item">
+                                <a href="{% url 'whitelabelpartnerportal:home-whitelabel' %}" class="nav-link"> Go To
+                                    White Label Partner Portal</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{% url 'freewhitelabelprogramonboarding:onboarding' %}" class="nav-link"> Go To
+                                    Free White Label Partner Portal</a>
+                            </li>
+                        {% endif %}
+                        <!-- Point: 12 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'products:dnbproducts' %}" class="nav-link"> Purchase Dunn & Bradstreet
+                                Products</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'onlinetools:onlinetoolshome' %}" class="nav-link"> See Online Tools That
+                                Help Grow Your Business</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/insurance-products" class="nav-link">
+                                Insurance Products </a>
+                        </li>
+                    {% if dynamic.is_main_site %}
+                        <!-- Point: 8 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="{% url 'chromeextension:chromeextensionindex' %}" class="nav-link"> Go To Chrome
+                                Extension Portal </a>
+                        </li> -->
+                    {% endif %}
+                        <!--  <li class="nav-item"><a href="/{{ request.resolver_match.app_name }}/lifegoals" class="nav-link">Life Money Hacks</a></li> -->
+                        <!-- Point: 3 Done -->
+                        <!-- <li class="nav-item"><a href="https://creator.us.uneeq.io/try/a16502cd-d6ab-43e3-9026-a9d487d20a3e"
+                          target="_blank" class="nav-link">Your AI Customer Success Agent</a></li>
+                        <li class="nav-item"> -->
+                            {% if dynamic.iphoneApp %}
+                                <a href={{ dynamic.iphoneApp }} target="_blank" class="nav-link"> Download Our Iphone
+                                    App </a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item">
+                            {% if dynamic.androidApp %}
+                                <a href={{ dynamic.androidApp }} target="_blank" class="nav-link"> Download Our Android
+                                    App </a>
+                            {% endif %}
+                        </li>
+                    {% if dynamic.is_main_site %}
+                        <li class="nav-item">
+                            {% if dynamic.chromeExt %}
+                                <!-- Point: 7 Done -->
+                                <!-- <a href={{ dynamic.chromeExt }} target="_blank" class="nav-link"> Download Our Google
+                                    Chrome Extension </a> -->
+                            {% endif %}
+                        </li>
+                    {% endif %}
+                    {% if dynamic.is_main_site %}
+                        <li class="nav-item">
+                            <a href="{% url 'business:faqs' %}" class="nav-link"> Frequently Asked Questions</a>
+                        </li>
+                    {% endif %}
+
+                        <!--  <li class="nav-item">
+                              <a href="https://tawk.to/chat/5f678306f0e7167d00120839/default" target="_blank" class="nav-link"><span
+                                      class="toggle-none">Live Chat</span></a>
+                          </li>      -->
+                        <!-- <li class="nav-item">
+                            <a href="https://creator.us.uneeq.io/try/ef9e5b4c-deb5-4acb-acfb-7ba07e8bc8be" target="_blank"
+                               class="nav-link"><span
+                                    class="toggle-none">Your AI Customer Success Agent</span></a>
+                        </li> -->
+                        <!-- Point: 11 Done -->
+                        <!-- <li class="nav-item">
+                            <a href="https://kleuishop.com/" target="_blank" class="nav-link"><span
+                                    class="toggle-none">Shop At Our Online Store <br> *(Get Business Cards, Clothes & Much More!)*</span></a>
+                        </li> -->
+                        <!--
+                      <li class="nav-item">
+                          <a href="{% url 'onboarding:onboardinghome' %}" class="nav-link"> Client Onboarding</a>
+                      </li> -->
+
+                        <br><br><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function Search() {
+
+     var input,filter,ul,li,a,i,txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        ul=document.getElementById('menu');
+        li = document.getElementsByClassName('nav-item');
+    //loop through all the list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+
+        // search in the second level navbar
+        var second_level = document.getElementsByClassName('nav-second-level');
+        for(var j = 0;j < second_level.length;j++) {
+            li = second_level[j].getElementsByClassName('nav-item');
+            for(var k = 0;k < li.length;k++) {
+                a = li[k].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    second_level[j].parentNode.style.display = "";
+                    break;
+                }
+            }
+        }
+    }
+        </script>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

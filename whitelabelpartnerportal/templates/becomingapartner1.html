@@ -1,0 +1,116 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <section class="main-content pt-4">
+        {% if not form and partners %}
+            <div class="card">
+                <div class="card-header card-default">
+                    Your Provided Business Information
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Logo</th>
+                                <th>Business Name</th>
+                                <th>Business Number</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for partner in partners %}
+                                <tr>
+                                    <td>{% if partner.logo %}
+                                        <img src="{{ partner.logo.url }}" height="80px">
+                                    {% else %}
+                                        No Logo
+                                    {% endif %}
+                                    </td>
+                                    <td>{{ partner.business_name }}</td>
+                                    <td>{{ partner.business_number }}</td>
+                                    <td><a class="btn btn-primary"
+                                           href="/whitelabelpartnerportal/becomingapartner1/edit/{{ partner.id }}">Edit</a>
+                                    </td>
+                                    <td>
+                                        <form method="post" id="delete" name="delete" action="">
+                                            {% csrf_token %}
+                                            <input type="text" name="delete" value="{{ partner.id }}" hidden>
+                                            <input type="submit" value="Delete" class="btn btn-primary">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header card-default">
+                    Edit Partner Information
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="btn-toolbar">
+                                <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                                <input class="btn btn-primary"  onclick="window.history.go(-1)">Back</input>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="card">
+                <div class="card-header card-default">
+                    Enter In Your Business Information To Become A Partner
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form accept-charset="UTF-8"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="form-group">
+                                <label for="newlead_firstname">Business Name You Would Like To Use</label>
+                                <input type="text" name="business_name" id="newlead_firstname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="newlead_lastname">Business Phone Number You Would Like To Use </label>
+                                <input type="text" name="business_number" id="newlead_lastname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="logo">Logo</label>
+                                <input type="file" name="logo" id="logo"/>
+                            </div>
+
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" value="Create Newlead"
+                                        class="btn btn-primary mr-1"
+                                        data-disable-with="Create Newlead">Beceome A Partner
+                                </button>
+                                <a class="btn btn-primary" onclick="window.history.go(-1)">Back</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        {% endif %}
+    </section>
+
+{% endblock %}

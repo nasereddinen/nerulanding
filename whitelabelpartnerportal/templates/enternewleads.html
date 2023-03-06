@@ -1,0 +1,81 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 40px">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/sJaMWvPb5yY" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header">
+                    Edit Leads
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="btn-toolbar">
+                                <input type="submit" value="Submit" class="btn btn-primary mr-1"/>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            <div class="card">
+                <div class="card-header">
+                    Enter In Your New Leads
+                </div>
+
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form action="/whitelabelpartnerportal/enternewleads" accept-charset="UTF-8"
+                              method="post">{% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="newlead_firstname">First Name</label>
+                                <input type="text" name="firstname" id="newlead_firstname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="newlead_lastname">Last Name</label>
+                                <input type="text" name="lastname" id="newlead_lastname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="newlead_businessname">Business Name</label>
+                                <input type="text" name="businessname" id="newlead_businessname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="newlead_businesspackage">Business Package</label>
+                                <input type="text" name="businesspackage" id="newlead_businesspackage"/>
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" value="Create Newlead" class="btn btn-primary mr-1"
+                                        data-disable-with="Create Newlead">Create Newlead
+                                </button>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+    </section>
+
+{% endblock %}

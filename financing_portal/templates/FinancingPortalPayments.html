@@ -1,0 +1,66 @@
+{% extends "FinancingPortalNavigationBase.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center">
+            <h2>Payments</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+      <!--  <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <p>
+                            Amount left: {{ amount_left }}
+                        </p>
+                        <p>
+                            Terms: {{ terms }}
+                        </p>
+                        <p>
+                            Payments Left: {{ payments_left }}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-default">
+                    Payments Left
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="datatable" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Amount Left:</th>
+                                <th>Payments Left:</th>
+                                <th>Terms:</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ amount_left }}</td>
+                                    <td>{{ payments_left }}</td>
+                                    <td>{{ terms }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

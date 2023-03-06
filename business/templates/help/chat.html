@@ -1,0 +1,37 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Live Chat</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+          
+<!-- End of businessbuilders Zendesk Widget script -->
+            </div>
+        </div>
+    </section>
+
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

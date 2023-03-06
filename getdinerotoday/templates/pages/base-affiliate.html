@@ -1,0 +1,38 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block navigation %}
+      <div class="main-sidebar-nav dark-navigation">
+         <div class="nano">
+            <div class="nano-content sidebar-nav">
+               <div class="card-body border-bottom text-center nav-profile">
+                 <br>
+                  <p class="lead margin-b-0 toggle-none">
+                    {{ request.user.get_full_name }}
+                  </p>
+                  <p class="text-muted mv-0 toggle-none">Welcome Affiliate Partner</p>
+               </div>
+               <ul class="metisMenu nav flex-column" id="menu">
+                  <li class="nav-heading"><span>MAIN</span></li>
+                  <li class="nav-item"><a href="/dashboard" class="nav-link">Go Back To Main Portal</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:home-affiliate' %}" class="nav-link">Dashboard</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:myresiduals' %}" class="nav-link">My Residuals</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:affiliate-enternewleads' %}" class="nav-link">Enter New Leads</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:leadoverview' %}" class="nav-link">Lead Overview</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:mysales' %}" class="nav-link">My Sales</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:networkmarketing' %}" class="nav-link">Network Marketing</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:commission' %}" class="nav-link">Your Commission On Products</a></li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none"> Marketing Information <span class="fa arrow"></span></span></a>
+                     <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                        <li class="nav-item"><a href="{% url 'affiliate:sharelinks'%}" class="nav-link"> Marketing Links</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item"><a href="{% url 'affiliate:addbankinfo' %}" class="nav-link">Add Bank Account Information To Receive Payments *Or You Can Add Paypal Information*</a></li>
+                  <li class="nav-item"><a href="{% url 'affiliate:addpaypalinfo' %}" class="nav-link">Add Paypal Information To Receive Payments</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

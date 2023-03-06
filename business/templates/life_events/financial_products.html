@@ -1,0 +1,513 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+
+    <style>
+        .btn {
+            white-space: normal !important;
+            word-wrap: break-word;
+        }
+    </style>
+
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Normal Life Events</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        See The Best Financing Options You Qualify For In This Situation
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Lender Name</th>
+                                    <th>Estimated Terms</th>
+                                    <th>Apply Now</th>
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                {% for data in loans %}
+                                    <tr>
+                                        <td>{{ data.lender_name }}</td>
+                                        <td>{{ data.estimated_terms }}</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{{ data.url }}" target="_blank">Click Here
+                                                For More Details</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Lenders
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <tbody>
+                                <thead>
+                                <tr>
+                                    <th>Lender Name</th>
+                                    <th>Terms</th>
+                                    <th>Inquiries</th>
+                                    <th>Credit Bureau</th>
+                                    <th>States Available</th>
+                                    <th>Min Credit Score</th>
+                                    <th>Min Employment Length Needed</th>
+                                    <th>Min Credit History</th>
+                                    <th>Apply Now</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for loan in personal_loans %}
+                                    <tr>
+                                        <td>{{ loan.lender_name }}</td>
+                                        <td>{{ loan.terms }}</td>
+                                        <td>{{ loan.inquiries }}</td>
+                                        <td>{{ loan.credit_bureau }}</td>
+                                        <td>{{ loan.states }}</td>
+                                        <td>{{ loan.credit_score }}</td>
+                                        <td>{{ loan.emp_length }}</td>
+                                        <td>{{ loan.credit_history }}</td>
+                                        <td><a href="{{ loan.get_url }}" target="_blank">
+                                            <button type="submit" class="btn btn-primary" name="signup"
+                                                    value="Apply Now">
+                                                Apply Now
+                                            </button>
+                                        </a></td>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Lenders You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Credit Card Name</th>
+                                    <th>Min Credit Score Needed</th>
+                                    <th>Credit Bureau They Pull From</th>
+                                    <th>Debt Ratio Needed</th>
+                                    <th>Bankruptcy</th>
+                                    <th>Derogatory Credit Data</th>
+                                    <th>APR</th>
+                                    <th>Misc. Information</th>
+                                    <th>Apply Now</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for cc in personal_credit_cards %}
+                                    <tr>
+                                        <td>{{ cc.cc_name }}</td>
+                                        <td>{{ cc.min_credit_score }}</td>
+                                        <td>{{ cc.credit_bureau }}</td>
+                                        <td>{{ cc.debt_ratio }}</td>
+                                        <td>{{ cc.bankruptcy }}</td>
+                                        <td>{{ cc.credit_data }}</td>
+                                        <td>{{ cc.apr }}</td>
+                                        <td>{{ cc.misc_info }}</td>
+                                        <td><a href="{{ cc.get_url }}" target="_blank">
+                                            <button type="submit" class="btn btn-primary" name="signup"
+                                                    value="Apply Now">
+                                                Apply Now
+                                            </button>
+                                        </a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">0% Business Credit Card Strategy For Applying For Multiple Cards At One
+                            Time & Not Getting Multiple Inquiries</p>
+                        <h4>Criteria To Get 0% Business Credit Cards Below</h4>
+
+                        <li>Seperate Legal Entity</li>
+                        <li>Company Must Be In Good Standing</li>
+                        <li>Employer Identification Number</li>
+                        <li>Business Contact Information</li>
+                        <li>680+ Credit Score</li>
+                        <li>No Unpaid Collections</li>
+                        <li>Less Than 5 Inquiries</li>
+                        <li>No Bankruptcies</li>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">How To Get An Easy Credit Limit Increase</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a target="_blank" class="btn btn-primary"
+                               href="https://millennialbusinessbuilders.com/credit.pdf">Download Credit Maximizer
+                                PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text">Creating Relationship With Banks To Get Easy Approvals</p>
+                        <h4>Benefits Of Using Business Credit Cards</h4>
+
+                        <li><b>Higher credit limits.</b> Such cards typically carry credit limits of $50,000 or more,
+                            making it much easier to make major business purchases that you would not be able to make
+                            using your personal credit card or cash.
+                        </li>
+                        <li><b>Credit rating boost.</b> Having business credit cards, not misusing them, and making
+                            timely payments can help boost your business credit rating quickly. Make sure to do business
+                            with suppliers who report your transactions to the credit bureaus.
+                        </li>
+                        <li><b>Separate business credit.</b> A business credit card stands on its own, meaning your
+                            personal credit rating is not reflected in your transactions. In addition, by having a
+                            separate credit card for a small business, you no longer have to sort out business and
+                            personal transactions when it is time to pay taxes.
+                        </li>
+                        <li><b>Control on employee spending.</b> A business credit card makes it easier to set limits on
+                            spending by employees.
+                        </li>
+                        <li><b>Business perks.</b> The rewards offered on business credit cards are typically business
+                            related and may include discounts on business travel and on shopping at business supply
+                            outlets.
+                        </li>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Business Credit Card Information That Report To The Personal Credit Bureaus
+                    </div>
+
+
+                    <div class="card-body">
+                        <table id="datatable2" class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Bank Name</th>
+                                <th>Report To The Personal Credit Bureau</th>
+                                <th>Report To The Business Credit Bureau</th>
+                                <th>Report If You Default Or Go Into The Negative</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>American Express</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Bank of America</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital One</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Chase</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>CitiBusiness</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Discover</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                                <td>Yes</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>US Bank</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Wells Fargo</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                                <td>No</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Business Credit Cards
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <tbody>
+                                <thead>
+                                <tr>
+                                    <th>Credit Card Name</th>
+                                    <th>Credit Bureau They Pull From</th>
+                                    <th>Min Credit Score Needed</th>
+                                    <th>Debt Ratio Needed</th>
+                                    <th>Bankruptcy</th>
+                                    <th>Derogatory Credit Data</th>
+                                    <th>APR</th>
+                                    <th>Strategy</th>
+                                    <th>Max Inquiries You Can Have</th>
+                                    <th>Apply Now</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for cc in cc_list %}
+                                    <tr>
+                                        <td>{{ cc.cc_name }}</td>
+                                        <td>{{ cc.min_credit_score }}</td>
+                                        <td>{{ cc.credit_bureau }}</td>
+                                        <td>{{ cc.debt_ratio }}</td>
+                                        <td>{{ cc.bankruptcy }}</td>
+                                        <td>{{ cc.credit_data }}</td>
+                                        <td>{{ cc.apr }}</td>
+                                        <td>{{ cc.strategy }}</td>
+                                        <td>{{ cc.max_inquiries }}</td>
+                                        <td><a href="{{ cc.get_url }}" target="_blank">
+                                            <button type="submit" class="btn btn-primary" name="signup"
+                                                    value="Apply Now">
+                                                Apply Now
+                                            </button>
+                                        </a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center mb-5">
+            <div>
+                <h1>
+                    Become A White Label Partner
+                </h1>
+
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Basic Partnership Program Package</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4">
+                            <ul class="la-list">
+                                <li>Access To Software With Your Branding</li>
+                                <li>Access To Mobile App With Your Branding When Client Logs In</li>
+                                <li>Access To Chrome Extension App With Your Branding When Client Logs In</li>
+                                <li>30% Commission On Our Products</li>
+                                <li>Email Support</li>
+                                <li>Ability To Upgrade To Get Our White Label Website With Your Branding Or Toll
+                                    Free Number, Fax Number, Professional Email Address & Business Credit
+                                    Building Automation
+                                </li>
+
+                            </ul>
+                        </div>
+                        {% if dynamic.offer_paid_whitelabel %}
+                            <div class="text-center py-4"><h1>${{ dynamic.basic_partnership_program_price }} /
+                                Year</h1>
+                                <h3>(We Do Have Financing Available)</h3></div>
+                            <form method="post">{% csrf_token %}
+                                <input type="hidden" name="product" value="basic">
+                                <button type="submit" class="btn btn-primary btn-block">Order Now</button>
+                            </form>
+                        {% else %}
+                            <div class="text-center pt-4"><h1>Free of charge</h1></div>
+                            <a class="btn btn-primary btn-block mt-4"
+                               href="{% url "whitelabelpartnerportal:becomingapartner1" %}">Register</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Premium Partnership Program</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4">
+                            <ul class="la-list">
+                                <li>Everything In Basic Package</li>
+                                <li>Marketing Done For You With Dedicated Customer Success Agent and Support
+                                    Number
+                                    For Your Clients (Google Ads, Quora, Facebook, Tiktok, Snapchat, Instagram,
+                                    Twitter)
+                                </li>
+                                <li>White Label Business Package That Includes: White Label Website, Toll Free
+                                    Number, Fax
+                                    Number, Virtual Address Set Up, Professional Email Address & Domain
+                                </li>
+                                <li>We build business credit for your entity that uses the partner program
+                                </li>
+                                <li>40% Commissions Instead Of 30% Commissions</li>
+                                <li>Access To 100,000 Small Business Leads</li>
+                                <li>50% Off Our Autodialer Service That Allows You To Do Bulk Text Messaging,
+                                    Voicemail
+                                    Drops & Call Drops With Ability to say 1 if interested and 2 if you want to
+                                    be places on the
+                                    do not call list
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="text-center py-4"><h1>${{ dynamic.premium_partnership_program_price }} /
+                            Month</h1>
+                            <h3>3 Month Commitment</h3>
+                            <h3>(Not Including Marketing Budget)</h3></div>
+                        <form method="post">{% csrf_token %}
+                            <input type="hidden" name="product" value="premium">
+                            <button class="btn btn-primary btn-block">Order Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Concierge Partnership Program (Application & Limited To 100 Partners)</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4 pb-4">
+                            <ul class="la-list">
+                                <li>1 Trip Anywhere In The World 5 Star Hotel Amenities & First Class Ticket
+                                </li>
+                                <li>1 Trip With Us To Cowboys Stadium To See Your Favorite NFL Team That They
+                                    Are
+                                    Playing In Our Suite With 1st Class Ticket Or Ability To Trade In For Trip
+                                    Of Equal Value
+                                </li>
+                                <li>All Of Your Payment Goes Toward Your Marketing</li>
+                                <li>Your Own Dedicated Two Person Sales Team</li>
+                                <li>50% Commissions</li>
+                                <li>Email Script That Allows You To Email For Free Over 10 AWS Virtual Machine
+                                    Servers
+                                    That We Set Up For You
+                                </li>
+                                <li>Wholesale Rate On All Autodialer Services</li>
+                                <li>Access to 5,000,000 Small Business Leads</li>
+                                <li>We Help You Set Up Automation For Your Business With Our Phone Script That
+                                    Calls
+                                    7,000 People For You On Your Behalf
+                                </li>
+                                <li>Your Own Dedicated App In App Store & Google Play Store</li>
+                                <li>Your Own Dedicated Chrome Extension</li>
+                                <li>Free Access On Our payroll service for up to 25 users</li>
+                                <li>Free Access To Our CRM Service Up To 25 Users</li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-primary btn-block" href="{{ dynamic.appointment_link }}" target="_blank">Schedule
+                            An Appointment</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

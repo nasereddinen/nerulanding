@@ -1,0 +1,323 @@
+{% extends "pages/base-business.html" %}
+{% load static %}
+{% block extrastyle %}
+    <style type="text/css">
+
+        .group {
+            background: white;
+            box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10),
+            0 3px 6px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            position: relative;
+            color: #8898AA;
+            font-weight: 300;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 20px;
+            display: block;
+        }
+
+        .group label:not(:last-child) {
+            border-bottom: 1px solid #F0F5FA;
+        }
+
+        label > span {
+            width: 20%;
+            text-align: right;
+            float: left;
+        }
+
+        .field {
+            background: transparent;
+            font-weight: 300;
+            border: 0;
+            color: #31325F;
+            outline: none;
+            padding-right: 10px;
+            padding-left: 10px;
+            cursor: text;
+            width: 70%;
+            height: 40px;
+            float: right;
+        }
+
+        .field::-webkit-input-placeholder {
+            color: #CFD7E0;
+        }
+
+        .field::-moz-placeholder {
+            color: #CFD7E0;
+        }
+
+        .field:-ms-input-placeholder {
+            color: #CFD7E0;
+        }
+
+
+        .outcome {
+            float: left;
+            width: 100%;
+            padding-top: 8px;
+            min-height: 24px;
+            text-align: center;
+        }
+
+        .success, .error {
+            display: none;
+            font-size: 13px;
+        }
+
+        .success.visible, .error.visible {
+            display: inline;
+        }
+
+        .error {
+            color: #E4584C;
+        }
+
+        .success {
+            color: #666EE8;
+        }
+
+        .success .token {
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .button-link {
+            background: none !important;
+            border: none;
+            padding: 0 !important;
+            color: #4b71fa;
+            cursor: pointer;
+        }
+
+        .button-link:hover {
+            color: #0056b3;
+        }
+    </style>
+    <script>
+        function changePaymentMethod() {
+
+            $("#add_change_payment_method").toggle()
+        }
+    </script>
+{% endblock extrastyle %}
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Checkout</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card padding-15">
+                    <!-- <div class="card-header">Your cart:</div> -->
+                    <div class="card-body">
+                        <!-- {% if products %}
+                            <table class="table">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th style="width: 1%;">Remove</th>
+                                </tr>
+                                </thead>
+
+                                {% for product in products %}
+                                    <tr class="bg-white">
+                                        <td>{{ product.name }}</td>
+                                        <td>{{ product.quantity }}</td>
+                                        <td>${{ product.price }}</td>
+                                        <td>
+                                            <form action="{% url "business:delete_item" %}"
+                                                  method="post">{% csrf_token %}
+                                                <input name="delete_item" type="hidden" value="{{ product.name }}">
+                                                <button type="submit" class="btn btn-primary">Remove</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                <tr class="bg-white">
+                                    <td class="text-right border-0" colspan="2">Total:</td>
+                                    <td>${{ amount }}</td>
+                                    <td class="border-0"></td>
+                                </tr>
+                            </table>
+                        {% else %}
+                            <div class="text-center">Your cart is empty.</div>
+                        {% endif %} -->
+
+
+                        <!-- {% if add_card %}
+                            Add card:
+                            {% if cards_available %}
+                                <form action="{% url "business:stripe_checkout" %}" method="post">{% csrf_token %}
+                                    <input type="submit" name="back_to_checkout_cards" value="Back" class="button-link">
+                                </form>
+                            {% endif %}
+                            <form action="{% url "business:subscription_stripe" %}" method="post"
+                                  id="stripe_form">{% csrf_token %}
+                                <div>
+
+                                    <div class="group">
+                                        <label>
+                                            <span>Name</span>
+                                            <input name="cardholder-name" class="field" placeholder="Jane Doe"/>
+                                        </label>
+                                    </div>
+                                    <div class="group">
+                                        <label>
+                                            <span>Card</span>
+                                            <div id="card-element" class="field"></div>
+                                        </label>
+                                    </div>
+                                    <input id="stripeToken" name="stripeToken" type="hidden"/>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Pay ${{ amount }}</button>
+                                <div class="outcome">
+                                    <div class="error" role="alert"></div>
+                                    <div class="success">
+                                        Success! Your Stripe token is <span class="token"></span>
+                                    </div>
+                                </div>
+                            </form>
+                        {% else %}
+                            Selected card: {{ def_card.card_brand }} {{ def_card.card_last4 }}<br>
+                            <a href="#" onclick="changePaymentMethod()">Change</a><br><br>
+                            <div style="display: none" id="add_change_payment_method">
+                                {% for card in sources_available %}
+                                    <form action="{% url "business:stripe_checkout" %}" method="post">{% csrf_token %}
+                                        {{ def_card.card_brand }} {{ card.last4 }}
+                                        <input type="hidden" name="source_id" value="{{ card.id }}">
+                                        <button class="button-link">Select</button>
+                                    </form>
+                                {% endfor %}
+                                <form action="{% url "business:stripe_checkout" %}" method="post">{% csrf_token %}
+                                    <input type="submit" name="add_new_card" class="button-link" value="Add New Card">
+                                </form>
+                            </div>
+                            <br>
+                            <form action="{% url "business:subscription_stripe" %}" method="post">{% csrf_token %}
+                                <input id="stripeToken" name="stripeToken" type="hidden"/>
+                                <button type="submit" class="btn btn-primary btn-block"
+                                        {% if not products %}disabled{% endif %}>Pay ${{ amount }}</button>
+                            </form>
+                        {% endif %}
+                    </div> -->
+
+
+                    {% if offer_steps %}
+                        <hr>
+
+                        <!-- <h3>Steps To Do After Checkout Based On Your Answers </h3> -->
+                        <h3>Steps To Do Based On Your Answers </h3>
+                        {% for key, values in offer_steps.items %}
+                            {% if key == 'LLC' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:business-entity" %}" target="_blank">Go Here To Set Up Your LLC</a>
+                            {% endif %}
+
+                            {% if key == 'EIN' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:ein" %}" target="_blank">Go Here To Set Up Your EIN</a>
+                            {% endif %}
+
+                            {% if key == 'business_account' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:business-bank-account" %}" target="_blank">Go Here To Set Up Your Business Account</a>
+                            {% endif %}
+
+                            {% if key == 'merchant_account' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:merchant-account" %}" target="_blank">Go Here To Set Up Your Merchant Account</a>
+                            {% endif %}
+
+                            {% if key == 'duns' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:duns" %}" target="_blank">Go Here To Set Up Your DUNS Number</a>
+                            {% endif %}
+
+                            {% if key == 'tradelines' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:tradelines" %}" target="_blank">Go Here To Set Up Your Tradelines</a>
+                            {% endif %}
+
+                            {% if key == 'marketing' %}
+                                <a class="btn btn-primary my-2" href="{% url "business:marketing-business" %}" target="_blank">Go Here To Set Up Your Business Marketing</a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if add_card %}
+        <script src="https://js.stripe.com/v3/"></script>
+        <script type="text/javascript">
+
+            var stripe = Stripe('{{stripe_key}}');
+            var elements = stripe.elements();
+
+            var card = elements.create('card', {
+                style: {
+                    base: {
+                        iconColor: '#666EE8',
+                        color: '#31325F',
+                        lineHeight: '40px',
+                        fontWeight: 300,
+                        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                        fontSize: '15px',
+
+                        '::placeholder': {
+                            color: '#CFD7E0',
+                        },
+                    },
+                }
+            });
+
+            card.mount('#card-element');
+
+            function setOutcome(result) {
+
+                var successElement = document.querySelector('.success');
+                var errorElement = document.querySelector('.error');
+                successElement.classList.remove('visible');
+                errorElement.classList.remove('visible');
+
+                if (result.token) {
+                    document.getElementById('stripeToken').value = result.token.id;
+                    successElement.querySelector('.token').textContent = result.token.id;
+                    successElement.classList.add('visible');
+                    return true
+                } else if (result.error) {
+                    errorElement.textContent = result.error.message;
+                    errorElement.classList.add('visible');
+                    return false
+                }
+            }
+
+            card.on('change', function (event) {
+                setOutcome(event);
+            });
+
+
+            document.getElementById('stripe_form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+                var form = document.getElementById('stripe_form');
+                var extraDetails = {
+                    name: form.querySelector('input[name=cardholder-name]').value,
+                };
+                var res = await stripe.createToken(card, extraDetails)
+                console.log(res)
+                var isOk = setOutcome(res);
+                (isOk && $('form').submit());
+            });
+
+
+        </script>
+    {% endif %}
+{% endblock %}
+

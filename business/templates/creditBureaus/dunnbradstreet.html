@@ -1,0 +1,76 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Getting Established With Dunn & Bradstreet</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/Vl-xUIAFqUo" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/vQ9D2ZldSQI" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <p class="card-text">Watch The Video On Why & How To Use The DNB I Update Tool</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a target="_blank" class="btn btn-primary"
+                                   href="https://iupdate.dnb.com/iUpdate/viewiUpdateHome.htm;jsessionid=F49771F1A0596D0F0034D70FDDB1E39B.app1">Go
+                                    To I Update Tool</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Esp9xezwn0o" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <p class="card-text">Watch The Video To Learn About Dunn & Bradstreet</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/2LCjkB7A-Dg" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <p class="card-text">Watch The Video To Learn About Dunn & Bradstreet's Paydex Score</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

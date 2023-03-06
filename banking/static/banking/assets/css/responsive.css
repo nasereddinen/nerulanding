@@ -1,0 +1,1054 @@
+@media only screen and (max-width: 767px) {
+  .ptb-100 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .pt-100 {
+    padding-top: 50px;
+  }
+  .pb-100 {
+    padding-bottom: 50px;
+  }
+  .pb-70 {
+    padding-bottom: 20px;
+  }
+  .section-title h2 {
+    font-size: 25px;
+  }
+  .top-header-information {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .text-right {
+    text-align: center !important;
+  }
+  .top-header-others {
+    text-align: center;
+  }
+  .top-header-others .languages-list .nice-select .list {
+    left: auto;
+    right: 0;
+  }
+  .mean-container a.meanmenu-reveal {
+    padding: 5px 0 0 0;
+  }
+  .mean-container a.meanmenu-reveal span {
+    display: block;
+    background: #000;
+    height: 4px;
+    margin-top: -5px;
+    border-radius: 3px;
+    position: relative;
+    top: 8px;
+  }
+  .mean-container .mean-bar {
+    background-color: unset;
+    border-bottom: none;
+  }
+  .mean-container .mean-nav {
+    margin-top: 50px;
+  }
+  .others-option-for-responsive .dot-menu {
+    top: -32px;
+  }
+  .others-option-for-responsive .container .container {
+    right: 20px;
+    max-width: 235px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .others-option-for-responsive .option-inner .others-options {
+    margin-left: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item {
+    margin-bottom: 10px;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item:last-child {
+    margin-bottom: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list {
+    display: inline-block;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list .nice-select .list {
+    right: auto;
+    left: 0;
+    margin: 5px 0 0;
+  }
+  .others-option-for-responsive .option-inner .others-options.d-flex {
+    display: block !important;
+  }
+  .main-banner-content h1 {
+    font-size: 30px;
+  }
+  .main-banner-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .top-services-item {
+    padding: 20px;
+  }
+  .top-services-item h3 {
+    font-size: 22px;
+  }
+  .banking-image {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .banking-content h3 {
+    font-size: 25px;
+  }
+  .single-fun-fact h3 {
+    font-size: 30px;
+  }
+  .single-fun-fact p {
+    font-size: 16px;
+  }
+  .protect-area .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .protect-content h3 {
+    font-size: 25px;
+  }
+  .protect-content .protect-inner-content h4 {
+    font-size: 20px;
+  }
+  .protect-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .single-services-item h3 {
+    font-size: 22px;
+  }
+  .credit-card-area.bg-ffffff .row {
+    padding: 30px 15px;
+  }
+  .credit-card-content h3 {
+    font-size: 25px;
+  }
+  .credit-card-content .credit-card-features li {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    max-width: unset;
+  }
+  .credit-card-image {
+    margin-top: 30px;
+  }
+  .services-slider.owl-theme:hover .owl-nav [class*=owl-] {
+    left: -15px;
+  }
+  .services-slider.owl-theme:hover .owl-nav [class*=owl-].owl-next {
+    right: -15px;
+  }
+  .below-area .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .below-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .below-content h3 {
+    font-size: 25px;
+  }
+  .below-content .below-inner-content h4 {
+    font-size: 22px;
+  }
+  .customer-item {
+    padding: 30px 25px;
+  }
+  .customer-item .customer-info h3 {
+    font-size: 20px;
+  }
+  .customer-item .customer-info span {
+    font-size: 15px;
+  }
+  .customer-slider.owl-theme:hover .owl-nav [class*=owl-] {
+    left: -10px;
+  }
+  .customer-slider.owl-theme:hover .owl-nav [class*=owl-].owl-next {
+    right: -10px;
+  }
+  .app-content {
+    text-align: center;
+  }
+  .app-content h3 {
+    font-size: 25px;
+  }
+  .app-btn {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .app-btn .app-store-btn {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .single-blog-item .post-content h3 {
+    font-size: 22px;
+  }
+  .single-blog-item .post-content .post-meta li {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .partner-item img {
+    max-width: 140px;
+  }
+  .pl-5, .px-5 {
+    padding-left: 0 !important;
+  }
+  .main-banner-item.banner-item-two {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .main-banner-form {
+    padding: 30px 20px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+  .main-banner-form .content h3 {
+    font-size: 22px;
+  }
+  .main-banner-form .lost-your-password {
+    display: none;
+  }
+  .about-image {
+    height: 450px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .about-image .video-btn {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+  }
+  .about-image .video-btn i {
+    font-size: 40px;
+  }
+  .about-content {
+    padding: 10px;
+  }
+  .about-content h3 {
+    font-size: 25px;
+  }
+  .overview-content {
+    padding: 20px;
+  }
+  .overview-image {
+    height: 450px;
+  }
+  .app-inner {
+    background-color: #4865ff;
+    padding: 35px 15px;
+  }
+  .goals-content h3 {
+    font-size: 25px;
+  }
+  .goals-content .goals-inner-content h4 {
+    font-size: 20px;
+  }
+  .goals-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .single-team-box .team-content {
+    padding: 15px;
+  }
+  .main-banner-item.banner-item-three {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .main-banner-shape .shape-1 {
+    display: none;
+  }
+  .grow-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .grow-content h3 {
+    font-size: 25px;
+  }
+  .grow-content .grow-inner-content h4 {
+    font-size: 20px;
+  }
+  .operate-content h3 {
+    font-size: 25px;
+  }
+  .operate-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .fun-facts-area.bg-color .single-fun-fact .icon i {
+    font-size: 55px;
+  }
+  .transactions-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .transactions-content h3 {
+    font-size: 25px;
+  }
+  .consultants-content h3 {
+    font-size: 25px;
+  }
+  .consultants-content .consultants-inner-content h4 {
+    font-size: 20px;
+  }
+  .consultants-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .app-area.bg-color {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .app-area.bg-color .app-content {
+    margin-top: 30px;
+  }
+  .app-area.bg-color .app-content h3 {
+    font-size: 25px;
+  }
+  .app-area.bg-color .app-btn {
+    text-align: center;
+  }
+  .app-image-warp {
+    text-align: center;
+  }
+  .main-banner-shape .shape-1 {
+    max-width: 250px;
+  }
+  .main-banner-shape .shape-3 {
+    display: none;
+  }
+  .main-slider-item {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .main-slider-content h1 {
+    font-size: 25px;
+  }
+  .main-slider-shape .shape-1 {
+    display: none;
+  }
+  .main-slider-shape .shape-2 {
+    display: none;
+  }
+  .main-slider-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .banking-area.bg-ffffff .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .banking-area.bg-ffffff .banking-content {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .banking-image-warp {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .subscribe-content h2 {
+    font-size: 25px;
+  }
+  .newsletter-form button {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin-top: 20px;
+  }
+  .main-banner-item.banner-item-five {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .about-area.bg-ffffff .about-content {
+    padding: 0;
+  }
+  .page-banner-content h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+  .page-banner-area {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .overview-box-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .overview-box-content h3 {
+    font-size: 25px;
+  }
+  .payment-box-image {
+    margin-top: 30px;
+  }
+  .payment-box-content h3 {
+    font-size: 25px;
+  }
+  .using-card-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .using-card-content h3 {
+    font-size: 25px;
+  }
+  .using-card-content .using-card-inner-content h4 {
+    font-size: 20px;
+  }
+  .about-content-warp {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .about-content-warp h3 {
+    font-size: 25px;
+  }
+  .about-area.bg-ffffff .about-image {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .fun-facts-area.bg-ffffff .single-fun-fact .icon i {
+    font-size: 55px;
+  }
+  .pricing-list-tab .tabs li a {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+  .single-pricing-box .pricing-features li {
+    font-size: 15px;
+  }
+  .open-account-form {
+    padding: 40px 30px;
+  }
+  .security-content h3 {
+    font-size: 25px;
+  }
+  .security-image {
+    text-align: center;
+    margin-top: 30px;
+    height: 450px;
+  }
+  .advice-image {
+    height: 450px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .advice-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .advice-content h3 {
+    font-size: 25px;
+  }
+  .advice-content .advice-inner-content h4 {
+    font-size: 20px;
+  }
+  .online-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .online-content h3 {
+    font-size: 25px;
+  }
+  .online-content .online-inner-content h4 {
+    font-size: 20px;
+  }
+  .online-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .location-maps-area {
+    overflow: hidden;
+  }
+  .location-maps-image .location a::before {
+    left: 0;
+  }
+  .location-maps-image .location a .location-info {
+    bottom: 14px;
+    width: 90px;
+    left: -35px;
+  }
+  .location-maps-image .location a .location-info::before {
+    left: 30px;
+    bottom: -5px;
+  }
+  .location-maps-image .location a .location-info h5 {
+    font-size: 12px;
+  }
+  .sign-in-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .sign-in-form {
+    padding: 40px 30px;
+  }
+  .sign-in-form form .lost-your-password {
+    text-align: left;
+  }
+  .register-form {
+    padding: 40px 30px;
+  }
+  .register-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    max-width: unset;
+    margin-bottom: 20px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box:last-child {
+    margin-bottom: 0;
+  }
+  .contact-form {
+    padding: 25px;
+  }
+  .privacy-content h3 {
+    font-size: 22px;
+  }
+  .services-details-desc h1 {
+    font-size: 25px;
+  }
+  .services-details-desc .services-details-features .features-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .services-details-information {
+    margin-top: 30px;
+  }
+  .personal-loan-content h3 {
+    font-size: 25px;
+  }
+  .personal-loan-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .types-loan-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .types-loan-content h3 {
+    font-size: 25px;
+  }
+  .types-loan-content .types-loan-inner-content h4 {
+    font-size: 20px;
+  }
+  .apply-content h3 {
+    font-size: 25px;
+  }
+  .apply-content .apply-inner-content h4 {
+    font-size: 20px;
+  }
+  .apply-image {
+    height: 450px;
+  }
+  .loan-form {
+    padding: 30px;
+  }
+  .blog-details-desc .article-content h3 {
+    font-size: 22px;
+  }
+  .blog-details-desc .article-content .entry-meta ul li a {
+    font-size: 15px;
+  }
+  .blog-details-desc .article-footer .article-tags {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    max-width: unset;
+  }
+  .blog-details-desc .article-footer .article-tags a {
+    padding: 5px 6px;
+    margin: 0 2px;
+    font-size: 12px;
+  }
+  .blog-details-desc .article-footer .article-tags span {
+    font-size: 15px;
+  }
+  .blog-details-desc .article-footer .article-share {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    max-width: unset;
+    margin-top: 30px;
+  }
+  .blog-details-desc .article-footer .article-share span {
+    font-size: 15px;
+  }
+  .blog-details-desc .article-footer .article-share .social {
+    text-align: left;
+  }
+  .widget-area {
+    margin-top: 30px;
+  }
+  .contact-info-box .icon {
+    margin-bottom: 15px;
+  }
+  .contact-info-box .icon i {
+    font-size: 45px;
+  }
+  .contact-info-box .icon::before {
+    height: 45px;
+    width: 45px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .blog-details-desc .article-footer .article-share {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ptb-100 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .pt-100 {
+    padding-top: 70px;
+  }
+  .pb-100 {
+    padding-bottom: 70px;
+  }
+  .pb-70 {
+    padding-bottom: 40px;
+  }
+  .top-header-information {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .text-right {
+    text-align: center !important;
+  }
+  .top-header-others {
+    text-align: center;
+  }
+  .top-header-others .languages-list .nice-select .list {
+    left: auto;
+    right: 0;
+  }
+  .mean-container a.meanmenu-reveal {
+    padding: 5px 0 0 0;
+  }
+  .mean-container a.meanmenu-reveal span {
+    display: block;
+    background: #000;
+    height: 4px;
+    margin-top: -5px;
+    border-radius: 3px;
+    position: relative;
+    top: 8px;
+  }
+  .mean-container .mean-bar {
+    background-color: unset;
+    border-bottom: none;
+  }
+  .mean-container .mean-nav {
+    margin-top: 50px;
+  }
+  .others-option-for-responsive .dot-menu {
+    top: -32px;
+  }
+  .others-option-for-responsive .container .container {
+    right: 20px;
+    max-width: 235px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .others-option-for-responsive .option-inner .others-options {
+    margin-left: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item {
+    margin-bottom: 10px;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item:last-child {
+    margin-bottom: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list {
+    display: inline-block;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list .nice-select .list {
+    right: auto;
+    left: 0;
+    margin: 5px 0 0;
+  }
+  .others-option-for-responsive .option-inner .others-options.d-flex {
+    display: block !important;
+  }
+  .main-banner-item {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .main-banner-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .banking-image {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .protect-area .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .protect-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .credit-card-area.bg-ffffff .row {
+    padding: 30px 15px;
+  }
+  .credit-card-image {
+    margin-top: 30px;
+  }
+  .services-slider.owl-theme:hover .owl-nav [class*=owl-] {
+    left: -20px;
+  }
+  .services-slider.owl-theme:hover .owl-nav [class*=owl-].owl-next {
+    right: -20px;
+  }
+  .below-area .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .below-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .customer-item {
+    padding: 30px 25px;
+  }
+  .customer-slider.owl-theme:hover .owl-nav [class*=owl-] {
+    left: -10px;
+  }
+  .customer-slider.owl-theme:hover .owl-nav [class*=owl-].owl-next {
+    right: -10px;
+  }
+  .app-content {
+    text-align: center;
+  }
+  .app-btn {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .single-blog-item .post-content .post-meta li {
+    font-size: 15px;
+  }
+  .pl-5, .px-5 {
+    padding-left: 0 !important;
+  }
+  .main-banner-form {
+    padding: 50px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+  .about-image {
+    height: 450px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .about-content {
+    padding: 15px;
+  }
+  .overview-content {
+    padding: 30px;
+  }
+  .overview-image {
+    height: 450px;
+  }
+  .app-inner {
+    background-color: #4865ff;
+    padding: 35px 15px;
+  }
+  .goals-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .grow-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .operate-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .transactions-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .consultants-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .app-area.bg-color {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .app-area.bg-color .app-content {
+    margin-top: 30px;
+  }
+  .app-area.bg-color .app-btn {
+    text-align: center;
+  }
+  .app-image-warp {
+    text-align: center;
+  }
+  .main-banner-shape .shape-1 {
+    max-width: 250px;
+  }
+  .main-slider-shape .shape-1 {
+    display: none;
+  }
+  .main-slider-shape .shape-2 {
+    display: none;
+  }
+  .main-slider-image {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .banking-area.bg-ffffff .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .banking-area.bg-ffffff .banking-content {
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .banking-image-warp {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .about-area.bg-ffffff .about-content {
+    padding: 0;
+  }
+  .overview-box-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .payment-box-image {
+    margin-top: 30px;
+  }
+  .using-card-image {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .about-content-warp {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .about-area.bg-ffffff .about-image {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+  .security-image {
+    text-align: center;
+    margin-top: 30px;
+    height: 450px;
+  }
+  .advice-image {
+    height: 450px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .advice-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .online-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .online-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-in-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .register-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box:last-child {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  .services-details-desc .services-details-features .features-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .services-details-information {
+    margin-top: 30px;
+  }
+  .personal-loan-image {
+    height: 450px;
+    margin-top: 30px;
+  }
+  .types-loan-image {
+    height: 450px;
+    margin-bottom: 30px;
+  }
+  .apply-image {
+    height: 450px;
+  }
+  .widget-area {
+    margin-top: 30px;
+  }
+  .blog-details-desc .article-footer .article-tags a {
+    padding: 4px 8px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .top-header-area {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .mean-container a.meanmenu-reveal {
+    padding: 5px 0 0 0;
+  }
+  .mean-container a.meanmenu-reveal span {
+    display: block;
+    background: #000;
+    height: 4px;
+    margin-top: -5px;
+    border-radius: 3px;
+    position: relative;
+    top: 8px;
+  }
+  .mean-container .mean-bar {
+    background-color: unset;
+    border-bottom: none;
+    padding-top: 0;
+  }
+  .mean-container .mean-nav {
+    margin-top: 50px;
+  }
+  .others-option-for-responsive .dot-menu {
+    top: -32px;
+  }
+  .others-option-for-responsive .container .container {
+    right: 20px;
+    max-width: 235px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .others-option-for-responsive .option-inner .others-options {
+    margin-left: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item {
+    margin-bottom: 10px;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item:last-child {
+    margin-bottom: 0;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list {
+    display: inline-block;
+  }
+  .others-option-for-responsive .option-inner .others-options .option-item .languages-list .nice-select .list {
+    right: auto;
+    left: 0;
+    margin: 5px 0 0;
+  }
+  .others-option-for-responsive .option-inner .others-options.d-flex {
+    display: block !important;
+  }
+  .main-banner-item {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .top-services-item {
+    padding: 30px;
+  }
+  .top-services-item h3 {
+    font-size: 22px;
+  }
+  .single-fun-fact p {
+    font-size: 20px;
+  }
+  .credit-card-area.bg-ffffff .row {
+    padding: 50px 20px;
+  }
+  .single-blog-item .post-content h3 {
+    font-size: 25px;
+  }
+  .single-footer-widget .footer-logo .social li a i {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+  }
+  .about-content {
+    padding: 15px;
+  }
+  .app-btn .app-store-btn {
+    margin-right: 5px;
+  }
+  .app-inner {
+    padding: 70px 14px;
+  }
+  .single-team-box .team-content {
+    padding: 15px;
+  }
+  .single-team-box .team-content h3 {
+    font-size: 25px;
+  }
+  .main-banner-shape .shape-1 {
+    max-width: 250px;
+  }
+  .single-fun-fact h3 {
+    font-size: 35px;
+  }
+  .single-fun-fact p {
+    font-size: 16px;
+  }
+  .main-slider-shape .shape-1 {
+    max-width: 300px;
+  }
+  .single-services-item {
+    padding: 25px;
+  }
+  .single-services-item h3 {
+    font-size: 20px;
+  }
+  .about-area.bg-ffffff .about-content {
+    padding: 30px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+  .projects-details-content .projects-details-info .projects-info-box:last-child {
+    margin-bottom: 0;
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 2500px) {
+  .container {
+    max-width: 1470px;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

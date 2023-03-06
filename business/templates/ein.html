@@ -1,0 +1,61 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Business EIN Number</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/rvI5g9lIADY" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                             height="200px" width="100%" alt="">
+                        <br><br>
+                        <h3><b>Step 1</b></h3>
+                        <h5 class="card-title">DO YOU HAVE AN EIN#?</h5>
+                        <h5 class="card-title">The United States requires all business entities to file for an EIN#.
+                            Like a social security number is to an individual an EIN# is to a business.</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                             height="200px" width="100%" alt="">
+                        <br><br>
+                        <h3><b>Step 2</b></h3>
+                        <h5 class="card-title">APPLY FOR YOUR BUSINESS'S EIN#</h5>
+                        <div class="btn-group">
+                            <a target="_blank" class="btn btn-primary"
+                               href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online">Click
+                                Here To Apply To Get Your EIN Number</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

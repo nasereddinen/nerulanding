@@ -1,0 +1,77 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Client Progress</h2></div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                    </div>
+                    <div class="table-responsive">
+                        <table id="datatable" class="table">
+                            <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>What Have Been Done</th>
+                                <th>What Is Left</th>
+                                <th>Clients Goal</th>
+                                <th>What Is Purchased</th>
+                                <th>What Is Recommended</th>
+                                <th>Client Can See Only Created Portals</th>
+                                <th>Activate Client Account</th>
+                                <th>Create Portal</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for client in clients %}
+                                <tr>
+                                    <td>{{ forloop.counter0 }}) &nbsp; {{ client.user.first_name }} {{ client.user.last_name }}</td>
+                                    <td>{{ client.what_is_done }}</td>
+                                    <td>{{ client.what_is_left }}</td>
+                                    <td>{% for i in client.goals %}<p> {{ forloop.counter0 }}) {{ i.name }}</p>{% endfor %}
+                                        <p>{{ client.user_goals_text }}</p></td>
+                                    <td>{{ client.what_is_purchased }}</td>
+                                    <td>{{ client.what_is_recommended }}</td>
+                                    <td>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <label>
+                                                <input hidden name="see_only_created_portal" value="{{ client.user.id }}">
+                                                <input type="checkbox" name="can_see" onChange="this.form.submit()" {% if client.user.profile.can_see_only_created_portals %} checked {% endif %} #}/>
+                                            </label>
+                                        </form>
+                                    </td>
+                                <td> <form method="post">
+                                            {% csrf_token %}
+                                            <label>
+                                                <input hidden name="shut_of_client_account" value="{{ client.user.id }}">
+                                                <input type="checkbox" name="access" onChange="this.form.submit()"  {% if client.user.is_active %} checked {% endif %}  />
+
+                                            </label>
+                                        </form> </td>
+
+                                    <td>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input hidden name="create_portal" value="{{ client.user.id }}">
+                                            <button class="btn btn-primary">Create Portal</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

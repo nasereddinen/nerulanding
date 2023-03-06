@@ -1,0 +1,257 @@
+{% extends "pages/base-business.html" %}
+{% load static %}
+{% block navigation %}
+<div class="main-sidebar-nav dark-navigation">
+  <div class="nano">
+    <div class="nano-content sidebar-nav">
+      <div class="card-body border-bottom text-center nav-profile">
+        <br>
+        <p class="lead margin-b-0 toggle-none">
+          {{ request.user.get_full_name }}
+        </p>
+        <p class="text-muted mv-0 toggle-none">Welcome</p>
+      </div>
+      <ul class="metisMenu nav flex-column" id="menu">
+        
+        {% if not show_portal %}
+          <li class="nav-item">
+          <a href="{% url 'homepage' %}" class="nav-link"><span class="toggle-none">Go Back To Main
+              Portal</span></a>
+        </li>
+        {% endif %}
+          
+        
+        {% if request.user.profile.virtual_access_card_paid %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/virtual-card/" class="nav-link"><span
+              class="toggle-none">Virtual Card Access</span></a>
+        </li>
+        {% endif %}
+        {% for portal in portal_goal.portals.all %}
+        {% if portal.code == 'business_credit_with_nopg' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/upgrade" class="nav-link">
+            Upgrade to Full Business Builder Program with No Money Down</a>
+        </li>
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/business-credit-plan" class="nav-link"> Create My
+            Business Credit
+            Building Plan </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><span class="toggle-none">Business
+              Credit Building <span class="fa arrow"></span></span></a>
+          <ul class="nav-second-level nav flex-column " aria-expanded="false">
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-entity"
+                class="nav-link">Business
+                Entity</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/ein" class="nav-link">EIN Number</a>
+            </li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-license"
+                class="nav-link">Business
+                License</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/website-creation-options"
+                class="nav-link">Website
+                Creation</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/fax-number-options"
+                class="nav-link">Fax
+                Number</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/four-eleven" class="nav-link">411
+                Listings</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/professional-email"
+                class="nav-link">Professional
+                Email Address</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/domain" class="nav-link">Domain</a>
+            </li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/toll-free-options"
+                class="nav-link">Toll
+                Free
+                Number</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/virtual-address"
+                class="nav-link">Virtual
+                Address</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-bank-account"
+                class="nav-link">Business
+                Bank Account</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/merchant-account"
+                class="nav-link">Merchant
+                Account</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/duns" class="nav-link">Duns
+                Number</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/sic" class="nav-link">SIC & NAISC
+                Codes</a>
+            </li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-good-standing"
+                class="nav-link">Checking
+                If Your Business Is In Good Standing </a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-in-good-standing"
+                class="nav-link">How
+                To Get Your Business Back In Good Standing</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/business-credit-step" class="nav-link"> Choose
+            Business Credit
+            Building Steps You Need Done For You </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">
+              Business Credit Bureaus To Become Established With <span class="fa arrow"></span></span></a>
+          <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/experian" class="nav-link"> Experian
+                Business </a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/dunn-brad" class="nav-link"> Dunn &
+                Bradsheet </a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/equifax" class="nav-link"> Equifax
+                Business </a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="{% url 'businesscreditcourse:home' %}" target="_blank" class="nav-link"> Business Credit
+            Building
+            Course </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Corporate
+              Credit List<span class="fa arrow"></span></span></a>
+          <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/vendor-list"
+                class="nav-link">Starter Vendor
+                List</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/store-credit-vendor-list"
+                class="nav-link">Store
+                Credit Vendor List</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-credit-vendor"
+                class="nav-link">Revolving
+                Business Credit Vendor List</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/cc-credit-vendor"
+                class="nav-link">Credit
+                Card No Personal Gaurantee Vendor List</a></li>
+          </ul>
+        </li>
+        {% endif %}
+        {% if portal.code == 'long_term_loan' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/apply-loans" class="nav-link"> Apply For Business
+            Loans </a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'imediate_business_credit' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/financing" class="nav-link"> Create My Business
+            Financing Plan </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span class="toggle-none">Full List Of
+              Financing Products<span class="fa arrow"></span></span></a>
+          <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/personal-credit-card"
+                class="nav-link">Personal
+                Credit Cards</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-credit-card"
+                class="nav-link">Business
+                Credit Cards</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/short-term-loan"
+                class="nav-link">Short Term
+                Loans</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-term-loan"
+                class="nav-link">Business
+                Term Loans</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/small-business-loan"
+                class="nav-link">Small
+                Business Adminstration Loans</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/personal-loan"
+                class="nav-link">Personal
+                Loans</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/business-line-credit"
+                class="nav-link">Business
+                Lines Of Credit</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/nocredit-financings"
+                class="nav-link">No
+                Credit Check Loans</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/invoice-factoring"
+                class="nav-link">Invoice
+                Factoring</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/invoice-financings"
+                class="nav-link">Invoice
+                Financing</a></li>
+            <li class="nav-item"><a href="/user/my-portal-goals/{{ portal_number }}/equipment-financings"
+                class="nav-link">Equipment
+                Financing</a></li>
+          </ul>
+        </li>
+        {% endif %}
+        {% if portal.code == 'fix_personal_credit' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/credit-situation" class="nav-link"> Create My
+            Credit Repair Plan </a>
+        </li>
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/maincreditfile" class="nav-link">Personal credit
+            course</a>
+        </li>
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/credit-trade-lines" class="nav-link"> Personal
+            Credit Primary
+            Tradelines </a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'affiliate_partner' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/refer/" class="nav-link">Make Extra Money
+            Referring Friends</a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'business_marketing' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/marketing-business/" class="nav-link">Marketing
+            Your Busines</a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'repair_business_credit' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/business-credit-monitoring/" class="nav-link">
+            Sign Up For Business Credit Monitoring
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/my-portal-goals/{{ portal_number }}/business-credit-repair-new/">Business
+            Credit
+            Repair</a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'services_you_offer' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/business-credit-step/" class="nav-link">Choose
+            Business Credit
+            Building Steps You Need Done For You</a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'business_insurance' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/insurance-products" class="nav-link"> Insurance
+            Products </a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'need_merchant_account' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/merchant-account" class="nav-link">Merchant
+            Account</a>
+        </li>
+        {% endif %}
+        {% if portal.code == 'offer_financing2_customers' %}
+        <li class="nav-item">
+          <a href="/user/my-portal-goals/{{ portal_number }}/customer-financing-offer" class="nav-link">
+            Offering Financing To
+            Your
+            Customers </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

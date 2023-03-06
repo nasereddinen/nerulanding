@@ -1,0 +1,95 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Domain Name</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        {% if services %}
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe width="100%" height="515" src="https://www.youtube.com/embed/mmOpMZwKcuA" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+
+                    <br><br>
+                    <table class="table">
+                        <thead class="thead-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Link</th>
+                            <th>Dashboard</th>
+                        </tr>
+                        </thead>
+                        {% for service in services %}
+                            <tr class="bg-white">
+                                <td>{{ service.name }}</td>
+                                <td>{{ service.status }}</td>
+                                <td>{% if service.product %} <a href="{{ service.product }}">{{ service.product }}</a>{% endif %}</td>
+                                <td>{% if service.dashboard %} <a href="{{ service.dashboard }}" class="btn btn-primary">Go To Dashboard</a>{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    </a>
+                </div>
+            </div>
+        {% else %}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe width="100%" height="515" src="https://www.youtube.com/embed/mmOpMZwKcuA" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="https://images.pexels.com/photos/1029757/pexels-photo-1029757.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                 height="200px" width="100%" alt="">
+                            <br><br>
+                            <h5 class="card-title">Do You Have A Domain Name For Your Website?</h5>
+                            <h5 class="card-body">Your Business Needs To Have A Domain Name In Order For You To Get A
+                                Website & Professional Email Address. These Are Required In Order For You To Look
+                                Credible &
+                                Start Being Able To Get Business Credit Without Leveraging Your Personal Credit. </h5>
+
+                               <a  class="btn btn-primary btn-block"
+                                href="https://www.kleui.com/business/business-credit-steps-onlyprograms/">Click
+                                 Here To Get Your <br>Domain Name</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+
+
+{% endblock %}

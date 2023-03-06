@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoom</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="container mx-auto h-24 flex justify-between items-center">
+      <img
+        class="w-28"
+        src="{{dynamic.bcb_video_conferencing_logo.url}}"
+        alt="Logo"
+      />
+      <a href="https://bcbcrmsoftware.com/login" class="rounded py-1 px-12 text-white" style="background: #da621e">
+        Login
+      </a>
+    </nav>
+    <!-- A left container with picture or right side and text on left side  -->
+    <main class="container mx-auto flex items-center">
+      <section>
+        <h1
+          style="
+            font-size: 44px;
+            margin-top: 0;
+            padding-top: 76px;
+            margin-bottom: 7px;
+            max-width: 850px;
+            line-height: 60px;
+            font-size: 48px;
+            max-height: 344px;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            font-weight: 700;
+          "
+        >
+          {{dynamic.bcb_video_conferencing_heading}}
+        </h1>
+        <p
+          class="text-xl"
+          style="
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 24px;
+            padding: 0 100px 10px 0;
+            color: #444444;
+            text-align: left;
+            -webkit-box-orient: vertical;
+            width: 100%;
+            word-break: break-word;
+            font-family: 'Lato';
+            margin: 0 0 10px;
+          "
+        >
+          {{dynamic.bcb_video_conferencing_text}}
+        </p>
+        <a href="https://bcbcrmsoftware.com/login"  
+          class="rounded-lg p-2"
+          style="
+            background: #da621e;
+            color: white;
+            width: 200px;
+            height: 48px;
+          "
+        >
+          Sign Up Free
+        </a>
+      </section>
+      <img
+        src="{% static 'assets/img/vector.jpg' %}"
+        alt=""
+        srcset=""
+        class=""
+        style="width: 816px; height: 483px"
+        ;
+      />
+    </main>
+  </body>
+</html>

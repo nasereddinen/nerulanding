@@ -1,0 +1,72 @@
+<div class="row page-header">
+    <div class="col-lg-6 align-self-center ">
+        <h2>Invoice Financing</h2></div>
+</div>
+
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/rOQqoXCRE3g" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-default">
+                    Lenders
+                </div>
+                <div class="card-body">
+                    <table id="datatable" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                        <tr>
+                            <th>Lender Name</th>
+                            <th>Personal Credit Score Needed</th>
+                            <th>Business Revenue Needed</th>
+                            <th>Time In Business Needed</th>
+                            <th>APR</th>
+                            <th>Strategy</th>
+                            <th>Apply Now</th>
+                        </tr>
+                        </thead>
+
+                        </tbody>
+                        <tbody>
+                        <% @invoicefinance.each do |i| %>
+                        <tr>
+                            <td><%= i.lender_name %></td>
+                            <td><%= i.personal_credit_score %></td>
+                            <td><%= i.time_in_business %></td>
+                            <td><%= i.term_length %></td>
+                            <td><%= i.apr %></td>
+                            <td>You want to leverage invoice financing when you have accounts receivables or money that
+                                is owed to you by other businesses but do not want to have them be notified like invoice
+                                factoring.
+                            </td>
+                            <td><%= link_to "Apply Now", applyforloan_path, class: 'btn btn-sm btn-primary' %></td>
+                        </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+    </form>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+
+</section>

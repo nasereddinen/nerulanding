@@ -1,0 +1,158 @@
+{#{% extends "pages/base-business.html" %}#}
+
+{% extends request.resolver_match.page_template %}
+
+
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Prefill Form Information</h2>
+
+        </div>
+    </div>
+    <section class="main-content" style="margin-bottom: 40px">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">{% csrf_token %}
+                    <div class="row mb-2">
+                        <div class="col-6 required">
+                            {{ form.first_name.label_tag }}*{{ form.first_name }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.last_name.label_tag }}*{{ form.last_name }}
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            {{ form.business_name.label_tag }}*{{ form.business_name }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.duns.label_tag }}*{{ form.duns }}
+                        </div>
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-6">
+
+                        </div>
+                        <div class="col-6">
+                            {{ form.ein.label_tag }}*{{ form.ein }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_street_address_1.label_tag }}*{{ form.personal_street_address_1 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_street_address_1.label_tag }}*{{ form.business_street_address_1 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_street_address_1.label_tag }}*{{ form.billing_street_address_1 }}
+                        </div>
+                    </div>
+
+                    <!--  <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_street_address_2.label_tag }}{{ form.personal_street_address_2 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_street_address_2.label_tag }}{{ form.business_street_address_2 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_street_address_2.label_tag }}{{ form.billing_street_address_2 }}
+                        </div>
+                    </div> -->
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_zip_code.label_tag }}*{{ form.personal_zip_code }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_zip_code.label_tag }}*{{ form.business_zip_code }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_zip_code.label_tag }}*{{ form.billing_zip_code }}
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_state.label_tag }}*{{ form.personal_state }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_state.label_tag }}*{{ form.business_state }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_state.label_tag }}*{{ form.billing_state }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_country.label_tag }}*{{ form.personal_country }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_country.label_tag }}*{{ form.business_country }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_country.label_tag }}*{{ form.billing_country }}
+                        </div>
+                    </div>
+
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_city.label_tag }}*{{ form.personal_city }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_city.label_tag }}*{{ form.business_city }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_city.label_tag }}*{{ form.billing_city }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_phone.label_tag }}*{{ form.personal_phone }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_phone.label_tag }}*{{ form.business_phone }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_phone.label_tag }}*{{ form.billing_phone }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            {{ form.email.label_tag }}*{{ form.email }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.website.label_tag }}*{{ form.website }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            {{ form.toll_free_number.label_tag }}*{{ form.toll_free_number }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.fax_number.label_tag }}*{{ form.fax_number }}
+                        </div>
+                    </div>
+
+
+                    <div class="btn-toolbar">
+                        <input type="submit" value="{% if checkout %}Continue to checkout{% else %}Submit{% endif %}" class="btn btn-primary mr-1"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

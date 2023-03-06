@@ -1,0 +1,241 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Add Business Tradelines</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row ">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/eNpVZIv8Mgw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="row justify-content-center">
+            <div class="col-md-12 mb-5 card p-2">
+                <div class="col-md-12">
+                    <div class="card-title">Enter your personal data</div>
+                    {% if error %}
+                        <div class="text-danger"><h4>Please fill all required fields</h4></div>
+                    {% endif %}
+                    <form id="userdata" method="post">{% csrf_token %}
+                        <div class="row mb-2">
+                            <div class="col-6 required">
+                                {{ form.first_name.label_tag }}*{{ form.first_name }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.last_name.label_tag }}*{{ form.last_name }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.business_name.label_tag }}*{{ form.business_name }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.duns.label_tag }}*{{ form.duns }}
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                                {{ form.ein.label_tag }}*{{ form.ein }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_street_address_1.label_tag }}*{{ form.personal_street_address_1 }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_street_address_1.label_tag }}*{{ form.business_street_address_1 }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_street_address_1.label_tag }}*{{ form.billing_street_address_1 }}
+                            </div>
+                        </div>
+
+                        <!--  <div class="row mb-2">
+                        <div class="col-4">
+                            {{ form.personal_street_address_2.label_tag }}{{ form.personal_street_address_2 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.business_street_address_2.label_tag }}{{ form.business_street_address_2 }}
+                        </div>
+                        <div class="col-4">
+                            {{ form.billing_street_address_2.label_tag }}{{ form.billing_street_address_2 }}
+                        </div>
+                    </div> -->
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_zip_code.label_tag }}*{{ form.personal_zip_code }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_zip_code.label_tag }}*{{ form.business_zip_code }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_zip_code.label_tag }}*{{ form.billing_zip_code }}
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_state.label_tag }}*{{ form.personal_state }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_state.label_tag }}*{{ form.business_state }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_state.label_tag }}*{{ form.billing_state }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_country.label_tag }}*{{ form.personal_country }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_country.label_tag }}*{{ form.business_country }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_country.label_tag }}*{{ form.billing_country }}
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_city.label_tag }}*{{ form.personal_city }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_city.label_tag }}*{{ form.business_city }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_city.label_tag }}*{{ form.billing_city }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_phone.label_tag }}*{{ form.personal_phone }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_phone.label_tag }}*{{ form.business_phone }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_phone.label_tag }}*{{ form.billing_phone }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.email.label_tag }}*{{ form.email }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.website.label_tag }}*{{ form.website }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.toll_free_number.label_tag }}*{{ form.toll_free_number }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.fax_number.label_tag }}*{{ form.fax_number }}
+                            </div>
+                        </div>
+                    </form>
+                 <div class="btn-toolbar">
+                        <form id="datadata" method="post" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#datadata');
+                                                                return true;
+                                                                })()">{% csrf_token %}
+                            <input type="submit"
+                                   name="saveData"
+                                   value="Save Information"
+                                   class="btn btn-primary mr-1"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Add Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Company Name</th>
+                                    <th>Product</th>
+                                    <th>Tradeline Amount</th>
+                                    <th>Company reports to</th>
+                                    <th>Price</th>
+                                    <th>Fee</th>
+                                    <th>Video Link</th>
+                                    <th>Order</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in tradelines %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>${{ tradeline.tradeline_amount }}</td>
+                                        <td>{{ tradeline.company_reports_to }}</td>
+                                        <td>${{ tradeline.price }}</td>
+                                        <td>${{ tradeline.charge }}</td>
+                                        <td>
+                                            {% if tradeline.video_link %}
+                                                <a class="btn btn-primary" href="{{ tradeline.video_link }}"
+                                                   target="_blank">Video</a>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <form id="{{ tradeline.product_id }}" method="post" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#{{ tradeline.product_id }}');
+                                                                return true;
+                                                                })()">{% csrf_token %}
+                                                <input type="submit" name="{{ tradeline.company_name }}" hidden>
+                                                <input name="product_id" type="hidden"
+                                                       value="{{ tradeline.product_id }}">
+                                                <button type="submit" class="btn btn-primary"
+                                                        >Order
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

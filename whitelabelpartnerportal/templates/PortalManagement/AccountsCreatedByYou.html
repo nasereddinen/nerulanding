@@ -1,0 +1,46 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+{% block content %}
+ <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Showing The Clients Created By {{user.email}}</h2></div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                    Clients
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table">
+                            <thead>
+                            <tr>
+                            <th>No.</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for client in clients %}
+                                <tr>
+                                    <td>{{ forloop.counter0 }}</td>
+                                    <td>{{ client.user.first_name }} </td>
+                                                    <td>{{ client.user.last_name }}</td>
+                                    <td>{{client.user.email}}</td>
+                                    <td>{{client.phone_number}}</td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,175 @@
+<header id="site-header" class="header header-3">
+    <div class="container">
+        <div id="header-wrap">
+            <div class="row">
+                <div class="col-lg-12">
+                    <style media="screen">
+                        .navbar-toggler {
+                            background-color: {{ dynamic.primary_color }};
+                            color: {{ dynamic.primary_color }};
+                        }
+
+                        .my-ifram-in-mobile {
+                            display: none;
+                        }
+
+                        .my-btn-in-desktop {
+
+                        }
+
+                        @media screen and (max-width: 767px) {
+                            .my-ifram-in-mobile {
+                                display: block;
+                            }
+
+                            .my-btn-in-desktop {
+                                display: none;
+                            }
+                        }
+
+                        .spinner-eff-mobile {
+
+                        }
+
+                        .spinner-eff-mobile {
+                            position: absolute;
+                            width: 200px;
+                            height: 200px;
+                            bottom: 0;
+                        }
+
+                        .spinner-eff-mobile .circle-2 {
+                            width: 66.6%;
+                            height: 66.6%;
+                            background-color: #0cca4a;
+                            top: 0;
+                            animation: pulse-2 1.6s linear 0s infinite;
+                        }
+
+                        .spinner-eff-mobile .spinner-circle {
+                            border-radius: 100px;
+                            position: absolute;
+                            left: 97px;
+                            right: 0;
+                            margin: auto;
+                            transform: scale(1);
+                            transform-origin: center center;
+                        }
+
+                        {% if dynamic.primary_color %}
+                            .btn.btn-white {
+                                background: {{dynamic.primary_color}};
+                                color: {{dynamic.secondary_color}};
+                            }
+                            .btn.btn-white:hover {
+                                background: {{dynamic.accent_color}};
+                                color: {{dynamic.secondary_color}};
+                            }
+                            .btn.btn-theme {
+                                background: {{dynamic.primary_color}};
+                                color: {{dynamic.secondary_color}};
+                            }
+                        {% endif %}
+
+                    </style>
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg">
+                        {% if dynamic.logo and dynamic.logo.url %}
+                            <a class="navbar-brand logo" href="/">
+                                <img id="logo-white-img" class="img-center" src="{{ dynamic.logo.url }}"
+                                     height="180px" alt="">
+                                <img id="logo-img" class="img-center sticky-logo" src="{{ dynamic.logo.url }}"
+                                     height="180px" alt="">
+                            </a>
+                        {% endif %}
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                                data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    {% if dynamic.show_navigation_bar_links %}
+                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <!-- Left nav -->
+
+                            <ul id="main-menu" class="nav navbar-nav ml-auto mr-auto">
+
+                                {% if dynamic.show_navigation_bar_link_1%}
+
+                                <li class="nav-item"><a class="nav-link" href="{{ dynamic.navigation_bar_link_1_link }}">{{dynamic.navigation_bar_link_1_text}}</a>
+                                </li>
+                                {% endif %}
+
+                                {% if dynamic.show_navigation_bar_link_2 %}
+
+                                <li class="nav-item"><a class="nav-link" href="{{ dynamic.navigation_bar_link_2_link }}">{{dynamic.navigation_bar_link_2_text}}</a><br>
+{#                                    <ul>#}
+{#                                        <!--  <li class="nav-item"><a class="nav-link" href="/faq">Faq</a>#}
+{#                                          </li>#}
+{#                                          <br> -->#}
+{#                                        <li><a class="nav-link" href="{{ dynamic }}">Our Story</a>#}
+{#                                        </li>#}
+{#                                        <br>#}
+{#                                    <!--    <li><a class="nav-link" href="/testimonial">Testimonials</a>#}
+{#                                        </li> -->#}
+{#                                        </li>#}
+{#                                    </ul>#}
+                                </li>
+                                {% endif %}
+
+
+
+                                {% if dynamic.show_navigation_bar_link_3 %}
+                                <li class="nav-item"><a class="nav-link" href="{{ dynamic.navigation_bar_link_3_link }}">{{ dynamic.navigation_bar_link_3_text }}</a></li>
+                                </li>
+                                {% endif %}
+
+
+                                {% if  dynamic.show_navigation_bar_link_4 %}
+                                    <li class="nav-item"><a class="nav-link" class="nav-link" href="{{ dynamic.navigation_bar_link_4_link }}">{{ dynamic.navigation_bar_link_4_text  }}</a>
+                                </li>
+                                {% endif %}
+
+{##}
+{#                                {% if dynamic.is_main_site and dynamic.show_index_white_label %}#}
+{#                                    <li class="nav-item"><a class="nav-link" href="/whitelabel">White Label Program</a>#}
+{#                                    </li>#}
+{#                                {% endif %}#}
+                           {% if dynamic.show_navigation_bar_link_5 %}
+                               <li class="nav-item"><a class="nav-link" href="{{ dynamic.navigation_bar_link_5_link }}">{{ dynamic.navigation_bar_link_5_text }}</a>
+                                </li>
+
+                           {% endif %}
+
+                                {% if dynamic.show_navigation_bar_link_6 %}
+                                <div class="client-loginshow">
+
+                                    <li class="nav-item"><a class="nav-link" href="{{dynamic.navigation_bar_link_6_link}}" target="_blank">{{ dynamic.navigation_bar_link_6_text }}
+                                        </a>
+                                    </li>
+                                </div>
+                                {% endif %}
+
+
+
+                                <style media="screen">
+                                    @media screen and (min-width: 576px) {
+                                        .client-loginshow li {
+                                            display: none;
+                                        }
+                                    }
+                                </style>
+                            </ul>
+                        </div>
+                    {% endif %}
+
+                        <a class="btn btn-white btn-sm" href="/dashboard" target="_blank"
+                           data-text="Client Login">
+                            Client Login
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

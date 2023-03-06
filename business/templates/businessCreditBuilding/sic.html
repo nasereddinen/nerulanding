@@ -1,0 +1,47 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>SIC & NAICS Codes</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/oH-dEvA43Zw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                             height="200px" width="100%" alt="">
+                        <br><br>
+                        <h5 class="card-title">Do You Know Your SIC & NAISC Code?</h5>
+                        <h5 class="card-title">Watch The Video Above To Learn What These Codes Are</h5>
+                        <div class="btn-group">
+                            <a target="_blank" class="btn btn-primary" href="https://www.naics.com/search/">Click The
+                                Button To <br>Check For Your SIC <br>& NAICS Code For Your Industry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

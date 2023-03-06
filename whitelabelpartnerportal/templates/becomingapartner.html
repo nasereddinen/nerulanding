@@ -1,0 +1,159 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <section class="main-content pt-4">
+        {#        <div class="row">#}
+        {#            <div class="col-md-12" style="margin-top: 40px">#}
+        {#                <iframe width="100%" height="515" src="https://www.youtube.com/embed/sJaMWvPb5yY" frameborder="0"#}
+        {#                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"#}
+        {#                        allowfullscreen></iframe>#}
+        {#            </div>#}
+        {#        </div>#}
+
+
+        {#        <div class="card">#}
+        {#            <div class="card-header card-default">#}
+        {#                Become a White Label Partner#}
+        {#            </div>#}
+        {#            <div class="card-body">#}
+
+        <div class="row justify-content-center mb-5">
+            <div>
+                <h1>
+                    Become a White Label Partner
+                </h1>
+
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Basic Partnership Program Package</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4">
+                            <ul class="la-list">
+                                <li>Access To Software With Your Branding</li>
+                                <li>Access To Mobile App With Your Branding When Client Logs In</li>
+                                <li>Access To Chrome Extension App With Your Branding When Client Logs In</li>
+                                <li>30% Commission On Our Products</li>
+                                <li>Email Support</li>
+                                <li>Ability To Upgrade To Get Our White Label Website With Your Branding Or Toll
+                                    Free Number, Fax Number, Professional Email Address & Business Credit
+                                    Building Automation
+                                </li>
+
+                            </ul>
+                        </div>
+                        {% if dynamic.offer_paid_whitelabel %}
+                            <div class="text-center py-4"><h1>${{ dynamic.basic_partnership_program_price }} /
+                                Year</h1>
+                                <h3>(We Do Have Financing Available)</h3></div>
+                                <form method="post">{% csrf_token %}
+                                    <input type="hidden" name="product" value="basic">
+                                    <button type="submit" class="btn btn-primary btn-block">Order Now</button>
+                                </form>
+                        {% else %}
+                            <div class="text-center pt-4"><h1>Free of charge</h1></div>
+                            <a class="btn btn-primary btn-block mt-4"
+                               href="{% url "whitelabelpartnerportal:becomingapartner1" %}">Register</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Premium Partnership Program</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4">
+                            <ul class="la-list">
+                                <li>Everything In Basic Package</li>
+                                <li>Marketing Done For You With Dedicated Customer Success Agent and Support
+                                    Number
+                                    For Your Clients (Google Ads, Quora, Facebook, Tiktok, Snapchat, Instagram,
+                                    Twitter)
+                                </li>
+                                <li>White Label Business Package That Includes: White Label Website, Toll Free
+                                    Number, Fax
+                                    Number, Virtual Address Set Up, Professional Email Address & Domain
+                                </li>
+                                <li>We build business credit for your entity that uses the partner program
+                                </li>
+                                <li>40% Commissions Instead Of 30% Commissions</li>
+                                <li>Access To 100,000 Small Business Leads</li>
+                                <li>50% Off Our Autodialer Service That Allows You To Do Bulk Text Messaging,
+                                    Voicemail
+                                    Drops & Call Drops With Ability to say 1 if interested and 2 if you want to
+                                    be places on the
+                                    do not call list
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="text-center py-4"><h1>${{ dynamic.premium_partnership_program_price }} /
+                            Month</h1>
+                            <h3>3 Month Commitment</h3>
+                            <h3>(Not Including Marketing Budget)</h3></div>
+                        <form method="post">{% csrf_token %}
+                            <input type="hidden" name="product" value="premium">
+                            <button class="btn btn-primary btn-block">Order Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-header card-default">
+                        <h1>Concierge Partnership Program (Application & Limited To 100 Partners)</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="pl-4 pb-4">
+                            <ul class="la-list">
+                                <li>1 Trip Anywhere In The World 5 Star Hotel Amenities & First Class Ticket
+                                </li>
+                                <li>1 Trip With Us To Cowboys Stadium To See Your Favorite NFL Team That They
+                                    Are
+                                    Playing In Our Suite With 1st Class Ticket Or Ability To Trade In For Trip
+                                    Of Equal Value
+                                </li>
+                                <li>All Of Your Payment Goes Toward Your Marketing</li>
+                                <li>Your Own Dedicated Two Person Sales Team</li>
+                                <li>50% Commissions</li>
+                                <li>Email Script That Allows You To Email For Free Over 10 AWS Virtual Machine
+                                    Servers
+                                    That We Set Up For You
+                                </li>
+                                <li>Wholesale Rate On All Autodialer Services</li>
+                                <li>Access to 5,000,000 Small Business Leads</li>
+                                <li>We Help You Set Up Automation For Your Business With Our Phone Script That
+                                    Calls
+                                    7,000 People For You On Your Behalf
+                                </li>
+                                <li>Your Own Dedicated App In App Store & Google Play Store</li>
+                                <li>Your Own Dedicated Chrome Extension</li>
+                                <li>Free Access On Our payroll service for up to 25 users</li>
+                                <li>Free Access To Our CRM Service Up To 25 Users</li>
+                            </ul>
+                        </div>
+                        <a class="btn btn-primary btn-block" href="{{ dynamic.appointment_link }}" target="_blank">Schedule
+                            An Appointment</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

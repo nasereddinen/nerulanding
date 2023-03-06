@@ -1,0 +1,122 @@
+{% extends "FinancingPortalNavigationBase.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+    <style>
+        iframe {
+            border: 0;
+        }
+
+    </style>
+
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center">
+            <h2>Access Softwares</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Products Purchased
+                    </div>
+                    <div id="app" class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Payments Left</th>
+                                    <th>Amount Left</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Open Here</th>
+                                    <th>Go To Software Page</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for prod in products %}
+                                    <tr>
+                                        <td>{{ prod.product }}</td>
+                                        <td>${{ prod.product.price }}</td>
+                                        <td>{{ prod.payments_left }}</td>
+                                        <td>${{ prod.amount_left }}</td>
+                                        <td>{% if prod.username %}{{ prod.username }}{% endif %}</td>
+                                        <td>{% if prod.password %}{{ prod.password }}{% endif %}</td>
+                                        <td>
+                                            {% if prod.product.link %}
+                                                <button v-on:click="addTab('{{ prod.product.name }}','{{ prod.product.link }}')"
+                                                        class="btn btn-primary">
+                                                    Open
+                                                </button>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if prod.product.link %}
+                                                <a class="btn btn-primary" href="{{ prod.product.link }}"
+                                                   target="_blank">Go To Site</a>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item d-flex" v-for="(page, index) in pages" :key="page.name">
+                                <a class="nav-link" :id="page.id + '-tab'" data-toggle="tab" :href="'#'+ page.id" role="tab">${page.title}</a>
+                            <p  v-on:click="close(index)" style="cursor: pointer">X </p>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <iframe class="tab-pane fade" v-for="page in pages" :key="page.name"  width="100%" height="800" :id="page.id" :src="page.url" role="tabpanel"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascriptblock %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            delimiters: ['${', '}'],
+
+            data: {
+                pages: [],
+            },
+            mounted: function () {
+
+            },
+            methods: {
+
+                addTab: function (name, url) {
+                    this.pages.push({
+                        title: name,
+                        url: url,
+                        id: name.replace(/ /g, '')
+                    })
+                },
+                close: function (index) {
+                    this.pages.splice(index, 1)
+                }
+
+            },
+        });
+    </script>
+{% endblock %}

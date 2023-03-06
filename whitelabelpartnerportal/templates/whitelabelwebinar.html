@@ -1,0 +1,69 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>White Label Webinars</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/2CJXeJCayLU" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+        <h2 style="text-align:center;">White Label Webinar Presentation</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://www.getdinerotoday.com/static/assets/img/webinar4.png" height="300px" alt="">
+                    <div class="card-body">
+                        <p class="card-text">Webinar With $1499 Offer</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-sm btn-primary"
+                                    href="https://docs.google.com/presentation/d/e/2PACX-1vQYDm2NpbvTeLMkxRPGiK_o04MBP0WRZ8PApR7IystJb5qEGIpg2T_9m-7VIG737BFg-Z30cToK_eAh/pub?start=false&loop=false&delayms=3000"
+                                    target="_blank">
+                                Get Webinar Presentation Slides
+                            </button>
+                        </div>
+                        <br>
+                        <table id="datatable" class="">
+                            {% for webinar in webinars %}
+                                <tr>
+                                    <td>
+                                        <a target="_blank" class="btn btn-primary"
+                                           href="{{ webinar.link }}">Click
+                                            Here For Your White Label Webinar</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

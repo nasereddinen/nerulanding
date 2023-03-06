@@ -1,0 +1,188 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header no-background no-shadow margin-b-0">
+
+    </div>
+    <section class="main-content">
+        <div class="jumbonew">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1>What Are Your Goals With The Platform? <br>Choose One To Begin With. <br><br>
+                        <h3>We Wouldn't Want You To Get <br>Overwhelmed To Begin With.</h3>
+                        <h3><br><b>*You Can Always Come Back & Choose Another Goal*</b></h3></h1>
+                </div>
+            </div>
+        </div>
+        <style media="screen">
+            .jumbonew h1 {
+                text-align: center;
+                font-size: 26px;
+            }
+
+            .jumbonew h3 {
+                text-align: center;
+            }
+        </style>
+        <br>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/439416/pexels-photo-439416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Build Business Credit & Access Business Credit That Isn't Personally
+                            Gauranteed <br><br><b> *Credit That Is Only In The Business Name*</b></h4></h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:buildbusinesscredit' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/2068975/pexels-photo-2068975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Get Immediate Money For My Business <br><br><b>*For Business Owners That
+                            Are Looking For Business Credit Cards, No Credit Check Financing, Personal Credit Cards, &
+                            Much More* </b></b>
+                        </h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:immediatemoney' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/164501/pexels-photo-164501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Apply For A Business Loan <br><br><b>*Only For Those That Are Making At
+                            Least $5,000 Per Month Over The Last Three months*</b></h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'loanportal:loanoffers' %}" target="_blank" class="btn btn-primary">Click For This
+                                    Goal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% if dynamic.show_credit_repair_plan %}
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/210881/pexels-photo-210881.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Fix & Or Build My Personal Credit</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:buildpersonalcredit' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+            {% if dynamic.is_main_site %}
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Make Extra Money Being An Affiliate Or Partner. <br><br><b>*Both Are Free
+                            To Join*</b></h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:makeextramoney' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Learn How To Market My Business & Get $500 In Marketing</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:marketingbusiness' %}" target="_blank" class="btn btn-primary">Click For This Goal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Repair My Business Credit</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:repairbusinesscredit' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">Get A Merchant Account For Your Business To Accept Credit Card & Debit
+                            Card Payments. <br><br><b>*Get A $50-$100 Sign Up Bonus For Your Merchant Account*</b></h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:merchant' %}" target="_blank" class="btn btn-primary">
+                                    Click For This Goal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <img src="https://images.pexels.com/photos/128867/coins-currency-investment-insurance-128867.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <h4 class="card-text">I Want To Learn How To Offer Financing To My Existing Customers</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'goals:offeringfinancing' %}" target="_blank" class="btn btn-primary">Click For This Goal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+{% endblock content %}

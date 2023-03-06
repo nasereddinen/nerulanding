@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if dynamic.title %}
+        <title>{{ dynamic.title }}</title>
+    {% endif %}
+
+    <style media="screen">
+
+        .image {
+            max-height: 200px;
+            max-width: 500px;
+        }
+
+        .bgcolor {
+        {% if dynamic.bg_color %}
+            background: {{ dynamic.bg_color }};
+        {% endif %}
+            background-repeat: no-repeat;
+            font-family: "Montserrat", sans-serif;
+            color: #575962;
+            font-size: 14px;
+            font-weight: 400;
+            min-height: 100vh;
+            line-height: 24px;
+            overflow-x: hidden;
+            margin: 0;
+            text-align: left;
+        }
+
+
+        .misc-box {
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .container {
+            padding-top: 60px;
+        }
+
+        .row {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .justify-content-center {
+            justify-content: center !important;
+        }
+
+        .widthClass {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .misc-header {
+            padding: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            font-weight: 400;
+        }
+
+        .group-icon {
+            position: relative;
+            display: flex;
+        }
+
+        .group-icon .form-control {
+            padding-right: 40px;
+        }
+
+        input {
+            font-size: 13px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            border-radius: 0px;
+            box-shadow: none;
+            border: 1px solid #dde6e9;
+            transition-duration: .5s;
+            display: block;
+            width: 100%;
+            height: 25px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+        }
+
+        .float-left {
+            float: left !important;
+        }
+
+        .form-control {
+            box-shadow: 0 0 0 #000 !important;
+        }
+
+        .group-icon .icon-input {
+            position: absolute;
+            right: 0px;
+            top: 10px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .text-muted {
+            color: #909fa7 !important;
+        }
+
+        .btn.btn-rounded {
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .checkbox {
+            padding-left: 5px;
+        }
+
+        .margin-r-5 {
+            margin-right: 5px !important;
+        }
+
+        .checkbox label {
+            font-weight: 300;
+            display: block;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checkbox input[type="checkbox"] {
+            cursor: pointer;
+            opacity: 0;
+            z-index: 1;
+            outline: none !important;
+        }
+
+        .btn.box-shadow {
+            -webkit-box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.1);
+            border: 2px solid !important;
+            border-color: #FFFFFF !important;
+        }
+
+        input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].btn-block {
+            width: 100%;
+        }
+
+        .btn.btn-block {
+            display: block;
+        }
+
+        .btn-primary {
+            background-color: #4b71fa !important;
+            border-color: #4b71fa !important;
+            color: #fff !important;
+        }
+
+        .btn {
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            font-size: 14px;
+            line-height: 1.538462;
+            font-weight: 400;
+            padding: 8px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .btn-success {
+            background-color: #7bcb4d !important;
+            border-color: #7bcb4d !important;
+            color: #fff !important;
+        }
+
+
+    </style>
+    {% block extrastyle %}
+
+    {% endblock %}
+</head>
+<body class='bgcolor'>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="misc-header text-center">
+            {% if dynamic.logo and dynamic.logo.url %}
+                <img class="toggle-none hidden-xs image" src="{{ dynamic.logo.url }}"/>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-xs-12 widthClass">
+            <div class="misc-box">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+{% include "components/JavaScriptBlock.html" %}
+<script>
+    $(".nano").nanoScroller();
+
+    // Left menu collapse
+    $('.left-nav-toggle a').on('click', function (event) {
+        event.preventDefault();
+        $("body").toggleClass("nav-toggle");
+    });
+
+    // Left menu collapse
+    $('.left-nav-collapsed a').on('click', function (event) {
+        event.preventDefault();
+        $("body").toggleClass("nav-collapsed");
+    });
+
+    // Left menu collapse
+    $('.right-sidebar-toggle').on('click', function (event) {
+        event.preventDefault();
+        $("#right-sidebar-toggle").toggleClass("right-sidebar-toggle");
+    });
+
+    //metis menu
+    $('#menu').metisMenu();
+
+    //slim scroll
+    $('.scrollDiv').slimScroll({
+        color: '#eee',
+        size: '5px',
+        height: '293px',
+        alwaysVisible: false
+    });
+
+    //tooltip popover
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+</script>
+</html>

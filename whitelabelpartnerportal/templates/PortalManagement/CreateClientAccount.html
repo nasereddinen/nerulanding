@@ -1,0 +1,63 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    
+
+       <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Create Account For Your Clients</h2></div>
+    </div>
+<div class="main-content d-flex justify-content-center align-items-center">
+<div class="col-md-12">
+<div class="row"></div>
+<form method="POST">
+{% if e %}
+<div class="alert alert-danger  " role="alert">
+  <strong>OH NO!</strong> account already exists
+  
+</div>
+    
+{% endif %}
+
+{% if profile %}
+<div class="alert alert-success  " role="alert">
+  <strong>success</strong> account created successfully
+  
+</div>
+    
+{% endif %}
+    
+{% csrf_token %}
+ <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">First Name</label>
+    <input type="text" name="first_name" class="form-control" required="required" id="first-name" aria-describedby="emailHelp">
+    
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail1"  class="form-label">Last Name</label>
+    <input type="text" class="form-control"  name="last_name"required="required" id="lastname" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" required="required" id="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" name="password" required="required" class="form-control" id="exampleInputPassword1">
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone Number</label>
+    <input type="tel" name="phone_number" required="required" class="form-control" id="exampleInputPassword1">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+</div>
+
+{% endblock content %}

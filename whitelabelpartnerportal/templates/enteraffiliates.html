@@ -1,0 +1,75 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12" style="margin-top: 40px">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/sJaMWvPb5yY" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header">
+                    Edit Affiliates
+                </div>
+                
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+
+                            <div class="btn-toolbar">
+                                <input type="submit" value="Submit" class="btn btn-primary mr-1"/>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        {% else %}
+
+            <div class="card">
+                <div class="card-header">
+                    Enter In Your New Leads
+                </div>
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form action="/whitelabelpartnerportal/enteraffiliates" accept-charset="UTF-8"
+                              method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" name="fullname" id="fullname"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phonenumber">Phone Number</label>
+                                <input type="text" name="phonenumber" id="phonenumber"/>
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" value="Create Newlead" class="btn btn-primary mr-1"
+                                        data-disable-with="Create Newlead">Create Newlead
+                                </button>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+    </section>
+
+{% endblock %}

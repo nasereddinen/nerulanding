@@ -1,0 +1,66 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Edit tradeline
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped dt-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Apply</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <form method="post">{% csrf_token %}
+
+
+                                    <td>{{ userstep.name }}</td>
+
+                                    <td>
+                                        $<input name="price" value="{{ userstep.price }}" type="number" step="0.01">
+                                    </td>
+                                    <td>
+                                        <input name="product" value="{{ userstep.product_id }}" type="hidden">
+                                        <button class="btn btn-sm btn-primary">Apply</button>
+                                    </td>
+                                </form>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="my-5"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

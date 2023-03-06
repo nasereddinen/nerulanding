@@ -1,0 +1,103 @@
+{% extends "pages/base-affiliate.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Your Commission On Products</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/gkVFggErEZ0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header card-default">
+                Commission Per Product
+            </div>
+        <div class="card-body">
+            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price Of Product</th>
+                    <th>Commission On Product</th>
+                    <th>Your Payment</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>Business Builder Annual Package</td>
+                      <td>Annual One Time Payment Of $1,499</td>
+                      <td>30%</td>
+                      <td>$450</td>
+                    </tr>
+                    <tr>
+                      <td>Business Builder Monthly Package</td>
+                      <td>Monthly Payments Of $159.99</td>
+                      <td>25%</td>
+                      <td>$40 per month</td>
+                    </tr>
+                    <tr>
+                      <td>Ai Website Builder / Template Website</td>
+                      <td>$30 a month or $360 a year </td>
+                      <td>25%</td>
+                      <td>$7.50 per month or $39.99 For The Year</td>
+                    </tr>
+                    <tr>
+                      <td>Toll Free Number</td>
+                      <td>$49 A Month Or $599 For The Year</td>
+                      <td>25%</td>
+                      <td>$12.25 per month or $150 per year</td>
+                    </tr>
+                    <tr>
+                      <td>Fax Number</td>
+                      <td>$19.99 Per Month Or $240.99 For The Year</td>
+                      <td>25%</td>
+                      <td>$5 per month or $60 per year</td>
+                    </tr>
+                    <tr>
+                      <td>Professional Email Address</td>
+                      <td>$29.99 For The Year</td>
+                      <td>5%</td>
+                      <td>$1.50 Per Year</td>
+                    </tr>
+                    <tr>
+                      <td>Domain Name</td>
+                      <td>$13.99 For The Year</td>
+                      <td>5%</td>
+                      <td>$0.70 per year</td>
+                    </tr>
+                    <tr>
+                      <td>Merchant Account</td>
+                      <td>Free - $10 per month per product</td>
+                      <td>Variable Bonus</td>
+                      <td>$100-$200</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

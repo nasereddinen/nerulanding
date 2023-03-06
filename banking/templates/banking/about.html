@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="zxx">
+<head>{% load static %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/bootstrap.min.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/animate.min.css' %}">
+    <!-- Meanmenu CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/meanmenu.css' %}">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/boxicons.min.css' %}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/flaticon.css' %}">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/nice-select.min.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/owl.carousel.min.css' %}">
+    <!-- Owl Carousel Default CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/owl.theme.default.min.css' %}">
+    <!-- Odometer CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/odometer.min.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/magnific-popup.min.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'banking/assets/css/responsive.css' %}">
+    <title>Leve - Online Banking & Payment Processing HTML Template</title>
+    <link rel="icon" type="image/png" href="{% static 'banking/assets/img/favicon.png' %}">
+</head>
+<body>
+    <!-- Start Preloader Area -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="shadow"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+    <!-- Start Top Header Area -->
+    <div class="top-header-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <ul class="top-header-information">
+                        <li>
+                            <i class='bx bx-envelope'></i>
+                            <a href="mailto:hello@gmail.com">hello@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class='bx bxs-phone'></i>
+                            <a href="tel:15143125678">+1 (514) 312-5678</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="top-header-others">
+                        <li>
+                            <i class='bx bxs-map'></i>
+                            <a href="atm-and-bank-locations.html">ATMs location</a>
+                        </li>
+                        <li class="languages-list">
+                            <select>
+                                <option value="1">English</option>
+                                <option value="2">العربيّة</option>
+                                <option value="3">Deutsch</option>
+                                <option value="3">Português</option>
+                                <option value="3">简体中文</option>
+                            </select>
+                        </li>
+                        <li>
+                            <i class='bx bx-user'></i>
+                            <a href="my-account.html">Sign In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Header Area -->
+    {% include "banking/navbar.html" %}
+    <!-- Start Page Banner -->
+    <div class="page-banner-area" style="
+        position: relative;
+        z-index: 1;
+        background-image: url('{% static 'banking/assets/images/page-banner-1.jpg' %}');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        background-attachment: fixed;
+        ">
+        <div class="container">
+            <div class="page-banner-content">
+                <h2>About us</h2>
+                <ul>
+                    <li>
+                        <a href="{% url 'banking_home' %}">Home</a>
+                    </li>
+                    <li>About us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Banner -->
+    <!-- Start About Area -->
+    <section class="about-area bg-ffffff ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content-warp">
+                        <span>About</span>
+                        <h3>We operate our banking services in many countries around the world.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. </p>
+                        <ul class="about-warp-list">
+                            <li>
+                                <i class="flaticon-check"></i>
+                                consectetur adipiscing elit
+                            </li>
+                            <li>
+                                <i class="flaticon-check"></i>
+                                Labore et dolore magna aliqua.
+                            </li>
+                            <li>
+                                <i class="flaticon-check"></i>
+                                Quis ipsum suspendisse ultrices gravida.
+                            </li>
+                            <li>
+                                <i class="flaticon-check"></i>
+                                Risus commodo viverra maecenas accumsan.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image" style="
+                    background-image: url('{% static 'banking/assets/images/about.jpg' %}');
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    z-index: 1;
+                    ">
+                        <a href="https://www.youtube.com/watch?v=-67xX2__1oM" class="video-btn popup-youtube">
+                            <i class='bx bx-play'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Area -->
+    <!-- Start Partner Area -->
+    <div class="partner-area ptb-100">
+        <div class="container">
+            <div class="partner-slider owl-carousel owl-theme">
+                <div class="partner-item">
+                    <img src="{% static 'banking/assets/images/partner-1.png' %}" alt="image">
+                </div>
+                <div class="partner-item">
+                    <img src="{% static 'banking/assets/images/partner-2.png' %}" alt="image">
+                </div>
+                <div class="partner-item">
+                    <img src="{% static 'banking/assets/images/partner-3.png' %}" alt="image">
+                </div>
+                <div class="partner-item">
+                    <img src="{% static 'banking/assets/images/partner-4.png' %}" alt="image">
+                </div>
+                <div class="partner-item">
+                    <img src="{% static 'banking/assets/images/partner-5.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Partner Area -->
+    <!-- Start Banking Area -->
+    <section class="banking-area bg-ffffff ptb-100">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div
+                    style="
+                    background-image: url('{% static 'banking/assets/images/banking-2.jpg' %}');
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    height: 100%;
+                    width: 100%;
+                    "
+                    ></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="banking-content">
+                        <span>Business banking</span>
+                        <h3>We operate our banking services in many countries around the world</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <ul class="banking-list">
+                            <li><i class="flaticon-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </li>
+                            <li><i class="flaticon-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                sed do eiusmod.</li>
+                            <li><i class="flaticon-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </li>
+                            <li><i class="flaticon-check"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod incididunt ut labore et dolore magna aliqua.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banking Area -->
+    <!-- Start Fun Facts Area -->
+    <section class="fun-facts-area bg-ffffff pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span>Why choose us</span>
+                <h2>Our bank has been providing services to its customers for almost 25 years.</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <div class="icon">
+                            <i class="flaticon-positive-vote"></i>
+                        </div>
+                        <h3>
+                            <span class="odometer" data-count="358412">00</span>
+                        </h3>
+                        <p>Happy customers</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <div class="icon">
+                            <i class="flaticon-confetti"></i>
+                        </div>
+                        <h3>
+                            <span class="odometer" data-count="25">00</span>
+                        </h3>
+                        <p>Years in banking</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <div class="icon">
+                            <i class="flaticon-bank"></i>
+                        </div>
+                        <h3>
+                            <span class="odometer" data-count="2545">00</span>
+                        </h3>
+                        <p>Our branches</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-fun-fact">
+                        <div class="icon">
+                            <i class="flaticon-success"></i>
+                        </div>
+                        <h3>
+                            <span class="odometer" data-count="54285">00</span>
+                        </h3>
+                        <p>Successfully works</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Fun Facts Area -->
+    <!-- Start Team Area -->
+    <section class="team-area bg-ffffff pb-70">
+        <div class="container">
+            <div class="section-title">
+                <span>Expert people</span>
+                <h2>Global leadership team</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{% static 'banking/assets/images/team-1.jpg' %}" alt="image">
+                        </div>
+                        <div class="team-content">
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h3>Mark Torres</h3>
+                            <span>Reporting expert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{% static 'banking/assets/images/team-2.jpg' %}" alt="image">
+                        </div>
+                        <div class="team-content">
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h3>Shawn Maranto</h3>
+                            <span>CEO & Co-Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="{% static 'banking/assets/images/team-3.jpg' %}" alt="image">
+                        </div>
+                        <div class="team-content">
+                            <ul class="social">
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-linkedin'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <i class='bx bxl-facebook'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <h3>Riley Dougherty</h3>
+                            <span>Project manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Team Area -->
+    <!-- Start Customer Area -->
+    <section class="customer-area ptb-100">
+        <div class="container">
+            <div class="section-title">
+                <span>Customers say</span>
+                <h2>What customers say about Us</h2>
+            </div>
+            <div class="customer-slider owl-carousel owl-theme">
+                <div class="customer-item">
+                    <img src="{% static 'banking/assets/images/customer-1.jpg' %}" alt="image">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.”</p>
+                    <div class="customer-info">
+                        <h3>Robert jakech</h3>
+                        <span>Software engineer</span>
+                    </div>
+                    <div class="icon">
+                        <i class="flaticon-right-quotation-mark"></i>
+                    </div>
+                </div>
+                <div class="customer-item">
+                    <img src="{% static 'banking/assets/images/customer-2.jpg' %}" alt="image">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.”</p>
+                    <div class="customer-info">
+                        <h3>Joseph nakabale</h3>
+                        <span>Software engineer</span>
+                    </div>
+                    <div class="icon">
+                        <i class="flaticon-right-quotation-mark"></i>
+                    </div>
+                </div>
+                <div class="customer-item">
+                    <img src="{% static 'banking/assets/images/customer-1.jpg' %}" alt="image">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.”</p>
+                    <div class="customer-info">
+                        <h3>Robert jakech</h3>
+                        <span>Software engineer</span>
+                    </div>
+                    <div class="icon">
+                        <i class="flaticon-right-quotation-mark"></i>
+                    </div>
+                </div>
+                <div class="customer-item">
+                    <img src="{% static 'banking/assets/images/customer-2.jpg' %}" alt="image">
+                    <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.”</p>
+                    <div class="customer-info">
+                        <h3>Joseph nakabale</h3>
+                        <span>Software engineer</span>
+                    </div>
+                    <div class="icon">
+                        <i class="flaticon-right-quotation-mark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Customer Area -->
+    {% include "banking/footer.html" %}
+    <!-- Start Copy Right Area -->
+    <div class="copyright-area">
+        <div class="container">
+            <div class="copyright-area-content">
+                <p>
+                    Copyright © 2021 Leve. All Rights Reserved by
+                    <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End Copy Right Area -->
+    <!-- Start Go Top Area -->
+    <div class="go-top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+    <!-- End Go Top Area -->
+    <!-- Jquery Slim JS -->
+    <script src="{% static 'banking/assets/js/jquery.min.js' %}"></script>
+    <!-- Popper JS -->
+    <script src="{% static 'banking/assets/js/popper.min.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'banking/assets/js/bootstrap.min.js' %}"></script>
+    <!-- Meanmenu JS -->
+    <script src="{% static 'banking/assets/js/jquery.meanmenu.js' %}"></script>
+    <!-- Nice Select JS -->
+    <script src="{% static 'banking/assets/js/jquery.nice-select.min.js' %}"></script>
+    <!-- Owl Carousel JS -->
+    <script src="{% static 'banking/assets/js/owl.carousel.min.js' %}"></script>
+    <!-- Magnific Popup JS -->
+    <script src="{% static 'banking/assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Odometer JS -->
+    <script src="{% static 'banking/assets/js/odometer.min.js' %}"></script>
+    <!-- Jquery Appear JS -->
+    <script src="{% static 'banking/assets/js/jquery.appear.min.js' %}"></script>
+    <!-- Ajaxchimp JS -->
+    <script src="{% static 'banking/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <!-- Form Validator JS -->
+    <script src="{% static 'banking/assets/js/form-validator.min.js' %}"></script>
+    <!-- Contact JS -->
+    <script src="{% static 'banking/assets/js/contact-form-script.js' %}"></script>
+    <!-- Wow JS -->
+    <script src="{% static 'banking/assets/js/wow.min.js' %}"></script>
+    <!-- Custom JS -->
+    <script src="{% static 'banking/assets/js/main.js' %}"></script>
+</body>
+</html>

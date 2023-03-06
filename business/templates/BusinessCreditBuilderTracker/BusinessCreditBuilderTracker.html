@@ -1,0 +1,410 @@
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Business Credit Builder Tracker</h2></div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Your Current Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product Purchased</th>
+                                    <th>Amount</th>
+                                    <th>Last Purchased</th>
+                                    <th>Where Business Tradelines Reports To</th>
+                                    <th>View Screenshot</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Expected Time Till Tradelines Shows On Your Report</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in current_tradelines %}
+                                    <tr>
+                                        <td>{{ tradeline.tradeline.company_name }}</td>
+                                        <td>{{ tradeline.tradeline.product }}</td>
+                                        <td>${{ tradeline.tradeline.tradeline_amount }}</td>
+                                        <td>{{ tradeline.last_purchased }}</td>
+                                        <td>{{ tradeline.tradeline.company_reports_to }}</td>
+                                        <td>{% if tradeline.screenshot %}{{ tradeline.screenshot }}{% endif %}</td>
+                                        <td>{% if tradeline.tradeline.tradeline_credit_amount %}{{ tradeline.tradeline.tradeline_credit_amount }}{% endif %}</td>
+                                        <td>{% if tradeline.expected_time %}{{ tradeline.expected_time }}{% endif %}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-end"><a class="btn btn-primary" href="{% url "business:add-tradelines-tracker" %}">Add Business Tradeline</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Business Tradelines We Can Add For You
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Reports To</th>
+                                    <th>Tier Of Business Credit</th>
+                                    <th>Price</th>
+                                    <th>Fee</th>
+                                    <th>Add Tradeline</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in our_tradelines %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>${{ tradeline.tradeline_amount }}</td>
+                                        <td>{% if tradeline.tradeline_credit_amount %}${{ tradeline.tradeline_credit_amount }}{% endif %}</td>
+                                        <td>{{ tradeline.company_reports_to }}</td>
+                                        <td>{% if tradeline.tier %}{{ tradeline.tier }}{% endif %}</td>
+                                        <td>${{ tradeline.price }}</td>
+                                        <td>${{ tradeline.charge }}</td>
+                                        <td>
+                                            <form method="post">{% csrf_token %}
+                                                <input type="hidden" name="product_id" value="{{ tradeline.product_id }}">
+                                                <input type="hidden" name="our_tradeline" value="1">
+                                                <button class="btn btn-primary">Add Tradeline</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="text-center"> Need To Check How Many Tradelines You Have Reporting? <br>
+                            <a class="btn btn-primary" href="{% url "business:business-credit-monitoring" %}" target="_blank">Go To Business Credit Monitoring</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Non Reporting Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Report To</th>
+                                    <th>Terms</th>
+                                    <th>Description</th>
+                                    <th>Link</th>
+                                    <th>Add Tradeline</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in nonreporting %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>${{ tradeline.price }}</td>
+                                        <td>${{ tradeline.tradeline_credit_amount }}</td>
+                                        <td>{{ tradeline.reports_to }}</td>
+                                        <td>{{ tradeline.terms}}</td>
+                                        <td>{{ tradeline.description }}</td>
+                                        <td>{% if tradeline.website_link %} <a class="btn btn-primary" target="_blank" href="{{tradeline.website_link }}">View</a>{% endif %}</td>
+                                        <td>
+                                            <form method="post">{% csrf_token %}
+                                                <input type="hidden" name="tradeline" value="{{ tradeline.id }}">
+                                                <input type="hidden" name="tier" value="tier5">
+                                                <button class="btn btn-primary">Add Tradeline</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Tier 1 Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert">
+                            You Need 3 Tradelines Reporting To Go To Tier 2<br/>
+                            Your Current Business Tradelines Number: {{ tradeline_count }}
+                        </div>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Report To</th>
+                                    <th>Terms</th>
+                                    <th>Description</th>
+                                    <th>Link</th>
+                                    <th>Tradeline We Can Help You Add?</th>
+                                    <th>Add Tradeline</th>
+                                    <th>Recommended?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in tier1 %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>${{ tradeline.price }}</td>
+                                        <td>${{ tradeline.tradeline_credit_amount }}</td>
+                                        <td>{{ tradeline.reports_to }}</td>
+                                        <td>{{ tradeline.terms }}</td>
+                                        <td>{{ tradeline.description }}</td>
+                                        <td>{% if tradeline.website_link %}<a class="btn btn-primary" target="_blank"
+                                                                              href="{{ tradeline.website_link }}">View</a>{% endif %}
+                                        </td>
+                                        <td>{% if tradeline.we_can_help %} In Concierge Program {% endif %}</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{% url "business:signupforconcierge" %}">Go
+                                                To Concierge Program</a>
+                                        </td>
+                                        <td>Yes, Because Of Your Current Business Tradelines.</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Tier 2 Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert">
+                            You Need 6 Tradelines Reporting To Go To Tier 3<br/>
+                            Your Current Business Tradelines Number: {{ tradeline_count }}
+                        </div>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Report To</th>
+                                    <th>Terms</th>
+                                    <th>Description</th>
+                                    <th>Link</th>
+                                    <th>Tradeline We Can Help You Add?</th>
+                                    <th>Add Tradeline</th>
+                                    <th>Recommended?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in tier2 %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>{{ tradeline.price }}</td>
+                                        <td>{{ tradeline.tradeline_credit_amount }}</td>
+                                        <td>{{ tradeline.reports_to }}</td>
+                                        <td>{{ tradeline.terms }}</td>
+                                        <td>{{ tradeline.description }}</td>
+                                        <td>{% if tradeline.website_link %}<a class="btn btn-primary" target="_blank"
+                                                                              href="{{ tradeline.website_link }}">View</a>{% endif %}
+                                        </td>
+                                        <td>{% if tradeline.we_can_help %} In Concierge Program {% endif %}</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{% url "business:signupforconcierge" %}">Go
+                                                To Concierge Program</a>
+
+                                        </td>
+                                        <td>
+                                            {% if tradeline_count >= 3 %}
+                                                Yes, Because Of Your Current Business Tradelines.
+                                            {% else %}
+                                                No, We Do Not Recommend Based On How Many Current Tradelines You Have.
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Tier 3 Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert">
+                            You Need 10 Tradelines Reporting To Go To Tier 4<br/>
+                            Your Current Business Tradelines Number: {{ tradeline_count }}
+                        </div>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Report To</th>
+                                    <th>Terms</th>
+                                    <th>Description</th>
+                                    <th>Link</th>
+                                    <th>Tradeline We Can Help You Add?</th>
+                                    <th>Add Tradeline</th>
+                                    <th>Recommended?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in tier3 %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>{{ tradeline.price }}</td>
+                                        <td>{{ tradeline.tradeline_credit_amount }}</td>
+                                        <td>{{ tradeline.reports_to }}</td>
+                                        <td>{{ tradeline.terms }}</td>
+                                        <td>{{ tradeline.description }}</td>
+                                        <td>{% if tradeline.website_link %}<a class="btn btn-primary" target="_blank"
+                                                                              href="{{ tradeline.website_link }}">View</a>{% endif %}
+                                        </td>
+                                        <td>{% if tradeline.we_can_help %} In Concierge Program {% endif %}</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{% url "business:signupforconcierge" %}">Go
+                                                To Concierge Program</a>
+
+                                        </td>
+                                        <td> {% if tradeline_count >= 6 %}
+                                            Yes, Because Of Your Current Business Tradelines.
+                                        {% else %}
+                                            No, We Do Not Recommend Based On How Many Current Tradelines You Have.
+                                        {% endif %}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Tier 4 Business Tradelines
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert">
+                            You Need 10-14 Tradelines Reporting For This Tier<br/>
+                            Your Current Business Tradelines Number: {{ tradeline_count }}
+                        </div>
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Business Name</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Tradeline Credit Amount</th>
+                                    <th>Where Business Tradelines Report To</th>
+                                    <th>Terms</th>
+                                    <th>Description</th>
+                                    <th>Link</th>
+                                    <th>Tradeline We Can Help You Add?</th>
+                                    <th>Add Tradeline</th>
+                                    <th>Recommended?</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for tradeline in tier4 %}
+                                    <tr>
+                                        <td>{{ tradeline.company_name }}</td>
+                                        <td>{{ tradeline.product }}</td>
+                                        <td>{{ tradeline.price }}</td>
+                                        <td>{{ tradeline.tradeline_credit_amount }}</td>
+                                        <td>{{ tradeline.reports_to }}</td>
+                                        <td>{{ tradeline.terms }}</td>
+                                        <td>{{ tradeline.description }}</td>
+                                        <td>{% if tradeline.website_link %}<a class="btn btn-primary" target="_blank"
+                                                                              href="{{ tradeline.website_link }}">View</a>{% endif %}
+                                        </td>
+                                        <td>{% if tradeline.we_can_help %} In Concierge Program {% endif %}</td>
+                                        <td>
+                                            <a class="btn btn-primary" href="{% url "business:signupforconcierge" %}">Go
+                                                To Concierge Program</a>
+                                        </td>
+                                        <td> {% if tradeline_count >= 10 %}
+                                            Yes, Because Of Your Current Business Tradelines.
+                                        {% else %}
+                                            No, We Do Not Recommend Based On How Many Current Tradelines You Have.
+                                        {% endif %}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

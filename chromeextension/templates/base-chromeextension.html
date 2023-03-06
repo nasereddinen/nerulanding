@@ -1,0 +1,145 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block navigation %}
+    <div class="main-sidebar-nav dark-navigation">
+        <div class="nano">
+            <div class="nano-content sidebar-nav">
+                <div class="card-body border-bottom text-center nav-profile">
+                    <br>
+                    <p class="lead margin-b-0 toggle-none">
+                        {{ request.user.get_full_name }}
+                    </p>
+                    <p class="text-muted mv-0 toggle-none">Welcome</p>
+                </div>
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item">
+                        <a href="{% url 'homepage' %}" class="nav-link"><span
+                                class="toggle-none">Go Back To Main Portal</span></a>
+                    </li>
+                    {% if request.user.profile.virtual_access_card_paid %}
+                        <li class="nav-item">
+                            <a href="/{{ request.resolver_match.app_name }}/virtual-card" class="nav-link"><span
+                                    class="toggle-none">Virtual Card Access</span></a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a href="{% url 'chromeextension:chromeextensionindex' %}" class="nav-link"><span
+                                class="toggle-none">Introduction Video Page For Chrome Extension Portal</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'chromeextension:moneyforbusinesscredit' %}" class="nav-link"><span
+                                class="toggle-none">Get Money To Build Business Credit</span></a>
+                    </li>
+                    <li class="nav-item"><a
+                            href="/chromeextension/user_data/"
+                            class="nav-link">Prefill Information So We Can Automate Forms For You</a></li>
+                    <li class="nav-item">
+                        <a href="{% url 'chromeextension:business-credit-plan' %}" class="nav-link"><span
+                                class="toggle-none">Create my business credit building plan</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><span class="toggle-none">Business Credit Building <span
+                                class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column " aria-expanded="false">
+                            <li class="nav-item"><a href="/chromeextension/business-entity"
+                                                    class="nav-link">Business
+                                Entity</a></li>
+                            <li class="nav-item"><a href="/chromeextension/ein" class="nav-link">EIN
+                                Number</a></li>
+                            <li class="nav-item"><a href="/chromeextension/business-license"
+                                                    class="nav-link">Business
+                                License</a></li>
+                            <li class="nav-item"><a href="/chromeextension/four-eleven"
+                                                    class="nav-link">411
+                                Listings</a></li>
+                            <li class="nav-item"><a href="/chromeextension/virtual-address"
+                                                    class="nav-link">Virtual
+                                Address</a></li>
+                            <li class="nav-item"><a href="/chromeextension/business-bank-account"
+                                                    class="nav-link">Business
+                                Bank Account</a></li>
+                            <li class="nav-item"><a href="/chromeextension/duns" class="nav-link">Duns
+                                Number</a></li>
+                            <li class="nav-item"><a href="/chromeextension/sic" class="nav-link">SIC
+                                & NAISC Codes</a>
+                            </li>
+                            <li class="nav-item"><a href="/chromeextension/business-good-standing"
+                                                    class="nav-link">Checking
+                                If Your Business Is In Good Standing </a></li>
+                            <li class="nav-item"><a
+                                    href="/chromeextension/business-in-good-standing"
+                                    class="nav-link">How
+                                To Get Your Business Back In Good Standing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a
+                            href="/chromeextension/business-credit-steps"
+                            class="nav-link">Business Steps We Can Automate For You</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"><span class="toggle-none">Business Credit Steps We Have Or Can Do For You <span
+                                class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column " aria-expanded="false">
+
+                    <li class="nav-item"><a
+                            href="/chromeextension/website-creation-options"
+                            class="nav-link">Website
+                        Creation</a></li>
+                    <li class="nav-item"><a href="/chromeextension/fax-number-options"
+                                            class="nav-link">Fax
+                        Number</a></li>
+                        <li class="nav-item"><a href="/chromeextension/professional-email"
+                                                class="nav-link">Professional
+                            Email Address</a></li>
+                        <li class="nav-item"><a href="/chromeextension/domain"
+                                                class="nav-link">Domain</a></li>
+                        <li class="nav-item"><a href="/chromeextension/toll-free-options"
+                                                class="nav-link">Toll Free
+                            Number</a></li>
+                      <li class="nav-item"><a href="/chromeextension/merchant-account"
+                                                class="nav-link">Merchant
+                            Account</a></li>
+                  </ul>
+                  </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                class="toggle-none"> Business Credit Bureaus To Become Established With  <span
+                                class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a href="/chromeextension/experian" class="nav-link"> Experian
+                                Business </a></li>
+                            <li class="nav-item"><a href="/chromeextension/dunn-brad" class="nav-link"> Dunn &
+                                Bradsheet </a></li>
+                            <li class="nav-item"><a href="/chromeextension/equifax" class="nav-link"> Equifax
+                                Business </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'businesscreditcourse:home' %}" class="nav-link"><span class="toggle-none">business credit building course</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript: void(0);" aria-expanded="false"> <span
+                                class="toggle-none">Corporate Credit List<span
+                                class="fa arrow"></span></span></a>
+                        <ul class="nav-second-level nav flex-column sub-menu" aria-expanded="false">
+                            <li class="nav-item"><a href="/chromeextension/vendor-list" class="nav-link">Starter Vendor
+                                List</a></li>
+                            <li class="nav-item"><a href="/chromeextension/store-credit-vendor-list" class="nav-link">Store
+                                Credit Vendor List</a></li>
+                            <li class="nav-item"><a href="/chromeextension/business-credit-vendor" class="nav-link">Revolving
+                                Business Credit Vendor List</a></li>
+                            <li class="nav-item"><a href="/chromeextension/cc-credit-vendor" class="nav-link">Credit
+                                Card No Personal Gaurantee Vendor List</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://chrome.google.com/webstore/detail/get-dinero-today/nopllamladnpdgmgcfbnhdfpllpgpcgk" target="_blank" class="nav-link"><span class="toggle-none">Download Our Chrome Extension To Automate Business Credit Building</span></a>
+                    </li>
+                    <br><br><br>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

@@ -1,0 +1,517 @@
+{% extends request.resolver_match.page_template %}
+{% load static %}
+{% block extrastyle %}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <style>
+        .select_box {
+            margin: 0 10px;
+            display: flex;
+            width: 130px;
+            height: 130px;
+            padding: 10px;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            background: #fafafa;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        .select_box:hover {
+            background: #f1fff1;
+            border: 2px solid green;
+        }
+
+        .select_box_selected {
+            background: #f1fff1;
+            border: 2px solid green !important;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Guided Business Creation Steps</h2>
+        </div>
+    </div>
+    <div class="room">
+        <section class="main-content">
+            <div class="row">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div id="applicat">
+                            <div class="card-header d-flex flex-column align-items-center">
+                                ${currentPage.title}
+                            </div>
+                            <div class="d-flex justify-content-center mb-5 flex-column align-items-center">
+                                <div class="d-flex justify-content-center w-75">
+                                    <div class="select_box" v-on:click="onSelectOption(1)"
+                                         :class="{select_box_selected : pages[currentPage.id].choice === 1 }">
+                                        <div class="text-center">
+                                            ${currentPage.answer1 || "Yes"}
+                                        </div>
+                                    </div>
+                                    <div class="select_box" v-on:click="onSelectOption(2)"
+                                         :class="{select_box_selected : pages[currentPage.id].choice === 2 }">
+                                        <div class="text-center">
+                                            ${currentPage.answer2 || "No, What Is This?"}
+                                        </div>
+                                    </div>
+                                    <div class="select_box" v-on:click="onSelectOption(3)"
+                                         :class="{select_box_selected : pages[currentPage.id].choice === 3 }">
+                                        <div class="text-center">
+                                            ${currentPage.answer3 || "No, But I Would Like To Get One."}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div v-if="currentPage.askForIndustry && pages[currentPage.id].choice === 3"
+                                     class="mt-5">
+                                    Select Industry:
+                                    <select v-model="industry" name="industry" id="industry"
+                                            class="custom-select w-100">
+                                        <option>Electrician</option>
+                                        <option>Gardener</option>
+                                        <option>Tattoo Artist</option>
+                                        <option>Photography</option>
+                                        <option>Limo Service</option>
+                                        <option>Nutrition Advisor</option>
+                                        <option>Life Coach</option>
+                                        <option>Veterinary clinic</option>
+                                        <option>Laundromat</option>
+                                        <option>Fitness Club</option>
+                                        <option>Dentist</option>
+                                        <option>Consulting</option>
+                                        <option>Auto Repair</option>
+                                        <option>Tutor</option>
+                                        <option>Bakery</option>
+                                        <option>Financial Advisor</option>
+                                        <option>Lawyer</option>
+                                        <option>Marketing Agency</option>
+                                        <option>Trucking</option>
+                                        <option>Locksmith</option>
+                                        <option>Medical Clinic</option>
+                                        <option>Dance Studio</option>
+                                        <option>Carpenter</option>
+                                        <option>Moving Company</option>
+                                        <option>Hair Salon</option>
+                                        <option>Cleaning Service</option>
+                                        <option>Car Dealer</option>
+                                        <option>Portfolio</option>
+                                        <option>Real Estate</option>
+                                        <option>Preschool</option>
+                                        <option>Spa Services</option>
+                                        <option>Physical Therapist</option>
+                                    </select>
+                                </div>
+
+                                <div v-if="currentPage.selectTollPrefix && pages[currentPage.id].choice === 3"
+                                     class="mt-5">
+                                    Select Toll Free Number Prefix:
+                                    <select v-model="toll_free_prefix" class="custom-select mb-2">
+                                        <option value="888">888 (Toll Free Prefix)</option>
+                                        <option value="877">877 (Toll Free Prefix)</option>
+                                        <option value="866">866 (Toll Free Prefix)</option>
+                                        <option value="855">855 (Toll Free Prefix)</option>
+                                        <option value="844">844 (Toll Free Prefix)</option>
+                                        <option value="833">833 (Toll Free Prefix)</option>
+                                        <option value="800">800 (Toll Free Prefix)</option>
+                                    </select>
+                                </div>
+
+                                <div v-if="currentPage.selectFaxPrefix && pages[currentPage.id].choice === 3"
+                                     class="mt-5">
+                                    Select Fax Number Prefix:
+                                    <select v-model="fax_prefix" class="custom-select mb-2">
+                                        <option value="888">888 (Toll Free Prefix)</option>
+                                        <option value="877">877 (Toll Free Prefix)</option>
+                                        <option value="866">866 (Toll Free Prefix)</option>
+                                        <option value="855">855 (Toll Free Prefix)</option>
+                                        <option value="844">844 (Toll Free Prefix)</option>
+                                        <option value="833">833 (Toll Free Prefix)</option>
+                                        <option value="800">800 (Toll Free Prefix)</option>
+                                    </select>
+                                </div>
+
+
+                                <div v-if="currentPage.chooseTime && pages[currentPage.id].choice === 3" class="mt-5">
+                                    Select option:
+                                    <select class="custom-select mb-2" v-on:change="changeTime"
+                                            v-model="pages[currentPage.id].time">
+                                        <option value="year">Yearly</option>
+                                        <option value="month">Monthly</option>
+                                    </select>
+                                </div>
+
+
+                                <div v-if="currentPage.askForDomain && pages[currentPage.id].choice === 3"
+                                     class="mt-5 w-50">
+                                    <label for="domain_name">Domain name:</label>
+                                    <div style="display: flex">
+                                        <input type="text" v-model="domain" name="domain_name" id="domain_name">
+                                        <div>
+                                            <a class="btn btn-primary"
+                                               v-on:click="checkDomain('domain_name')">Check</a>
+                                        </div>
+
+                                    </div>
+                                    <div id="domain-statusdomain_name"></div>
+
+                                </div>
+
+                                <div v-if="disabledNext && currentPage.explainEmail" class="mt-5 text-danger">
+                                    You Have To Buy Domain To Get Professional Email Address.
+                                </div>
+
+                                <div v-if="pages[currentPage.id].choice === 2" class="mt-5 px-5">
+                                    ${pages[currentPage.id].description}
+                                </div>
+
+
+                            </div>
+                            <div class="text-center">
+                                 ${currentPage.id+ 1} / ${pages.length}
+
+                            </div>
+
+                            <div class="progress mx-5 mb-2">
+                                <div class="progress-bar" role="progressbar" :style="{ width: calculateProgress() + '%' }" aria-valuenow="25"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-between">
+                                <div v-if="currentPage.id !== 0">
+                                    <button class="btn btn-primary" v-on:click="prevPage">Back</button>
+                                </div>
+                                <div v-else></div>
+
+                                <div v-if="currentPage.id !== pages.length-1">
+                                    <button class="btn btn-disabled" v-on:click="nextPage"
+                                            :class="{'btn-primary' : !disabledNext && pages[currentPage.id].choice, 'btn-disabled' : disabledNext || !pages[currentPage.id].choicde }">
+                                        Next
+                                    </button>
+                                </div>
+                                                                <div v-else>
+                                <button class="btn btn-disabled" :class="{'btn-primary' : canCheckout }"
+                                        v-on:click="onSubmitForm">Checkout
+                                </button>
+
+                                <form method="post" id="steps-form" style="display: none">{% csrf_token %}</form>
+                                                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+    </div>
+
+    <style media="screen">
+        .room {
+            margin-bottom: 10%;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+{% endblock %}
+
+
+{% block javascriptblock %}
+    <script>
+        const app = new Vue({
+            el: '#applicat',
+            delimiters: ['${', '}'],
+
+            data: {
+                currentPage: {
+                    id: 0,
+                    title: ""
+                },
+                industry: '',
+                domain: '',
+                toll_free_prefix: 888,
+                fax_prefix: 888,
+                disabledNext: false,
+                canCheckout: false,
+
+                pages: [
+                    {
+                        id: 0,
+                        name: 'LLC',
+                        title: "Do you have an LLC?",
+                        description: "LLC - A limited liability company (LLC) is a business structure in the United States whereby the owners are not personally liable for the company's debts or liabilities. Limited liability companies are hybrid entities that combine the characteristics of a corporation with those of a partnership or sole proprietorship."
+                    },
+                    {
+                        id: 1,
+                        name: 'EIN',
+                        title: "Do you have an EIN?",
+                        description: "The Employer Identification Number, also known as the Federal Employer Identification Number or the Federal Tax Identification Number, is a unique nine-digit number assigned by the Internal Revenue Service to business entities operating in the United States for the purposes of identification.",
+
+                    },
+                    {
+                        id: 2,
+                        title: "Do you have a website?",
+                        name1: 'website',
+                        name2: 'website_year',
+                        chooseTime: true,
+                        time: 'year',
+                        description: "A website is a collection of web pages and related content that is identified by a common domain name and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com.",
+                        askForIndustry: true
+                    },
+                    {
+                        id: 3,
+                        title: "Do you Have a Toll free Number?",
+                        name1: "toll_free_number",
+                        name2: "toll_free_number_year",
+                        chooseTime: true,
+                        selectTollPrefix: true,
+                        time: 'year',
+                        description: "A toll-free telephone number or freephone number is a telephone number that is billed for all arriving calls instead of incurring charges to the originating telephone subscriber. For the calling party, a call to a toll-free number from a landline is free of charge.",
+
+                    },
+                    {
+                        id: 4,
+                        title: "Do you have a fax number?",
+                        name1: "fax_number",
+                        name2: "fax_number_year",
+                        chooseTime: true,
+                        selectFaxPrefix: true,
+                        time: 'year',
+                        description: "A fax number is a phone number that can be used to contact a fax machine. It looks exactly like a regular phone number.",
+
+                    },
+                    {
+                        id: 5,
+                        title: "Do you have a domain name?",
+                        name1: "domain",
+                        name2: "domain_year",
+                        chooseTime: true,
+                        time: 'year',
+                        description: "Domain names are used to identify one or more IP addresses. ... Domain names are used in URLs to identify particular Web pages. For example, in the URL http://www.pcwebopedia.com/index.html, the domain name is pcwebopedia.com.",
+                        askForDomain: true
+                    },
+                    {
+                        id: 6,
+                        title: "Do you have a professional email address?",
+                        name1: "professional_email_address",
+                        name2: "professional_email_address_year",
+                        chooseTime: true,
+                        time: 'year',
+                        description: "A professional email address is the one that has your business name in it. For example, john@myphotostudio.com is a professional email address. ... For a professional email address, you will need a domain name and a website",
+                        explainEmail: true,
+                    },
+                    {
+                        id: 7,
+                        name: 'business_account',
+                        title: "Do you have a business bank account?",
+                        description: "A business bank account is an account that helps the business owner keep business transactions separate from personal finances, and usually comes with special conditions for businesses. ... Business bank accounts are different to private or personal bank accounts as they are made specifically for businesses.",
+
+                    },
+                    {
+                        id: 8,
+                        name: 'merchant_account',
+                        title: "Do you have a merchant account?",
+                        description: "A merchant account is a type of bank account that allows businesses to accept payments in multiple ways, typically debit or credit cards. A merchant account is established under an agreement between an acceptor and a merchant acquiring bank for the settlement of payment card transactions.",
+
+                    },
+                    {
+                        id: 9,
+                        name: 'duns',
+                        title: "Do you have a duns number?",
+                        description: "The Data Universal Numbering System, abbreviated as DUNS or D-U-N-S, is a proprietary system developed and managed by Dun & Bradstreet that assigns a unique numeric identifier, referred to as a \"DUNS number\" to a single business entity. It was introduced in 1963 to support D&B's credit reporting practice",
+
+                    },
+                    {
+                        id: 10,
+                        name: 'tradelines',
+                        answer1: 'No, I Do Not Need To Add Business Tradelines.',
+                        answer3: 'Yes, I Would Like To Add Business Tradelines',
+                        title: "Would you like to add business tradelines?",
+                        description: "A business tradeline is a credit account between a business and vendor. ... Like other small business credit options, they include information from vendors who report to commercial credit reporting agencies. For example, a vendor account with net-30, net-60, or net-90 terms.",
+
+                    },
+                    {
+                        id: 11,
+                        name: 'marketing',
+                        answer1: 'No, I Do Not Need Help Marketing My Business',
+                        answer3: 'Yes, I Would Like Help With Marketing My Business',
+                        title: "Do you need help marketing your business?",
+                        description: "Marketing is profitably using the results of studying short term and long term needs of those who can pay for a one-time, or in most cases, a steady flow of service or product placement.",
+
+                    },
+                ],
+            },
+            mounted: function () {
+                this.init();
+            },
+            methods: {
+                init: function () {
+                    for (let i of this.pages) {
+                        i.choice = null
+                    }
+                    this.currentPage = this.pages[0]
+                },
+
+                nextPage: function () {
+                    if (this.pages[this.currentPage.id].choice && this.currentPage.id + 1 <= this.pages.length && !this.disabledNext) {
+                        this.currentPage = this.pages[this.currentPage.id + 1]
+                        this.onSelectOption(this.pages[this.currentPage.id].choice)
+                    }
+                },
+
+                prevPage: function () {
+                    if (this.currentPage.id - 1 >= 0) {
+                        this.currentPage = this.pages[this.currentPage.id - 1]
+                        this.onSelectOption(this.pages[this.currentPage.id].choice)
+                    }
+                },
+
+                onSelectOption: function (choice) {
+                    if (choice >= 1 && choice <= 3) {
+
+                        this.disabledNext = choice === 2;
+
+                        if (this.currentPage.explainEmail) {
+                            if (choice === 3 && !this.domain) {
+                                this.disabledNext = true
+                            }
+                        }
+
+
+                        if (this.currentPage.askForDomain) {
+                            if (choice === 1) {
+                                this.disabledNext = false
+                            }
+                            if (choice === 3 && !this.domain) {
+                                this.disabledNext = true
+                            }
+                        }
+
+                        const pages = [...this.pages];
+                        pages[this.currentPage.id].choice = choice
+                        this.pages = pages
+
+                        if (this.pages.filter(i => i.choice === null || i.choice === 2).length === 0) {
+                            this.canCheckout = true
+                        }
+
+                    }
+                },
+
+                calculateProgress: function () {
+                    return ((this.currentPage.id + 1) / this.pages.length) * 100
+                },
+
+                onDomainChange: function (e) {
+                    this.domain = e.target.value
+                    this.disabledNext = !Boolean(this.domain)
+                },
+
+                onChooseTime: function (choice) {
+
+                    const pages = [...this.pages];
+                    pages[this.currentPage.id].time = choice
+                    this.pages = pages
+                },
+
+                onSubmitForm: function () {
+                    if (this.canCheckout) {
+                        const form = document.getElementById('steps-form');
+                        let input;
+
+                        for (let item of this.pages) {
+                            if (item.name1 && item.choice === 3) {
+                                input = document.createElement('input');
+                                if (item.time === 'year') {
+                                    input.name = item.name2;
+                                } else if (item.time === 'month') {
+                                    input.name = item.name1;
+                                }
+                                input.value = 'on';
+                                form.appendChild(input);
+                            }
+
+                            if (item.name && item.choice === 3) {
+                                input = document.createElement('input');
+                                input.name = item.name;
+                                input.value = 'on';
+                                form.appendChild(input);
+                            }
+                        }
+
+                        input = document.createElement('input');
+                        input.name = 'toll_free_number_prefix';
+                        input.value = this.toll_free_prefix;
+                        form.appendChild(input);
+
+                        input = document.createElement('input');
+                        input.name = 'fax_number_prefix';
+                        input.value = this.fax_prefix;
+                        form.appendChild(input);
+
+                        input = document.createElement('input');
+                        input.name = 'industry';
+                        input.value = this.industry;
+                        form.appendChild(input);
+
+                        input = document.createElement('input');
+                        input.name = 'domain_name';
+                        input.value = this.domain;
+                        form.appendChild(input);
+
+                        input = document.createElement('input');
+                        input.name = 'domain_name_year';
+                        input.value = this.domain;
+                        form.appendChild(input);
+
+                        form.submit();
+                    }
+                },
+
+                checkDomain: function (form_id) {
+                    const check = async (form_id) => {
+                        var formData = new FormData();
+                        var valu = document.getElementById(form_id).value
+                        formData.append('domain', valu)
+                        var response = await fetch('{% url "check_domain" %}', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        var data = await response.json()
+
+                        if (data.status === 'true') {
+                            document.getElementById('domain-status' + form_id).innerHTML = document.getElementById(form_id).value + " is available."
+                            document.getElementById('domain-status' + form_id).style.color = 'inherit'
+                            this.domain = valu;
+                            this.disabledNext = false
+                        } else {
+                            document.getElementById('domain-status' + form_id).innerHTML = data.error
+                            document.getElementById('domain-status' + form_id).style.color = 'red'
+                            this.domain = '';
+                            this.disabledNext = true
+                        }
+                    }
+                    check(form_id)
+                },
+
+                changeTime: function (event) {
+                    this.pages[this.currentPage.id].time = event.target.value
+                }
+
+            },
+        });
+    </script>
+{% endblock %}

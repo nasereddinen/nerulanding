@@ -1,0 +1,54 @@
+{% extends request.resolver_match.page_template %}
+{% load static %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Sign Up For Concierge Program</h2></div>
+    </div>
+    <section class="main-content">
+        <div class="container">
+            <div class="card-deck mb-3">
+                <div class="card mb-6 shadow-sm">
+                    <div class="card-header text-center">
+                        Concierge Program
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title text-center">$3,999<small class="text-muted">/
+                            Year</small></h1>
+                        <div class="pl-4">
+                            <ul class="la-list mt-3 mb-4">
+                                <li>Set up Your business credibly, and manage your account</li>
+                                <li>Apply For Business Loans To Access To Get Best Rates</li>
+                                <li>Tailored Done For You Website Design (Usually $2,000+)</li>
+                                <li>Free Web Hosting For The Entire Year</li>
+                                <li>We Buy Your Fax Number For Entire Year(Usually $100+)</li>
+                                <li>Professional Email (Usually $100+)</li>
+                                <li>Toll-Free Number Purchase For The Entire Year (Whole sale rate of $10 Per Month On
+                                    Up To 2 Other Members) (Savings Of $1,500+ Per Year)
+                                </li>
+                                <li>1 Year Free On Our Accounting Software</li>
+                                <li>We List You On 411</li>
+                                <li>Set Up Your Business Entity</li>
+                                <li>Help With Credit Repair via our affiliate</li>
+                                <li>Help You With Marketing Strategies & Getting You With The Best Marketing Companies
+                                </li>
+                                <li>Get You Business Credit Vendors To Begin Building Business Credit</li>
+                                <li>50% Off Our Autodialer Services and $1,000 of free credits</li>
+                                <li>100,000 B2B Leads In Your Target Industry</li>
+                                <li>Position your business for loans and lines of credit</li>
+                                <li>Position you to get business credit cards to grow your business</li>
+                                <li>Your Own Backend App To Track Progress</li>
+                                <li>One On One Customer Success Agent</li>
+                            </ul>
+                        </div>
+                        <form method="post">{% csrf_token %}
+                            <input type="hidden" name="product" value="concierge_program">
+                            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

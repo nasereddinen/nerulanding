@@ -1,0 +1,67 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+        </div>
+    </div>
+
+    <section class="main-content">
+
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header">
+                    Edit Zelle Information
+                </div>
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="btn-toolbar">
+                                <input type="submit" value="Submit" class="btn btn-primary mr-1"/>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="card">
+                <div class="card-header">
+                    Enter In New Zelle Information
+                    <br> <br> 
+                    Please Fill-Out At Least One Field
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form action="/whitelabelpartnerportal/addzelleinfoform" accept-charset="UTF-8"
+                              method="post">{% csrf_token %}
+                          
+                            <div class="form-group">
+                                <label for="zelle_email">Zelle Email</label>
+                                <input type="email" name="zelle_email" id="=zelle_email"/>
+                               
+                            </div>
+                            <div class="form-group">
+                             <label for="zelle_phone">Zelle Phone Number</label>
+                               <input type="text" name="zelle_phone" pattern="[0-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9">
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" class="btn btn-primary mr-1">Submit</button>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </section>
+
+
+{% endblock %}

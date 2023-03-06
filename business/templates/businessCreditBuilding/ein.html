@@ -1,0 +1,22 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Business EIN Number</h2>
+        </div>
+    </div>
+    <section class="main-content">
+      {% include 'businessCreditBuilding/CreditBuildingTemplates/ein.html' %}
+    </section>
+
+
+{% endblock %}

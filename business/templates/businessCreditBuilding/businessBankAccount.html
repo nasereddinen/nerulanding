@@ -1,0 +1,65 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">Business Bank Account</a></li>
+            </ol>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://d187qskirji7ti.cloudfront.net/companies/wide_images/000/000/005/1518101921_large.png"
+                             height="200px" width="100%" alt="">
+                        <br><br>
+                        <h5 class="card-title">Do You Need A Business Bank Account?</h5>
+                        <h5 class="card-title">We Also Recommend JP Morgan Chase </h5>
+                        <div class="btn-group">
+                            <a target="_blank" class="btn btn-primary" href="https://www.chase.com/business">Click Here To Go
+                                <br>To Their Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="https://spring.capitalone.com/img/print-logo-blue.png" height="200px" width="100%"
+                             alt="">
+                        <br><br>
+                        <h5 class="card-title">Do You Need A Business Bank Account?</h5>
+                        <h5 class="card-title">We Also Recommend Capital One Bank</h5>
+                        <div class="btn-group">
+                            <a target="_blank" class="btn btn-primary" href="https://www.capitalone.com/">Click Here To
+                                Go <br>To Their Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

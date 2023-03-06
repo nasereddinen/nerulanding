@@ -1,0 +1,288 @@
+{% extends "userBase.html" %}
+{% block extrastyle %}
+
+    <style>
+    .misc-box{
+        background-color: {{ dynamic.login_window_color }};
+    }
+    </style>
+
+<style type="text/css">
+
+        .group {
+            background: white;
+            box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10),
+            0 3px 6px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            position: relative;
+            color: #8898AA;
+            font-weight: 300;
+            height: 40px;
+            line-height: 40px;
+            {#margin-left: 20px;#}
+            display: block;
+        }
+
+        .group label:not(:last-child) {
+            border-bottom: 1px solid #F0F5FA;
+        }
+
+        label > span {
+            width: 20%;
+            text-align: right;
+            float: left;
+        }
+
+        .field {
+            background: transparent;
+            font-weight: 300;
+            border: 0;
+            color: #31325F;
+            outline: none;
+            padding-right: 10px;
+            padding-left: 10px;
+            cursor: text;
+            width: 70%;
+            height: 40px;
+            float: right;
+        }
+
+        .field::-webkit-input-placeholder {
+            color: #CFD7E0;
+        }
+
+        .field::-moz-placeholder {
+            color: #CFD7E0;
+        }
+
+        .field:-ms-input-placeholder {
+            color: #CFD7E0;
+        }
+
+
+        .outcome {
+            float: left;
+            width: 100%;
+            padding-top: 8px;
+            min-height: 24px;
+            text-align: center;
+        }
+
+        .success, .error {
+            display: none;
+            font-size: 13px;
+        }
+
+        .success.visible, .error.visible {
+            display: inline;
+        }
+
+        .error {
+            color: #E4584C;
+        }
+
+        .success {
+            color: #666EE8;
+        }
+
+        .success .token {
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .button-link {
+            background: none !important;
+            border: none;
+            padding: 0 !important;
+            color: #4b71fa;
+            cursor: pointer;
+        }
+
+        .button-link:hover {
+            color: #0056b3;
+        }
+
+        .widthClass {
+    width: 500px;
+    margin-bottom: 20px;
+}
+    </style>
+
+{% endblock %}
+{% block content %}
+    {% if error %}
+        <p class=" text-center"><font size="3" color="red">{{ error }}</font></p>
+    {% endif %}
+    <form class="new_user" id="new_user" action="" accept-charset="UTF-8" method="post"> {% csrf_token %}
+        <div class="form-group">
+            <label for="user_first_name">First name</label>
+            <div class="group-icon">
+                <input autofocus="autofocus" placeholder="First Name" class="form-control" required="required"
+                       type="text" name="first_name" id="user_first_name"/>
+                <span class="icon-user text-muted icon-input"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="user_last_name">Last name</label>
+            <div class="group-icon">
+                <input placeholder="Last Name" class="form-control" required="required" type="text" name="last_name"
+                       id="user_last_name"/>
+                <span class="icon-user text-muted icon-input"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="user_email">Email</label>
+            <div class="group-icon">
+                <input autocomplete="email" placeholder="Email" class="form-control" required="required" type="email"
+                       value="" name="email" id="user_email"/>
+                <span class="icon-user text-muted icon-input"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="user_password">Password</label>
+            <div class="group-icon">
+                <input autocomplete="new-password" placeholder="Password" class="form-control" required="required"
+                       type="password" name="password" id="user_password"/>
+                <span class="icon-lock text-muted icon-input"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="user_password_confirmation">Password confirmation</label>
+            <div class="group-icon">
+                <input autocomplete="new-password" placeholder="Confirm Password" class="form-control"
+                       required="required" type="password" name="user[password_confirmation]"
+                       id="user_password_confirmation"/>
+                <span class="icon-lock text-muted icon-input"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone</label>
+            <div class="group-icon">
+                <input placeholder="Phone" class="form-control" required="required" type="text" name="phone_number"
+                       id="phone_number"/>
+                <span class="icon-user text-muted icon-input"></span>
+            </div>
+        </div>
+
+
+        {% if dynamic.is_paid %}
+
+                <div>
+                    <div class="group">
+                        <label>
+                            <span>Name</span>
+                            <input name="cardholder-name" class="field" placeholder="Jane Doe"/>
+                        </label>
+                    </div>
+                    <div class="group">
+                        <label>
+                            <span>Card</span>
+                            <div id="card-element" class="field"></div>
+                        </label>
+                    </div>
+                    <input id="stripeToken" name="stripeToken" type="hidden"/>
+                </div>
+                <button type="submit" class="newButton btn btn-block btn-primary btn-rounded box-shadow mt-10" style="width: 100%">Pay ${{ dynamic.portal_price }} And Register</button>
+                <div class="outcome">
+                    <div class="error" role="alert"></div>
+                    <div class="success">
+                        Success! Your Stripe token is <span class="token"></span>
+                    </div>
+                </div>
+
+            <script src="https://js.stripe.com/v3/"></script>
+            <script type="text/javascript">
+
+                var stripe = Stripe('{{stripe_key}}');
+                var elements = stripe.elements();
+
+                var card = elements.create('card', {
+                    style: {
+                        base: {
+                            iconColor: '#666EE8',
+                            color: '#31325F',
+                            lineHeight: '40px',
+                            fontWeight: 300,
+                            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                            fontSize: '15px',
+
+                            '::placeholder': {
+                                color: '#CFD7E0',
+                            },
+                        },
+                    }
+                });
+
+                card.mount('#card-element');
+
+                function setOutcome(result) {
+
+                    var successElement = document.querySelector('.success');
+                    var errorElement = document.querySelector('.error');
+                    successElement.classList.remove('visible');
+                    errorElement.classList.remove('visible');
+
+                    if (result.token) {
+                        document.getElementById('stripeToken').value = result.token.id;
+                        successElement.querySelector('.token').textContent = result.token.id;
+                        successElement.classList.add('visible');
+                        return true
+                    } else if (result.error) {
+                        errorElement.textContent = result.error.message;
+                        errorElement.classList.add('visible');
+                        return false
+                    }
+                }
+
+                card.on('change', function (event) {
+                    setOutcome(event);
+                });
+
+
+                document.getElementById('new_user').addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    var form = document.getElementById('new_user');
+                    var extraDetails = {
+                        name: form.querySelector('input[name=cardholder-name]').value,
+                    };
+                    var res = await stripe.createToken(card, extraDetails)
+                    console.log(res)
+                    var isOk = setOutcome(res);
+                    (isOk && form.submit());
+                });
+
+
+            </script>
+        {% else %}
+            <div class="text-center"> By Clicking 'Register Now' You Agree with <a href="{% url 'user:terms' %}"
+                                                                                   target="_blank">Terms and
+                Conditions</a>
+            </div>
+            <input type="submit" name="commit" value="Register Now"
+                   class="newButton btn btn-block btn-primary btn-rounded box-shadow mt-10"
+                   data-disable-with="Register Now"/>
+        {% endif %}
+
+        <hr>
+
+        <p class=" text-center">Have an account?</p>
+        <a class="btn btn-block btn-success btn-rounded box-shadow" href="{% url 'user:login' %}">Login</a>
+    </form>
+
+    <style>
+        .newButton {
+            height: 40px !important;
+        }
+
+        hr {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+
+{% endblock %}

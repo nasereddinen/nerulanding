@@ -1,0 +1,75 @@
+
+
+  <!--End of Tawk.to Script-->
+
+
+
+<footer class="container-fluid pt-3 pl-5 pr-5" data-bg-img="/static/images/pattern/03.png">
+  <div class="primary-footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 md-m2-5">
+          {% if dynamic %}
+                    <h3 class="mb-2 wow fadeInUp" data-wow-duration="1.5s"
+                        style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">{{dynamic.title}}</h3>
+          {% endif %}
+
+            <p class=" mb-1 wow fadeInUp font-small pr-lg-2" data-wow-duration="2s" data-wow-delay="0.3s"
+                       style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        {{ dynamic.footer_text }}</p>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 md-m2-5">
+          <h4 class="wow fadeInUp" data-wow-duration="1.5s"
+          style="visibility: visible; animation-duration: 1.5s; animation-name: fadeInUp;">Contact Us</h4>
+         {% if dynamic %}
+          <ul class="media-icon list-unstyled mb-1 wow fadeInUp font-small pr-md-2" data-wow-duration="2s" data-wow-delay="0.3s"
+          style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
+            <li>
+
+              <p class="mb-0"><i class="fa fa-home" aria-hidden="true"></i> Address: <b>{{dynamic.address}}</b>
+              </p>
+            </li>
+            <li><i class="fa fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:{{dynamic.email}}"><b>{{dynamic.email}}</b></a>
+            </li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i> Phone: <a href="tel:{{dynamic.phno}}"><b>{{dynamic.phno}}</b></a>
+            </li>
+          </ul>
+         {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="secondary-footer mb-2 ">
+    <div class="container-fluid">
+      <div class="copyright text-center">
+        <div class="row align-items-center" style="
+        color: rgb(41, 21, 21);
+    ">
+          {% if dynamic %}
+          <div class="col-lg-12 col-md-12"> <span>&copy; {{dynamic.title}} 2020 | All Rights Reserved</span>
+          {% else %}
+            <div class="col-lg-12 col-md-12"> <span>&copy; Get Dinero Today 2020 | All Rights Reserved</span>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</footer>
+<div class="secondary-footer bg-dark">
+  <div class="container-fluid">
+    <div class="copyright text-center">
+      <div class="row align-items-center pa-3" style="
+      color: white;
+  ">
+        {% if dynamic %}
+        <div class="col-lg-12 col-md-12 col-sm-12"> <span>&copy; {{dynamic.title}} 2020 | All Rights Reserved</span>
+        {% else %}
+          <div class="col-lg-12 col-md-12 col-sm-12"> <span>&copy; Get Dinero Today 2020 | All Rights Reserved</span>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

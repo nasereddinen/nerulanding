@@ -1,0 +1,27 @@
+{% extends "pages/base-creditcourse.html" %}
+{% load static %}
+{% block content %}
+{% if dynamic.show_personal_credit_course %}
+  <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+        <h3>{{dynamic.personal_credit_course_video_Heading}}</h3>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+             {{dynaminc.personal_credit_course_video_link|safe}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body">
+                    <center><h3>{{dynamic.personal_credit_course_video_link_text}}</center>
+                </div>
+            </div>
+    </section>
+
+{% endif %}
+  
+
+{% endblock %}

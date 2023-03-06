@@ -1,0 +1,88 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Personal Credit Cards</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            {% if dynamic.is_main_site %}
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/_BR_cdMkxRw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            {% endif %}
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Lenders You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Credit Card Name</th>
+                                    <th>Min Credit Score Needed</th>
+                                    <th>Credit Bureau They Pull From</th>
+                                    <th>Debt Ratio Needed</th>
+                                    <th>Bankruptcy</th>
+                                    <th>Derogatory Credit Data</th>
+                                    <th>APR</th>
+                                    <th>Misc. Information</th>
+                                    <th>Apply Now</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for cc in personal_credit_cards %}
+                                    <tr>
+                                        <td>{{ cc.cc_name }}</td>
+                                        <td>{{ cc.min_credit_score }}</td>
+                                        <td>{{ cc.credit_bureau }}</td>
+                                        <td>{{ cc.debt_ratio }}</td>
+                                        <td>{{ cc.bankruptcy }}</td>
+                                        <td>{{ cc.credit_data }}</td>
+                                        <td>{{ cc.apr }}</td>
+                                        <td>{{ cc.misc_info }}</td>
+                                        <td><a href="{{ cc.get_url }}" target="_blank">
+                                            <button type="submit" class="btn btn-primary" name="signup"
+                                                    value="Apply Now">
+                                                Apply Now
+                                            </button>
+                                        </a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

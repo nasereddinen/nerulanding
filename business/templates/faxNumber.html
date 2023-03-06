@@ -1,0 +1,237 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Fax Number</h2>
+        </div>
+    </div>
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/41BYcPJqi5M" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/LINe6YHwCOw" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h3>Fax Number Standard Plan</h3>
+                        <ul>
+                            <li>Send 150 pages/mo</li>
+                            <li>Receive 150 pages/mo</li>
+                        </ul>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
+                            {#                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">#}
+                            {#                                <input type="hidden" name="cmd" value="_s-xclick">#}
+                            {#                                <input type="hidden" name="hosted_button_id" value="PE7HKSCE2WLKG">#}
+                            {#                                <table>#}
+                            {#                                    <tr>#}
+                            {#                                        <td><input type="hidden" name="on0"#}
+                            {#                                                   value="Fax Numbers To Choose From (7 Day Free Trial)">Fax Numbers To#}
+                            {#                                            Choose From (7 Day Free Trial)#}
+                            {#                                        </td>#}
+                            {#                                    </tr>#}
+                            {#                                    <tr>#}
+                            {#                                        <td><select name="os0">#}
+                            {#                                            <option value="888 (Toll Free Prefix)">888 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="877 (Toll Free Prefix)">877 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="866 (Toll Free Prefix)">866 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="855 (Toll Free Prefix)">855 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="844 (Toll Free Prefix)">844 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="833 (Toll Free Prefix)">833 (Toll Free Prefix)</option>#}
+                            {#                                            <option value="800 (Toll Free Prefix)">800 (Toll Free Prefix)</option>#}
+                            {#                                        </select></td>#}
+                            {#                                    </tr>#}
+                            {#                                </table>#}
+                            {#                                <input type="image"#}
+                            {#                                       src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0"#}
+                            {#                                       name="submit" alt="PayPal - The safer, easier way to pay online!">#}
+                            {#                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"#}
+                            {#                                     width="1" height="1">#}
+                            {#                            </form>#}
+                            <form action="{% url 'business:charge' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" id="amount" name="amount" value="2999">
+                                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="{{ stripe_key }}"
+                                        data-description="A Django Charge"
+                                        data-amount="2999"
+                                        data-locale="auto"></script>
+                            </form>
+                        </div>
+                        <br>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="S5THWXPLFHJTC">
+                            <table>
+                                <tr>
+                                    <td><input type="hidden" name="on0" value="Fax Numbers To Choose From">Fax Numbers
+                                        To Choose From
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><select name="os0">
+                                        <option value="888 (Toll Free Prefix)">888 (Toll Free Prefix)</option>
+                                        <option value="877 (Toll Free Prefix)">877 (Toll Free Prefix)</option>
+                                        <option value="866 (Toll Free Prefix)">866 (Toll Free Prefix)</option>
+                                        <option value="855 (Toll Free Prefix)">855 (Toll Free Prefix)</option>
+                                        <option value="844 (Toll Free Prefix)">844 (Toll Free Prefix)</option>
+                                        <option value="833 (Toll Free Prefix)">833 (Toll Free Prefix)</option>
+                                        <option value="800 (Toll Free Prefix)">800 (Toll Free Prefix)</option>
+                                    </select></td>
+                                </tr>
+                            </table>
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+                        <br> <a target="_blank" class="btn btn-primary"
+                                href="https://millennialsbuildinggreatness.com/products/fax-number-standard-package-annual-program-50-off-3-monthly-payments-with-viabill-0-interest">Click
+                        Here To Get 50% Off Yearly Package</a>
+                        <br><br>
+                        <a target="_blank" class="btn btn-primary"
+                           href="https://millennialsbuildinggreatness.com/products/fax-number-standard-package-annual-program-50-off-3-monthly-payments-with-viabill-0-interest">Yearly
+                            Package 3 Month Payment Option</a>
+                        <br><br>
+                        <a target="_blank" class="btn btn-primary" href="https://millennialbusinessbuilders.com/voip">See
+                            Full Fax Free Number Website</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/0f64iYQQvhs" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="card-body">
+                        <h3>Fax Number Premium Plan</h3>
+                        <ul>
+                            <li>Send 250 pages/mo</li>
+                            <li>Receive 250 pages/mo</li>
+                        </ul>
+                        <br>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="DGGRGAKE5NAU4">
+                                <table>
+                                    <tr>
+                                        <td><input type="hidden" name="on0"
+                                                   value="Fax Numbers To Choose From (7 Day Free Trial)">Fax Numbers To
+                                            Choose From (7 Day Free Trial)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><select name="os0">
+                                            <option value="888 (Toll Free Prefix)">888 (Toll Free Prefix)</option>
+                                            <option value="877 (Toll Free Prefix)">877 (Toll Free Prefix)</option>
+                                            <option value="866 (Toll Free Prefix)">866 (Toll Free Prefix)</option>
+                                            <option value="855 (Toll Free Prefix)">855 (Toll Free Prefix)</option>
+                                            <option value="844 (Toll Free Prefix)">844 (Toll Free Prefix)</option>
+                                            <option value="833 (Toll Free Prefix)">833 (Toll Free Prefix)</option>
+                                            <option value="800 (Toll Free Prefix)">800 (Toll Free Prefix)</option>
+                                        </select></td>
+                                    </tr>
+                                </table>
+                                <input type="image"
+                                       src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0"
+                                       name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif"
+                                     width="1" height="1">
+                            </form>
+                        </div>
+                        <br>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="396AUBB5YPWS8">
+                            <table>
+                                <tr>
+                                    <td><input type="hidden" name="on0" value="Fax Numbers To Choose From">Fax Numbers
+                                        To Choose From
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><select name="os0">
+                                        <option value="888 (Toll Free Prefix)">888 (Toll Free Prefix)</option>
+                                        <option value="877 (Toll Free Prefix)">877 (Toll Free Prefix)</option>
+                                        <option value="866 (Toll Free Prefix)">866 (Toll Free Prefix)</option>
+                                        <option value="855 (Toll Free Prefix)">855 (Toll Free Prefix)</option>
+                                        <option value="844 (Toll Free Prefix)">844 (Toll Free Prefix)</option>
+                                        <option value="833 (Toll Free Prefix)">833 (Toll Free Prefix)</option>
+                                        <option value="800 (Toll Free Prefix)">800 (Toll Free Prefix)</option>
+                                    </select></td>
+                                </tr>
+                            </table>
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif"
+                                   border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+                                 height="1">
+                        </form>
+
+                        <br> <a target="_blank" class="btn btn-primary"
+                                href="https://millennialsbuildinggreatness.com/products/fax-number-premium-package-annual-program-50-off-3-monthly-payments-with-viabill-0-interest">Click
+                        Here To Get 50% Off Yearly Package</a>
+                        <br><br>
+                        <a target="_blank" class="btn btn-primary"
+                           href="https://millennialsbuildinggreatness.com/products/fax-number-premium-package-annual-program-50-off-3-monthly-payments-with-viabill-0-interest">Yearly
+                            Package 3 Month Payment Option</a>
+                        <br><br>
+                        <a target="_blank" class="btn btn-primary" href="https://millennialbusinessbuilders.com/voip">See
+                            Full Fax Free Number Website</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <style>
+        .nav-link {
+            display: block;
+            padding: 0px !important;
+        }
+    </style>
+
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e0518eb7e39ea1242a1ea79/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+{% endblock %}

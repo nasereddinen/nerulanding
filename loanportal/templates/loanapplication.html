@@ -1,0 +1,417 @@
+{% extends "pages/base-loanportal.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Upload Your Documents</h2></div>
+    </div>
+
+    <section class="main-content">
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/w1PZQ64ehhc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-8 card">
+                <div class="card-title pt-2">Uploaded documents</div>
+                <table id="documts" class="table table-striped dt-responsive nowrap">
+                    <thead>
+                    <tr>
+                        <th>Document type</th>
+                        <th>View</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for document in documents %}
+                        <tr>
+                            <td>{{ document.type }}</td>
+                            <td>
+                                <a class="btn btn-primary" href="{{ document.document.url }}">View</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div style="text-align: center;"><h2>Upload Your Documents Below</h2></div>
+
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-5 card p-2">
+                <div class="col-md-12">
+                    <div class="card-title">Enter your personal data</div>
+                    {% if error %}
+                        <div class="text-danger"><h4>Please fill all required fields</h4></div>
+                    {% endif %}
+                    <form id="userdata" method="post">{% csrf_token %}
+                        <div class="row mb-2">
+                            <div class="col-6 required">
+                                {{ form.first_name.label_tag }}*{{ form.first_name }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.last_name.label_tag }}*{{ form.last_name }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.business_name.label_tag }}*{{ form.business_name }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.duns.label_tag }}{{ form.duns }}
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                                {{ form.ein.label_tag }}*{{ form.ein }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_street_address_1.label_tag }}*{{ form.personal_street_address_1 }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_street_address_1.label_tag }}*{{ form.business_street_address_1 }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_street_address_1.label_tag }}{{ form.billing_street_address_1 }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_zip_code.label_tag }}*{{ form.personal_zip_code }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_zip_code.label_tag }}*{{ form.business_zip_code }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_zip_code.label_tag }}{{ form.billing_zip_code }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_state.label_tag }}*{{ form.personal_state }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_state.label_tag }}*{{ form.business_state }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_state.label_tag }}{{ form.billing_state }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_country.label_tag }}*{{ form.personal_country }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_country.label_tag }}*{{ form.business_country }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_country.label_tag }}{{ form.billing_country }}
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_city.label_tag }}*{{ form.personal_city }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_city.label_tag }}*{{ form.business_city }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_city.label_tag }}{{ form.billing_city }}
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-4">
+                                {{ form.personal_phone.label_tag }}*{{ form.personal_phone }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.business_phone.label_tag }}*{{ form.business_phone }}
+                            </div>
+                            <div class="col-4">
+                                {{ form.billing_phone.label_tag }}{{ form.billing_phone }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.email.label_tag }}*{{ form.email }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.website.label_tag }}{{ form.website }}
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                {{ form.toll_free_number.label_tag }}{{ form.toll_free_number }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.fax_number.label_tag }}{{ form.fax_number }}
+                            </div>
+                        </div>
+                        <div class="btn-toolbar">
+
+                        </div>
+                    </form>
+                    <div class="btn-toolbar">
+                        <form id="datadata" method="post" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#datadata');
+                                                                return true;
+                                                                })()">{% csrf_token %}
+                            <input type="submit"
+                                   name="saveData"
+                                   value="Save Information"
+                                   class="btn btn-primary mr-1"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form action="/loanportal/loanapplication" accept-charset="UTF-8"
+              method="post" enctype="multipart/form-data" id="form1" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form1');
+                                                                return true;
+                                                                })()">{% csrf_token %}
+            <div class="card p-3">
+                <div class="card-title" style="color: darkblue">Three first fields are mandatory</div>
+                <div class="row" style="justify-content: space-around">
+                    <input type="text" name="all_documents" value="on" hidden/>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.getdinerotoday.com/static/images/drivers.png" class="card-img-top"
+                                 width="100%" height="250px">
+                            <div class="card-body" align="center">
+                                <h5 class="card-title">Upload Your Drivers License Or Government-Issued Photo ID</h5>
+
+                                <br>
+                                <h4>Upload Your Loan Documents Here</h4>
+                                <input type="file" name="Driver License / Photo Id" id="document" required/>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.getdinerotoday.com/static/images/socialcard.png" class="card-img-top"
+                                 width="100%" height="250px">
+                            <div class="card-body" align="center"><h5 class="card-title">Upload Your Social Security
+                                Card</h5>
+
+                                <br>
+
+                                <h4>Upload Your Loan Documents Here</h4>
+                                <input type="file" name="Social Security Card" id="document" required/>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.getdinerotoday.com/static/images/3month.png" class="card-img-top"
+                                 width="100%" height="250px">
+                            <div class="card-body" align="center"><h5 class="card-title">Upload Your Last 3 Months Of
+                                Bank
+                                Statements Click To Call Loan
+                                Support</h5>
+
+
+                                <h4>Upload Your Loan Documents Here</h4>
+                                <input type="file" name="Last 3 Months Of Bank Statement" id="document" required/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display: flex; justify-content: space-around">
+                    <button type="submit" name="commit" class="btn btn-primary btn-block">Submit</button>
+
+                </div>
+            </div>
+        </form>
+
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.getdinerotoday.com/static/images/6month.png" class="card-img-top"
+                         width="100%" height="250px">
+                    <div class="card-body" align="center"><h5 class="card-title">Upload Your Last 6 Months Of Bank
+                        Statements Click To Call Loan
+                        Support</h5>
+                        <form action="/loanportal/loanapplication" accept-charset="UTF-8" id="form2" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form2');
+                                                                return true;
+                                                                })()"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <br>
+                            <h4>Upload Your Loan Documents Here</h4>
+                            <input type="file" name="document" id="document"/>
+                            <input type="text" name="document_type" id="document_type" hidden
+                                   value="Last 6 Months Of Bank Statement"/>
+                            <br>
+                            <br>
+                            <br>
+                            <div style="display: flex; justify-content: space-around">
+                                <button type="submit" name="commit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.getdinerotoday.com/static/images/1yearbt.png" class="card-img-top"
+                         width="100%" height="250px">
+                    <div class="card-body" align="center"><h5 class="card-title">Upload Your Last Year Of Business Tax
+                        Returns Click To Call Loan
+                        Support</h5>
+                        <form action="/loanportal/loanapplication" accept-charset="UTF-8" id="form3" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form3');
+                                                                return true;
+                                                                })()"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <br>
+                            <h4>Upload Your Loan Documents Here</h4>
+                            <input type="file" name="document" id="document"/>
+                            <input type="text" name="document_type" id="document_type" hidden
+                                   value="Last Year Of Business Tax Returns"/>
+                            <br>
+                            <br>
+                            <br>
+                            <div style="display: flex; justify-content: space-around">
+                                <button type="submit" name="commit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.getdinerotoday.com/static/images/2yearbt.png" class="card-img-top"
+                         width="100%" height="250px">
+                    <div class="card-body" align="center"><h5 class="card-title">Upload Your Last 2 Years Of Business
+                        Tax Returns Click To Call Loan
+                        Support</h5>
+                        <form action="/loanportal/loanapplication" accept-charset="UTF-8" id="form4" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form4');
+                                                                return true;
+                                                                })()"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <br>
+                            <h4>Upload Your Loan Documents Here</h4>
+                            <input type="file" name="document" id="document"/>
+                            <input type="text" name="document_type" id="document_type" hidden
+                                   value="Last 2 Years Of Business Tax Returns"/>
+                            <br>
+                            <br>
+                            <br>
+                            <div style="display: flex; justify-content: space-around">
+                                <button type="submit" name="commit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.getdinerotoday.com/static/images/1yearpt.png" class="card-img-top"
+                         width="100%" height="250px">
+                    <div class="card-body" align="center"><h5 class="card-title">Upload Your Last Year Of Personal Tax
+                        Returns Click To Call Loan
+                        Support</h5>
+                        <form action="/loanportal/loanapplication" accept-charset="UTF-8" id="form5" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form5');
+                                                                return true;
+                                                                })()"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <br>
+                            <h4>Upload Your Loan Documents Here</h4>
+                            <input type="file" name="document" id="document"/>
+                            <input type="text" name="document_type" id="document_type" hidden
+                                   value="Last Year Of Personal Tax Returns"/>
+                            <br>
+                            <br>
+                            <br>
+                            <div style="display: flex; justify-content: space-around">
+                                <button type="submit" name="commit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.getdinerotoday.com/static/images/2yearspt.png" class="card-img-top"
+                         width="100%" height="250px">
+                    <div class="card-body" align="center"><h5 class="card-title">Upload Your Last Two Years Of Personal
+                        Tax Returns Click To Call Loan
+                        Support</h5>
+                        <form action="/loanportal/loanapplication" accept-charset="UTF-8" id="form6" onsubmit="(function(){
+                                                                console.log('data updated')
+                                                                $('#userdata :input').not(':submit').clone().hide().appendTo('#form6');
+                                                                return true;
+                                                                })()"
+                              method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <br>
+                            <h4>Upload Your Loan Documents Here</h4>
+                            <input type="file" name="document" id="document"/>
+                            <input type="text" name="document_type" id="document_type" hidden
+                                   value="Last Two Years Of Personal Tax Returns"/>
+                            <br>
+                            <br>
+                            <br>
+                            <div style="display: flex; justify-content: space-around">
+                                <button type="submit" name="commit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+
+{% block extrastyle %}
+
+    <style>
+        .btn {
+            white-space: normal !important;
+            word-wrap: break-word;
+        }
+    </style>
+
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Use Ecredable To Add Multiple Business Tradelines</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+
+            <div class="col-md-4 col-sm-6">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">Add Business Tradelines With Ecredable</div>
+                    <img src="https://business.ecredable.com/portals/0/images/business/small_business_tradelines_hero3.png"
+                         height="270px" width="100%" alt="">
+                    <div class="card-body">
+                        <a class="btn btn-primary btn-block" href="https://business.ecredable.com/" target="_blank">Sign Up For Ecredable Too Add Business Tradelines</a>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+{% endblock %}

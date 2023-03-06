@@ -1,0 +1,60 @@
+{% extends "FinancingPortalNavigationBase.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center">
+            <h2>Purchase Products</h2>
+        </div>
+    </div>
+
+    <section class="main-content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Purchase Products
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Amount</th>
+                                    <th>Description</th>
+                                    <th>Video Explanation</th>
+                                    <th>Purchase</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for prod in products %}
+                                    <tr>
+                                        <td>{{ prod.name }}</td>
+                                        <td>${{ prod.price }}</td>
+                                        <td>{{ prod.description }}</td>
+                                        <td>{% if prod.video %}<a class="btn btn-primary" href="{{ prod.video }}">Watch Video</a>{% endif %}</td>
+                                        <td>
+                                            <form method="post">{% csrf_token %}
+                                                <input type="hidden" name="product_id" value="{{ prod.product_id }}">
+                                                <button class="btn btn-primary">Add To Cart</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+<script>
+
+</script>

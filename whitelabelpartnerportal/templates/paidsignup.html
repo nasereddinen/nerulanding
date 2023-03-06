@@ -1,0 +1,79 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    <script type="text/javascript" src="https://chatterpal.me/build/js/chatpal.js?7.23" crossorigin="anonymous"
+            data-cfasync="false">
+    </script>
+    <script>
+        var chatPal = new ChatPal({
+            embedId: 'DfT7BnTm5dGn',
+            remoteBaseUrl: 'https://chatterpal.me/',
+            version: '7.23'
+        });
+    </script>
+{% endblock extrastyle %}
+<!-- ============================================================== -->
+<!--            Content Start             -->
+<!-- ============================================================== -->
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Your Clients Who Have Signed Up Under Your Portal</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/6xmuGt5x5s4" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Clients Who Have Signed Up Under Your Portal
+                    </div>
+                    <div class="card-body">
+                        {% for subdomain in user_data %}
+                            {{ subdomain.name }}
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Client Email</th>
+                                    <th>Client Phone Number</th>
+                                    <th>Upgrades Made In Portal</th>
+                                    <th>Residual Amount Made From Client</th>
+                                    <th>Expected Payout</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tbody>
+                                {% for user in subdomain.users %}
+                                    <tr>
+                                        <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
+                                        <td>{{ user.user.email }}</td>
+                                        <td>{{ user.phone_number }}</td>
+                                        <td>{{ user.updates_made }}</td>
+                                        <td>{{ user.residual_amount }}</td>
+                                        <td>{{ user.expected_payout }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                                </tbody>
+                            </table>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+{% endblock %}

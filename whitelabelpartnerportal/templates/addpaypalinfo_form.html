@@ -1,0 +1,58 @@
+{% extends "pages/base-whitelabel.html" %}
+{% load static %}
+{% block content %}
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+        </div>
+    </div>
+
+    <section class="main-content">
+
+
+        {% if form %}
+            <div class="card">
+                <div class="card-header">
+                    Edit PayPal Information
+                </div>
+
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form method="post">{% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="btn-toolbar">
+                                <input type="submit" value="Submit" class="btn btn-primary mr-1"/>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+
+            <div class="card">
+                <div class="card-header">
+                    Enter In New Payment Information
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <form action="/whitelabelpartnerportal/addpaypalinfo_form" accept-charset="UTF-8"
+                              method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <label for="paypal_email">Paypal Email</label>
+                                <input type="text" name="paypal_email" id="paypal_email"/>
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" name="commit" class="btn btn-primary mr-1">Submit</button>
+                                <a class="btn btn-primary" href="javascript:history.go(-1)">Back</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </section>
+
+
+{% endblock %}

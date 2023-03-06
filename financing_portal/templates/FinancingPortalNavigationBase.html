@@ -1,0 +1,52 @@
+{% extends "layout/BaseLayout.html" %}
+{% load static %}
+{% block navigation %}
+
+
+
+    <div class="main-sidebar-nav dark-navigation">
+        <div class="nano">
+            <div class="nano-content sidebar-nav">
+                <div class="card-body border-bottom text-center nav-profile">
+                    <p class="lead margin-b-0 toggle-none">
+                        {{ request.user.get_full_name }}
+                    </p>
+                </div>
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'homepage' %}" class="nav-link">Go Back To Main Portal</a></li>
+                </ul>
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'financing_portal:financing-portal-home' %}" class="nav-link">Dashboard</a></li>
+                </ul>
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'financing_portal:purchase-products' %}" class="nav-link">Purchase Products</a></li>
+                </ul>
+
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'financing_portal:payments' %}" class="nav-link">Payments</a></li>
+                </ul>
+
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'financing_portal:products-purchased' %}" class="nav-link">Products Purchased</a></li>
+                </ul>
+
+
+                <ul class="metisMenu nav flex-column" id="menu">
+                    <li class="nav-item"><a href="{% url 'financing_portal:products-access' %}" class="nav-link">Access Software</a></li>
+                </ul>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+{% endblock navigation %}
+{% block content %}
+{% endblock content %}

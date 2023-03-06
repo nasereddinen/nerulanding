@@ -1,0 +1,74 @@
+<div class="row page-header">
+    <div class="col-lg-6 align-self-center ">
+        <h2>Business Term Loans</h2></div>
+</div>
+
+<section class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe width="100%" height="515" src="https://www.youtube.com/embed/y-jHolQ2zCI" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-default">
+                    Lenders
+                </div>
+                <div class="card-body">
+                    <table id="datatable" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                        <tr>
+                            <th>Lender Name</th>
+                            <th>Personal Credit Score Needed</th>
+                            <th>Time In Business</th>
+                            <th>Term Length</th>
+                            <th>APR</th>
+                            <th>Strategy</th>
+                            <th>Apply Now</th>
+                        </tr>
+                        </thead>
+
+                        </tbody>
+                        <tbody>
+                        <% @trls.each do |t| %>
+                        <tr>
+                            <td><%= t.lender_name %></td>
+                            <td><%= t.personal_credit_score %></td>
+                            <td><%= t.time_in_business %></td>
+                            <td><%= t.term_length %></td>
+                            <td><%= t.apr %></td>
+                            <td>Term loans are great because you will have longer terms. You want to position yourself
+                                for this type of loan because they will place a UCC filing on your business which is a
+                                blanket lien on all of your assets if you default. Once you have a UCC filing it
+                                severely hampers your ability to get more business term or revenue lending financing.
+                            </td>
+                            <td><%= link_to "Apply Now", applyforloan_path, class: 'btn btn-primary' %></td>
+                        </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+    </form>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+
+
+</section>

@@ -1,0 +1,186 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block extrastyle %}
+
+{% endblock extrastyle %}
+
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2> Credit My Credit Repair &amp; Boosting Plan</h2>
+        </div>
+    </div>
+    <section class="main-content">
+
+        <div class="row">
+            {% if dynamic.is_main_site %}
+            <div class="col-md-12">
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/YUFC0ZcJKGI" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+            {% endif %}
+        </div>
+        <div class="container-header">
+            <h2 style="margin-top:2.5%" ;>Put Your Information Below To See Your Credit Repair Plan</h2>
+        </div>
+        <form accept-charset="UTF-8" action="." method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Experian Score)</label>
+                        <select class="form-control" id="experian_score" name="experian_score">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Equifax Score)</label>
+                        <select class="form-control" id="equifax_score" name="equifax_score">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="businessname">Current Credit Score (Transunion Score)</label>
+                        <select class="form-control" id="transunion_score" name="transunion_score">
+                            <option value="1">599 or below</option>
+                            <option value="2">600-679</option>
+                            <option value="3">680+ Credit Score or Higher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagesneeded">Current Credit Utilization Rate (Experian)</label>
+                        <select class="form-control" id="experian_utilization" name="experian_utilization">
+                            <option value="1">30% Or Lower</option>
+                            <option value="2">31% Or More</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagesneeded">Current Credit Utilization Rate (Equifax)</label>
+                        <select class="form-control" id="equifax_utilization" name="equifax_utilization">
+                            <option value="1">30% Or Lower</option>
+                            <option value="2">31% Or More</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pagesneeded">Current Credit Utilization Rate (Transunion)</label>
+                        <select class="form-control" id="transunion_utilization" name="transunion_utilization">
+                            <option value="1">30% Or Lower</option>
+                            <option value="2">31% Or More</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain">Any Current Collections?</label>
+                        <select class="form-control" id="current_collections" name="current_collections">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain">Any Current Active Bankruptcies?</label>
+                        <select class="form-control" id="bankruptcies" name="bankruptcies">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain">Any Bankruptcies In The Last 10 Years?</label>
+                        <select class="form-control" id="bankruptcies_10" name="bankruptcies_10">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="domain">Do You Have 6 Or More Inquiries On Your Credit Report?</label>
+                        <select class="form-control" id="inquiries" name="inquiries">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">Do You Have Any Missed Payments On Your Credit Report?</label>
+                        <select class="form-control" id="missed_payments" name="missed_payments">
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">How Many Current Active Accounts Do You Have On Your Experian Credit
+                            Score?</label>
+                        <select class="form-control" id="current_acc_experian" name="current_acc_experian">
+                            <option value="1">3 Or Less</option>
+                            <option value="2">4 Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">How Many Current Active Accounts Do You Have On Your Equifax Credit
+                            Score?</label>
+                        <select class="form-control" id="current_acc_equifax" name="current_acc_equifax">
+                            <option value="1">3 Or Less</option>
+                            <option value="2">4 Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">How Many Current Active Accounts Do You Have On Your Transunion Credit
+                            Score?</label>
+                        <select class="form-control" id="current_acc_transunion" name="current_acc_transunion">
+                            <option value="1">3 Or Less</option>
+                            <option value="2">4 Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">Average Age Of Credit History (Experian)?</label>
+                        <select class="form-control" id="credit_history_experian" name="credit_history_experian">
+                            <option value="1">2 years Or Less</option>
+                            <option value="2">3 years Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">Average Age Of Credit History (Equifax)?</label>
+                        <select class="form-control" id="credit_history_equifax" name="credit_history_equifax">
+                            <option value="1">2 years Or Less</option>
+                            <option value="2">3 years Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="domain">Average Age Of Credit History (Transunion)?</label>
+                        <select class="form-control" id="credit_history_transunion" name="credit_history_transunion">
+                            <option value="1">2 years Or Less</option>
+                            <option value="2">3 years Or More</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            See Your Credit Repair Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+
+
+{% endblock content %}
+
+
+{% block javascriptblock %}
+
+{% endblock javascriptblock %}

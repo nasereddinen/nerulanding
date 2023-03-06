@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sendinblue</title>
+    <!-- link the tailwind cdn -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+    />
+  </head>
+  <body>
+    <nav
+      class="
+        container
+        mx-auto
+        p-0
+        flex
+        justify-between
+        items-center
+        overflow-hidden
+      "
+    >
+      <img
+        class="w-36 h-24"
+        src="{{dynamic.bcb_marketing_automation_logo.url}}"
+        alt=""
+      />
+      <a href="https://bcbcrmsoftware.com/login"
+        class="bg-blue-500 rounded-xl text-lg font-bold text-white px-8 py-2"
+      >
+        login
+      </a>
+    </nav>
+    <main
+      class="
+        container
+        mx-auto
+        flex
+        justify-between
+        items-center
+        h-screen
+        overflow-hidden
+      "
+    >
+      <div class="left h-full w-full flex flex-col items-start justify-center">
+        <h1 class="text-7xl font-black">
+          {{dynamic.bcb_marketing_automation_heading}}
+        </h1>
+        <div class="p-12 mt-9 border-l-2 border-yellow-500">
+          <p>
+            {{dynamic.bcb_marketing_automation_text}}
+          </p>
+        </div>
+        <a href="https://bcbcrmsoftware.com/login"
+          class="
+            bg-blue-500
+            rounded-xl
+            text-white
+            font-bold
+            text-xl
+            px-20
+            py-3
+            mt-4
+          "
+        >
+          Sign-Up
+        </a>
+      </div>
+      <div class="right h-full w-full overflow-hidden">
+        <iframe
+          class="lazy w-full h-full overflow-hidden"
+          id="cover-video"
+          data-src="https://player.vimeo.com/video/427643680?api=1&amp;background=1&amp;mute=0"
+          frameborder="0"
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allowfullscreen=""
+          src="https://player.vimeo.com/video/427643680?api=1&amp;background=1&amp;mute=0"
+        ></iframe>
+      </div>
+    </main>
+  </body>
+</html>

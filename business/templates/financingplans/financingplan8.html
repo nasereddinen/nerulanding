@@ -1,0 +1,1626 @@
+{#{% extends "pages/base-business.html" %}#}
+{% extends request.resolver_match.page_template %}
+{% load static %}
+{% block content %}
+
+    <div class="row page-header">
+        <div class="col-lg-6 align-self-center ">
+            <h2>Financing You Qualify For</h2></div>
+    </div>
+
+    <section class="main-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Lenders You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Financing Products You Qualify For</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Personal Credit Cards</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" name="signup"
+                                            value="Click Here For A Better Description">See The Specific Financing
+                                        Products You Qualify For Below
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Corporate Business Credit</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" name="signup"
+                                            value="Click Here For A Better Description">See The Specific Financing
+                                        Products You Qualify For Below
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Personal Loan</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" name="signup"
+                                            value="Click Here For A Better Description">See The Specific Financing
+                                        Products You Qualify For Below
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>No Credit Check Financing</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" name="signup"
+                                            value="Click Here For A Better Description">See The Specific Financing
+                                        Products You Qualify For Below
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Equipment Financing</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary" name="signup"
+                                            value="Click Here For A Better Description">See The Specific Financing
+                                        Products You Qualify For Below
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Personal Credit Cards You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive">
+                            <thead>
+                            <tr>
+                                <th>Credit Card Namee</th>
+                                <th>Min Credit Score Needed</th>
+                                <th>Credit Bureau They Pull From</th>
+                                <th>Debt Ratio Needed</th>
+                                <th>Bankruptcy</th>
+                                <th>Derogatory Credit Data</th>
+                                <th>APR</th>
+                                <th>Misc. Information</th>
+                                <th>Apply Now</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Milestone Mastercard</td>
+                                <td>440</td>
+                                <td>EX, EQ, TU but mainly TU</td>
+                                <td>50% + has been approved.</td>
+                                <td>Dismissed/descharged 1 day</td>
+                                <td>Past delinquencies have little impact, recent negative marks create a chance of
+                                    being denied but can still be approved.
+                                </td>
+                                <td>23.90%</td>
+                                <td>New Credit accounts are ok. Valid social, physical address, and IP address in the
+                                    U>S. required.
+                                </td>
+                                <td><a href="www.milestonegoldcard.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>American Express EveryDay</td>
+                                <td>640</td>
+                                <td>EX, EQ and TU</td>
+                                <td>35% averaged over 6 months</td>
+                                <td>8 months - 2 years after discharge depending on creditworthiness.</td>
+                                <td>Auto decline if AMEX is involved in the delinquency unless paid in full. Ideally no
+                                    negative marks within 2-7 years but no set rule.
+                                </td>
+                                <td>0% intro APR on purchases and balance transfer for 15 months, then a variable APR,
+                                    14.49% to 25.49%.
+                                </td>
+                                <td>Amex will automatically decline your application if you've applied/opened more than
+                                    2 credit cards within last 90days. You can have up to 5 AMEX credit cards.
+                                </td>
+                                <td><a href="www.americanexpress.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Discover it Gas and Restaurant.</td>
+                                <td>680</td>
+                                <td>EX, EQ and TU</td>
+                                <td>43.00%</td>
+                                <td></td>
+                                <td>No delinquency in the last year but the look at up to 7 years.</td>
+                                <td>0% APR on purchases and balance transfer for the first 14 months then 13.49% to
+                                    24.49% APR.
+                                </td>
+                                <td>The highest approval limits are on applicant's with at least 3 years of credit.
+                                    Discover will only approve additional discover credit accounts after 1 full year
+                                    from initial account apening.
+                                </td>
+                                <td><a href="www.discover.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>American Express EveryDay Preferred</td>
+                                <td>640</td>
+                                <td>EX, EQ and TU</td>
+                                <td>35% averaged over 6 months</td>
+                                <td>Auto decline if bankruptcy is on credit report.</td>
+                                <td>Auto decline if AMEX is involved in the delinquency unless paid in full. Ideally no
+                                    negative marks within 2-7 years but no set rule.
+                                </td>
+                                <td>0% intro APR on purchases and balance transfer for 12 months, then a variable APR,
+                                    14.49% to 25.49%.
+                                </td>
+                                <td>Amex will automatically decline your application if you've applied/opened more than
+                                    2 credit cards within last 90days. You can have up to 5 AMEX credit cards.
+                                </td>
+                                <td><a href="www.americanexpress.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Bank of America BankAmericaard</td>
+                                <td>660</td>
+                                <td>EX</td>
+                                <td>30%</td>
+                                <td>8-10 years post discharge/dismissal</td>
+                                <td>Strongly impacts odds. You can be denied with delinquencies as old as 7 years.</td>
+                                <td>15.99-24.99 variable.</td>
+                                <td>The longer your credit history is positive the more likely you are for approval.
+                                    They do however have rules pertaining to how many Bank of America credit card
+                                    accounts you can be approved for at one time. They follow the 2/3/4 rule: 2 cards
+                                    per 2 rolling months, 3 cards per 12 rolling months, and 4 cards per 24 rolling
+                                    months.
+                                </td>
+                                <td><a href="www.bankofamerica.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Chase Freedom.</td>
+                                <td>620</td>
+                                <td>EX, EQ and TU</td>
+                                <td>40.00%</td>
+                                <td>Auto decline if bankruptcy is on credit report. .</td>
+                                <td>Individual to applicant but they prefer no negative marks within 5 years. If there
+                                    is a negative mark within five years the freedom card may have better chances.
+                                </td>
+                                <td>0% intro APR for 15 months, then a variable APR of 16.49% - 25.24%</td>
+                                <td>Must have a minimum of three accounts in good standing over the past 24 months.</td>
+                                <td><a href="www.chase.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital one QuicksilverOne Rewards</td>
+                                <td>620</td>
+                                <td>EX, EQ and TU</td>
+                                <td>40%</td>
+                                <td>Minimum of two years after bankruptcy discharge date with current credit in the
+                                    Average range.
+                                </td>
+                                <td>0% intro APR for 15 months, 14.49% - 24.49% variable.</td>
+                                <td>0% intro APR on purchases and balance transfer for 15 months, then a variable APR,
+                                    14.49% to 25.49%.
+                                </td>
+                                <td></td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>U.S. Bank Visa Platinum</td>
+                                <td>660</td>
+                                <td>EX, EQ and TU</td>
+                                <td>36%</td>
+                                <td>Discharge/dismissed 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>0% intro APR for 18 billing cycles then 11.49% - 23.49% variable.</td>
+                                <td>You must be a pre-existing U.S. Bank customer for a least 35 days to be eligible.
+                                    Credit history of at least 2 years is recommended. There is not a maximum number of
+                                    U.S. bank credit cards that you may have ay one time.
+                                </td>
+                                <td><a href="www.usbank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Citi Simplicity</td>
+                                <td>660</td>
+                                <td>EX, EQ split 90% of the time and TU 10%</td>
+                                <td>40%</td>
+                                <td>Auto decline until at least 7 years after bankruptcy discharge.</td>
+                                <td>Individialized to applicant but you can be denied with as little as one open
+                                    collection on your report.
+                                </td>
+                                <td>0% intro APR for 18 months then the variable APR will be 15.49% - 25.49%</td>
+                                <td>You must have at least 1 year of credit history. There is no limit to the amount of
+                                    credit cards you can have with Citibank. You can only apply for one Citi personal
+                                    card every 8 days. You can apply for no more than two Citi personal cards every 65
+                                    days.
+                                </td>
+                                <td><a href="www.citi.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Navy Federal Credit Card</td>
+                                <td>520</td>
+                                <td>EX, EQ, TU</td>
+                                <td>50% + has been approved.</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact, recent negative marks create a chance of
+                                    being denied but can still be approved. Prefer none within last 12 months.
+                                </td>
+                                <td>11.15% - 18.0% variable.</td>
+                                <td>You must be a Navy Federal member prior to applying for the credit card.</td>
+                                <td><a href="www.navyfederal.org" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Best Western Mastercard</td>
+                                <td>660</td>
+                                <td>EQ,EX,TU but mainly EX</td>
+                                <td>40.00%</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Prefer no more than one in 2 years</td>
+                                <td>20.24% or 24.24% variable</td>
+                                <td>No set age of credit history requiremen.ts</td>
+                                <td><a href="www.firstbankcard.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>First Premier Bank Mastercard</td>
+                                <td>420</td>
+                                <td>EQ,EX,TU</td>
+                                <td>50%+</td>
+                                <td>You can be approved prior to bankruptcy discharge as long as First Premier wasn't a
+                                    part of the bankruptcy within 36 months
+                                </td>
+                                <td>Past delinquencies have little impact, recent negative marks create a chance of
+                                    being denied but can still be approved.
+                                </td>
+                                <td>36.00%</td>
+                                <td>Checking account required</td>
+                                <td><a href="www.premiercardoffer.net" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Chase Sapphire Preferred</td>
+                                <td>620</td>
+                                <td>EX and EQ mainly, dependent on state</td>
+                                <td>40.00%</td>
+                                <td>auto declined if there is a bankruptcy in credit history</td>
+                                <td>Individual to applicant but they prefer no negative marks within 5 years. .</td>
+                                <td>16.99-23.99 variable</td>
+                                <td>Must have a minimum of three accounts in good standing over the past 24 months.You
+                                    cannot have another sapphire card open.You will have a better chance of approval if
+                                    you have at least one other card with a $5,000 or higher limit.
+                                </td>
+                                <td><a href="www.chase.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Total Visa Credit Card</td>
+                                <td>400</td>
+                                <td>EQ, EX, TU but mainly EX</td>
+                                <td>50%+</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact,recent negative marks create a chance of being
+                                    denied but can still be approved
+                                </td>
+                                <td>29.99%</td>
+                                <td>Checking account required</td>
+                                <td><a href="www.totalcardvisa.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>US Bank Harley-Davidson</td>
+                                <td>620</td>
+                                <td>EQ, EX, TU</td>
+                                <td>36.00%</td>
+                                <td>Auto decline if bankruptcy is on credit history within last 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>15.49%-24.49% variable</td>
+                                <td>No set age of credit history as long as you meet their general age requirements.
+                                </td>
+                                <td><a href="www.h-dvisa.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Wells Fargo Cash Wise Visa</td>
+                                <td>400</td>
+                                <td>EX, TU</td>
+                                <td>49.00%</td>
+                                <td>10 years after discharge/dismissal</td>
+                                <td>no set rule on number of delinquencies.One here or there has less impact than
+                                    consistent delinquencies or patterns of late payments
+                                </td>
+                                <td>0.00% introductory APR for 12 months, then 14.49% to 26.49% variable</td>
+                                <td>you must have more than 3 years of credit history and they prefer you to have a
+                                    current banking relationship with them.Wells fargo dows not have a limit to the
+                                    number of credit cards you can have open with them.
+                                </td>
+                                <td><a href="www.wellsfargo.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Bank of America cash Rewards</td>
+                                <td>620</td>
+                                <td>EX</td>
+                                <td>30%</td>
+                                <td>8-10 years post discharge/dismissal</td>
+                                <td>Strongly impacts odds. You can be denied with delinquencies as old as 7 years.</td>
+                                <td>14.49%-24.49% variable</td>
+                                <td>The longer your credit history is positive the more likely you are for approval.
+                                    They do however have rules pertaining to how many Bank of America credit card
+                                    accounts you can be approved for at one time. They follow the 2/3/4 rule: 2 cards
+                                    per 2 rolling
+                                </td>
+                                <td><a href="www.bankofamerica.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>American Express Blue Cash Everyday</td>
+                                <td>600</td>
+                                <td>EQ, EX and TU</td>
+                                <td>35% averaged over 6 months</td>
+                                <td>Auto decline if bankruptcy is on credit report.</td>
+                                <td>Auto decline if AMEX is involved in the delinquency unless paid in full. Ideally no
+                                    negative marks within 2-7 years but no set rule.
+                                </td>
+                                <td>14.49%-25.49%</td>
+                                <td>Amex will automatically decline your application if you've applied/opened more than
+                                    2 credit cards within last 90days. You can have up to 5 AMEX credit cards.
+                                </td>
+                                <td><a href="www.americanexpress.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Credit One Bank</td>
+                                <td>460</td>
+                                <td>EQ, EX, TU but mainly EX</td>
+                                <td>50%+</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact, Recent negative marks creat a chance of being
+                                    denied.
+                                </td>
+                                <td>17.49% to 25.49% variable</td>
+                                <td>Ideally over three years of credit history but applicants with brand new credit have
+                                    been approved.Multiple Credit One account are Ok.
+                                </td>
+                                <td><a href="www.creditonebank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital one Venture One Rewards</td>
+                                <td>680</td>
+                                <td>EQ, EX and TU</td>
+                                <td>40.00%</td>
+                                <td>minimum of two years after bankruptcy discharge date with current credit in the
+                                    excellent range.
+                                </td>
+                                <td>Auto decline if past due capital one credit card account, is over credit line on a
+                                    capital one credit card, or capital one credit card that charged off within the past
+                                    year. Never been 60 days late on a payment.
+                                </td>
+                                <td>0% introductory APR for the first 12 months, then 13.49%, 19.49% or 23.49%</td>
+                                <td>They don't require a specific amount of accounts but there are limitations to the
+                                    amount of capital one account you may have open at 1 time.
+                                </td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Citi Double Cash</td>
+                                <td>620</td>
+                                <td>EQ,EX split 90% of the time and TU 10%</td>
+                                <td>40.00%</td>
+                                <td>auto delcine until at least 7 years after bankruptcy discharge</td>
+                                <td>Individialized to applicant but you can be denied with as little as one open
+                                    collection on your report.
+                                </td>
+                                <td>14.99%-24.99%</td>
+                                <td>You must have at least 1 year of credit history. There is no limit to the amount of
+                                    credit cards you can have with Citibank. You can only apply for one Citi personal
+                                    card every 8 days. You can apply for no more than two Citi personal cards every 65
+                                    days.
+                                </td>
+                                <td><a href="www.citi.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Credit one Bank</td>
+                                <td>520</td>
+                                <td>EQ, EX, TU but mainly EX</td>
+                                <td>50%+</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact, Recent negative marks creat a chance of being
+                                    denied but can still be approved.
+                                </td>
+                                <td>17.49 to 25.49% variable</td>
+                                <td>Ideally over three years of credit history but applicants with brand new credit have
+                                    been approved.Multiple Credit One account are Ok.
+                                </td>
+                                <td><a href="www.creditonebank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital One Venture</td>
+                                <td>680</td>
+                                <td>EQ, EX and TU</td>
+                                <td>40.00%</td>
+                                <td>minimum of two years after bankruptcy discharge date with current credit in the
+                                    excellent range.
+                                </td>
+                                <td>Auto decline if past due capital one credit card account, is over credit line on a
+                                    capital one credit card, or capital one credit card that charged off within the past
+                                    year. Never been 60 days late on a payment.
+                                </td>
+                                <td>14.49-24.49% variable</td>
+                                <td>You will be denied if yiu exceed over 2 capital One accounts at one time or have
+                                    already applied to 2 capital one accounts within 30 days. To remain in the Average
+                                    range you must have not defaulted on a loan within 5 years.
+                                </td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Discover it Student Cash Back</td>
+                                <td>620</td>
+                                <td>EQ, EX and TU</td>
+                                <td>43.00%</td>
+                                <td>8 months - 2 years after discharge depending on creditworthiness.</td>
+                                <td>No delinquency in the last year but the look at up to 7 years.</td>
+                                <td>14.49%-23.49% .</td>
+                                <td>This card is best for those with less 3 years credit history.</td>
+                                <td><a href="www.discover.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>U.S. Bank Cash 365 AMEX</td>
+                                <td>520</td>
+                                <td>EQ, EX and TU</td>
+                                <td>36.00%</td>
+                                <td>Discharge/dismissed 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>15.49%to 24.49% variable</td>
+                                <td>You must be a pre-existing U.S. Bank customer for a least 35 days to be eligible.
+                                    Credit history of at least 2 years is recommended. There is not a maximum number of
+                                    U.S. bank credit cards that you may have ay one time.
+                                </td>
+                                <td><a href="www.usbank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Barclays Ring</td>
+                                <td>680</td>
+                                <td>TU</td>
+                                <td>35.00%</td>
+                                <td>Auto dellined if there is a bankruptcy in ctedit history</td>
+                                <td>No negative marks within last 12 months</td>
+                                <td>10.49% variable</td>
+                                <td>Applicants with as little as 1 year of history have been approved.</td>
+                                <td><a href="www.barclaycardus.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Barclays Card Visa y</td>
+                                <td>620</td>
+                                <td>TU</td>
+                                <td>35.00%</td>
+                                <td>auto declined if there is a bankruptcy in credit history</td>
+                                <td>No negative marks within last 12 months</td>
+                                <td>15.49%, 21.49% or 28.49%</td>
+                                <td>Applicants with as little as 1 year of history have been approved.</td>
+                                <td><a href="www.batclaycardus.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Bank of America Travel Rewards</td>
+                                <td>740</td>
+                                <td>EX</td>
+                                <td>30%</td>
+                                <td>8-10 years post discharge/dismissal</td>
+                                <td>Strongly impacts odds. You can be denied with delinquencies as old as 7 years.</td>
+                                <td>15.99% to 23.99% variable</td>
+                                <td>AThe longer your credit history is positive the more likely you are for approval.
+                                    They do however have rules pertaining to how many Bank of America credit card
+                                    accounts you can be approved for at one time. They follow the 2/3/4 rule: 2 cards
+                                    per 2 rolling
+                                </td>
+                                <td><a href="www.bankofamerica.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Indigo Platinum Master Card</td>
+                                <td>500</td>
+                                <td>EQ, EX, Tu but mainly EQ</td>
+                                <td>50%+</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact, Recent negative marks creat a chance of being
+                                    denied but can still be approved.
+                                </td>
+                                <td>23.90%</td>
+                                <td>New Credit accounts are ok. Valid social, physical address, and IP address in the
+                                    U>S. required.
+                                </td>
+                                <td><a href="www.indigocard.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>wells Fargo Cash Back College</td>
+                                <td>Limited Credit OK</td>
+                                <td>Ex, TU</td>
+                                <td>49.00%</td>
+                                <td>10 years after discharge/dismissal</td>
+                                <td>no set rule on number of delinquencies.One here or there has less impact than
+                                    consistent delinquencies or patterns of late payments
+                                </td>
+                                <td>12.65% to 22.65%</td>
+                                <td>you must have more than 3 years of credit history and they prefer you to have a
+                                    current banking relationship with them.Wells fargo dows not have a limit to the
+                                    number of credit cards you can have open with them.
+                                </td>
+                                <td><a href="  " target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>US Bank Harley-Davidson</td>
+                                <td>660</td>
+                                <td>EQ, EX, TU</td>
+                                <td>36.00%</td>
+                                <td>Auto decline if bankruptcy on credit history within ast 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>15.49%-24.49% variable</td>
+                                <td>No set age of credit as long as you meet their general age requirements</td>
+                                <td><a href="www.h-dvisa.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Barclays Arrival</td>
+                                <td>620</td>
+                                <td>TU</td>
+                                <td>35.00%</td>
+                                <td>auto declined if there is a bankruptcy in credit history</td>
+                                <td>No negative marks within last 12 months</td>
+                                <td>17.49%,21.49% or 24.49% variable.</td>
+                                <td>Applicants with as little as 1 year of history have been approved.</td>
+                                <td><a href="www.barclaycardus.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>American Express Blue</td>
+                                <td>600</td>
+                                <td>EQ, EX and TU</td>
+                                <td>35% averaged over 6 months</td>
+                                <td>Auto declined if there is a bankruptcy in credit report</td>
+                                <td>Auto decline if AMEX is involved in the delinquency unless paid in full. Ideally no
+                                    negative marks within 2-7 years but no set rule.
+                                </td>
+                                <td>16.74%, 19.74% or 21.74%</td>
+                                <td>Amex will automatically decline your application if you've applied/opened more than
+                                    2 credit cards within last 90days. You can have up to 5 AMEX credit cards.
+                                </td>
+                                <td><a href="www.americanexpress.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital One Platinum</td>
+                                <td>550</td>
+                                <td>EQ, EX and TU</td>
+                                <td>40.00%</td>
+                                <td>Three Months</td>
+                                <td>Auto decline if past due capital one credit card account, is over credit line on a
+                                    capital one credit card, or capital one credit card that charged off within the past
+                                    year. Never been 60 days late on a payment.
+                                </td>
+                                <td>22.99%-26.99% variable</td>
+                                <td>You will be denied if yiu exceed over 2 capital One accounts at one time or have
+                                    already applied to 2 capital one accounts within 30 days. To remain in the Average
+                                    range you must have not defaulted on a loan within 5 years.
+                                </td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>First access visa card</td>
+                                <td>400</td>
+                                <td>EQ</td>
+                                <td>50%+</td>
+                                <td>Dismissed/descharged 1 day.</td>
+                                <td>Past delinquencies have little impact, recent negative marks creat a chance of being
+                                    denied.
+                                </td>
+                                <td>29.99%</td>
+                                <td>Checking account required</td>
+                                <td><a href="www.firstaccesscard.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital One Savor Dining Rewards</td>
+                                <td>680</td>
+                                <td>EQ,EX and TU</td>
+                                <td>40.00%</td>
+                                <td>minimum of two years after bankruptcy discharge date with current credit in the
+                                    excellent range.
+                                </td>
+                                <td>Auto decline if past due capital one credit card account, is over credit line on a
+                                    capital one credit card, or capital one credit card that charged off within the past
+                                    year. Never been 60 days late on a payment.
+                                </td>
+                                <td>)% APR first 9 months, then 15.99%, 20.99% or 24.74% variable</td>
+                                <td>You will be denied if yiu exceed over 2 capital One accounts at one time or have
+                                    already applied to 2 capital one accounts within 30 days. To remain in the Average
+                                    range you must have not defaulted on a loan within 5 years.
+                                </td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Capital One Journey Student Rewards</td>
+                                <td>600</td>
+                                <td>EQ,EX and TU</td>
+                                <td>40.00%</td>
+                                <td>Minimum of two years after bankruptcy discharge date with current credit in the
+                                    Average range.
+                                </td>
+                                <td>Auto decline if past due capital one credit card account, is over credit line on a
+                                    capital one credit card, or capital one credit card that charged off within the past
+                                    year. Never been 60 days late on a payment.
+                                </td>
+                                <td>22.99%-26.99% variable</td>
+                                <td>You will be denied if yiu exceed over 2 capital One accounts at one time or have
+                                    already applied to 2 capital one accounts within 30 days. To remain in the Average
+                                    range you must have not defaulted on a loan within 5 years.
+                                </td>
+                                <td><a href="www.capitalone.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Chase State</td>
+                                <td>620</td>
+                                <td>EQ,EX and TU</td>
+                                <td>40.00%</td>
+                                <td>auto declined if there is a bankruptcy in credit history</td>
+                                <td>Individual to applicant but they prefer no negative marks within 5 years</td>
+                                <td>0% APR for 15 months from account opening after that 16.49%-25.24% variable</td>
+                                <td>Must have a minimum of three accounts in good standing over the past 24 months</td>
+                                <td><a href="www.chase.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Citi Thank You Preferred</td>
+                                <td>660</td>
+                                <td>EQ, EX split 90% of the time and TU 10%</td>
+                                <td>40.00%</td>
+                                <td>Auto decline until at least 7 years after bankruptcy discharge.</td>
+                                <td>Individialized to applicant but you can be denied with as little as one open
+                                    collection on your report.
+                                </td>
+                                <td>0% intro APRon purchases and balance transfers for 15 months; after that the
+                                    variable APR will be 14.99%-24.99%
+                                </td>
+                                <td>You must have at least 1 year of credit history. There is no limit to the amount of
+                                    credit cards you can have with Citibank. You can only apply for one Citi personal
+                                    card every 8 days. You can apply for no more than two Citi personal cards every 65
+                                    days.
+                                </td>
+                                <td><a href="www.citi.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>US Bank Cash + Visa Signature</td>
+                                <td>680</td>
+                                <td>EQ, EX and TU</td>
+                                <td>36.00%</td>
+                                <td>Discharge/dismissed 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>15.49% to 24.49% variable</td>
+                                <td>You must be a pre-existing U.S. Bank customer for a least 35 days to be eligible.
+                                    Credit history of at least 2 years is recommended. There is not a maximum number of
+                                    U.S. bank credit cards that you may have ay one time.
+                                </td>
+                                <td><a href="www.usbank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>American express blue cash preferred</td>
+                                <td>660</td>
+                                <td>EQ, EX and TU</td>
+                                <td>35% averaged over 6 months</td>
+                                <td>Auto decline if bankruptcy is on credit report.</td>
+                                <td>Auto decline if AMEX is involved in the delinquency unless paid in full. Ideally no
+                                    negative marks within 2-7 years but no set rule.
+                                </td>
+                                <td>0% on Purchase and balance Tranasfers for 12 months then 14.49%-25.49% variable</td>
+                                <td>Amex will automatically decline your application if you've applied/opened more than
+                                    2 credit cards within last 90days. You can have up to 5 AMEX credit cards.
+                                </td>
+                                <td><a href="www.americanexpress.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Citi Diamond Preferred</td>
+                                <td>600</td>
+                                <td>EQ, EX split 90% of the time and TU 10%</td>
+                                <td>40.00%</td>
+                                <td>Auto decline until at least 7 years after bankruptcy discharge.</td>
+                                <td>Individialized to applicant but you can be denied with as little as one open
+                                    collection on your report.
+                                </td>
+                                <td>Intro Apr on Purchases for 12 months; after that the variable APR will be
+                                    14.49%-24.49%
+                                </td>
+                                <td>You must have at least 1 year of credit history. There is no limit to the amount of
+                                    credit cards you can have with Citibank. You can only apply for one Citi personal
+                                    card every 8 days. You can apply for no more than two Citi personal cards every 65
+                                    days.
+                                </td>
+                                <td><a href="www.citi.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>U.S Bank Altitide Reserve Visa Infinite</td>
+                                <td>720</td>
+                                <td>EQ, EX and TU</td>
+                                <td>36.00%</td>
+                                <td>Discharge/dismissed 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>17.24 variable</td>
+                                <td>You must be a pre-existing U.S. Bank customer for a least 35 days to be eligible.
+                                    Credit history of at least 2 years is recommended. There is not a maximum number of
+                                    U.S. bank credit cards that you may have ay one time.
+                                </td>
+                                <td><a href="www.usbank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>U.S Bank Flex Perks Travel Rewards Visa Signature</td>
+                                <td>700</td>
+                                <td>EQ, EX and TU</td>
+                                <td>36.00%</td>
+                                <td>Discharge/dismissed 5 years</td>
+                                <td>They review last 5 years and ideally want no "serious" delinquencies within that
+                                    time. No set policy.
+                                </td>
+                                <td>15.49% to 25.49% variable</td>
+                                <td>You must be a pre-existing U.S. Bank customer for a least 35 days to be eligible.
+                                    Credit history of at least 2 years is recommended. There is not a maximum number of
+                                    U.S. bank credit cards that you may have ay one time.
+                                </td>
+                                <td><a href="www.usbank.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Chase Sapphire Reserve</td>
+                                <td>620</td>
+                                <td>40.00%</td>
+                                <td>auto declined if there is a bankruptcy in credit history</td>
+                                <td>Individual to aplicant but they prefer no negative marks within 5 years</td>
+                                <td>17.49%-24.49% variable .</td>
+                                <td>Must have a minimum of three active accounts in good standing over the past 24
+                                    months.
+                                </td>
+                                <td><a href="www.chase.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>First Premier Bank Gold Credit Card</td>
+                                <td>420</td>
+                                <td>50%+</td>
+                                <td>You can be approved prior to bankruptcy discharge as long as First Premier wasn't a
+                                    part of the bankruptcy within 36 months
+                                </td>
+                                <td>Past delinquencies have little ompact, recent negative marks creat a chance of being
+                                    denied but can still be approved.
+                                </td>
+                                <td>36.00%</td>
+                                <td>Checking account required</td>
+                                <td><a href="www.premiercardoffer.net" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>First Premier Bank Credit Card</td>
+                                <td>420</td>
+                                <td>50%+</td>
+                                <td>You can be approved prior to bankruptcy discharge as long as First Premier wasn't a
+                                    part of the bankruptcy within 36 months
+                                </td>
+                                <td>Past delinquencies have little ompact, recent negative marks creat a chance of being
+                                    denied but can still be approved.
+                                </td>
+                                <td>36.00%</td>
+                                <td>Checking account required</td>
+                                <td><a href="www.premiercardoffer.net" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Personal Loans You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive nowrap">
+                            <tbody>
+                            <thead>
+                            <tr>
+                                <th>Lender Name</th>
+                                <th>Terms</th>
+                                <th>Inquiries</th>
+                                <th>Credit Bureau</th>
+                                <th>States Available</th>
+                                <th>Min Credit Score</th>
+                                <th>Min Employment Length Needed</th>
+                                <th>Min Credit History</th>
+                                <th>Apply Now</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Discover Loans</td>
+                                <td>36,48,60,72,or 84 months</td>
+                                <td>recommend no more than 5 recent . Auto and mortgage Inquiries can be looked
+                                    over,they are more concerned about credit card inquiries.
+                                </td>
+                                <td>Experian</td>
+                                <td>All U.S. States</td>
+                                <td>700</td>
+                                <td>No minimum employment length</td>
+                                <td>Minimum Credit history of 2 years required.</td>
+                                <td><a href="www.discover.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Earnest</td>
+                                <td>36,48,or 72 months</td>
+                                <td>no more than 5 In last 12 months</td>
+                                <td>Experian</td>
+                                <td>N/A : Alabama , Delaware,Kentucky,Nevad,or Rhode Island</td>
+                                <td>680</td>
+                                <td>no minimum employment length</td>
+                                <td>Funding may not be used for college tuition : to pay for tuition at an accredited
+                                    (Title IV) institution, business capital, or real estate
+                                </td>
+                                <td><a href="www.earnest.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Lending Club</td>
+                                <td>Fixed monthly payments</td>
+                                <td>No more than 5 In last 24 months</td>
+                                <td>TransUnion</td>
+                                <td>N/A lowa, Guam and Puerto Rico</td>
+                                <td>no minimum</td>
+                                <td>no minimum employment length</td>
+                                <td>minimum of at least 1 active account . No other age requirement No more than two
+                                    loans open at the same time.
+                                </td>
+                                <td><a href="www.lendingclub.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Marcus by Goldman Sachs</td>
+                                <td>36 to 72 months</td>
+                                <td>No more than 6 in last 12 months</td>
+                                <td>TU- hard inquiry</td>
+                                <td>N/A : Maryland</td>
+                                <td>650</td>
+                                <td>1 year minimum</td>
+                                <td>only 1 loan per customer . Must have a valid U.S bank account and Social Security or
+                                    Individual Tax I.D number
+                                </td>
+                                <td><a href="www.marcus.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>payoff</td>
+                                <td>2-5 years</td>
+                                <td>Inquiries are not a factor</td>
+                                <td>Experian</td>
+                                <td>N/A DC,DE,IA,MA,MI,MN,MS.NC,NE,NV,OH,OK,VA,VT,WA,WI,and WV</td>
+                                <td>640</td>
+                                <td>no minimum employment length</td>
+                                <td>minimum of 3 years history and 2 open tradelines</td>
+                                <td><a href="www.payoff.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Prosper</td>
+                                <td>3 or 5 years</td>
+                                <td>No more than 7 inquries within the last 12 months</td>
+                                <td>Experian soft inquiry</td>
+                                <td>N/A : North Dakota , lowa , west , virginia , pennsylvania , maine</td>
+                                <td>640</td>
+                                <td>no minimum employment length</td>
+                                <td>no credit file age requirement . You cannot have a current loan open or in
+                                    collections with prosper
+                                </td>
+                                <td><a href="www.prosper.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Sofi</td>
+                                <td>36,48,or 75 months</td>
+                                <td>No more than 4 in last 12 months</td>
+                                <td>Experian Soft inquiry</td>
+                                <td>N/A : MS</td>
+                                <td>650</td>
+                                <td>no minimum employment length</td>
+                                <td>No specific requirements pertaining to age of accounts</td>
+                                <td><a href="www.sofi.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Upstart</td>
+                                <td>3-5 years</td>
+                                <td>No more than 6 inquiries on your credit in tha last 6 months excluding any inquiries
+                                    related to student loans , vehicle loans , or mortgages .
+                                </td>
+                                <td>TransUnion and equifax</td>
+                                <td>N/A West Virginia</td>
+                                <td>620</td>
+                                <td>no minimum employment length</td>
+                                <td>No new loans within the past 3 months .</td>
+                                <td><a href="www.upstart.com" target="_blank">
+                                    <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">Apply
+                                        Now
+                                    </button>
+                                </a></td>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Starter Vendors You Qualify For
+                    </div>
+
+
+                    <div class="card-body">
+                        <table id="datatable2" class="table table-striped table-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Category</th>
+                                <th>Who The Vendor Reports Too</th>
+                                <th>Strategy</th>
+                                <th>More Details & Application</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            {% for lender in lenders %}
+                                <tr>
+                                    <td>{{ lender.name }}</td>
+                                    <td>{{ lender.category }}</td>
+                                    <td>{{ lender.report_to }}</td>
+                                    <td>Corporate Business Credit is great because it is financing you can get without a
+                                        personal guarantee and not have a UCC filing which will help you get more
+                                        financing. For example, getting an Amazon Line Of Credit or Business Credit Card
+                                        from Walmart that doesn’t need a personal guarantee and UCC filing.
+                                    </td>
+                                    <td>
+                                        <a href="{{ lender.get_absolute_url }}" class="btn btn-primary">Click Here For
+                                            More Details</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        No Credit Check Loans
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th> Lender Name</th>
+                                <th>Estimated Terms</th>
+                                <th>Strategy</th>
+                                <th>Apply Now</th>
+                            </tr>
+                            </thead>
+
+
+                            <tbody>
+                            <tr>
+                                <td>Klarna</td>
+                                <td>6 Weeks (But Revolving Credit)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://www.klarna.com/us/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Afterpay</td>
+                                <td>6 Weeks (But Revolving Credit)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://www.klarna.com/us/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Sezzle</td>
+                                <td>6 Weeks (But Revolving Credit)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://sezzle.com/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Quadpay</td>
+                                <td>6 Weeks (But Revolving Credit)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://www.quadpay.com/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Viabill</td>
+                                <td>6 Weeks (But Revolving Credit)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://viabill.com/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Affirm</td>
+                                <td>12 Months (No Hard Credit Check But It Does Show On Your Report As A Tradeline)</td>
+                                <td>This form of financing is perfect for short term needs. Where you can leverage 0%
+                                    interest no credit check financing. You will have to put down 25% down of your
+                                    purchase though.
+                                </td>
+                                <td>
+                                    <a href="https://www.affirm.com/" target="_blank">
+                                        <button type="submit" class="btn btn-primary" name="signup" value="Apply Now">
+                                            Apply Now
+                                        </button></td>
+                                </a>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Equipment Financing Loans You Qualify For
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Lender Name</th>
+                                <th>Personal Credit Score Needed</th>
+                                <th>Business Revenue Needed</th>
+                                <th>Time In Business Needed</th>
+                                <th>APR</th>
+                                <th>Strategy</th>
+                                <th>Apply Now</th>
+                            </tr>
+                            </thead>
+
+                            </tbody>
+                            <tbody>
+                            {% for e in equipments %}
+                                <tr>
+                                    <td>{{ e.lender_name }}</td>
+                                    <td>{{ e.personal_credit_score }}</td>
+                                    <td>{{ e.time_in_business }}</td>
+                                    <td>{{ e.term_length }}</td>
+                                    <td>{{ e.apr }}</td>
+                                    <td>{{ e.strategy }}</td>
+                                    <td>
+                                        <a href="{% url 'business:applyforloan' %}" class="btn btn-sm btn-primary">Apply
+                                            Now</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-default">
+                        Lenders You Do Not Currently Qualify <br>*But Strategies On How To Qualify For Them In The
+                        Future*
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped table-responsive nowrap">
+                            <thead>
+                            <tr>
+                                <th>Financing Products We Want To Qualify For In The Future</th>
+                                <th>How To Qualify In The Future</th>
+                                <th>Description Of Why We Want To Qualify For Loan & Strategy</th>
+                            </tr>
+                            </thead>
+
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Lines Of Credit</td>
+                                <td>You will need to be in business for at least 3 months and make at least $4,200 per
+                                    month for 3 months and have no to very minimal NSF’s and keep a daily bank account
+                                    balance of at least $500.
+                                </td>
+                                <td>Lines Of Credit are great because you only pay back what you have used. The interest
+                                    rate does tend to be a bit higher because there isn’t a specific date you have to
+                                    pay it back in. You want to position yourself for this type of financing because
+                                    they will place a UCC filing on your business which is a blanket lien on all of your
+                                    assets if you default. Once you have a UCC filing it severely hampers your ability
+                                    to get more business term or revenue lending financing.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Invoice Financings</td>
+                                <td>You will need to have creditworthy businesses to have a contract with you so you can
+                                    borrow against your accounts receivables.
+                                </td>
+                                <td>You want to leverage invoice financing when you have accounts receivables or money
+                                    that is owed to you by other businesses but do not want to have them be notified
+                                    like invoice factoring.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Invoice Factoring</td>
+                                <td>You will need to have creditworthy businesses to have a contract with you so you can
+                                    borrow against your accounts receivables.
+                                </td>
+                                <td>You want to leverage invoice factoring when you have accounts receivables or money
+                                    that is owed to you by other businesses but you do not mind your customers being
+                                    notified and you have no recourse or risk to you with no recourse factoring.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Business Loans</td>
+                                <td>You will need to be in business for at least 3 months and make at least $4,200 per
+                                    month for 3 months and have no to very minimal NSF’s and keep a daily bank account
+                                    balance of at least $500.
+                                </td>
+                                <td>Term loans are great because you will have longer terms. You want to position
+                                    yourself for this type of loan because they will place a UCC filing on your business
+                                    which is a blanket lien on all of your assets if you default. Once you have a UCC
+                                    filing it severely hampers your ability to get more business term or revenue lending
+                                    financing.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>SBA Loan</td>
+                                <td>We Want To Dispute Anything Negative On Our Personal Credit & Use Primary Tradelines
+                                    To Lower Our Utiliazation Or An Authorized User Account.
+                                </td>
+                                <td>This is the loan we want to really position ourselves for because Small Business
+                                    Administration Loans have better rates and longer terms such as 10 years and 5-6%
+                                    interest rate.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Business Credit Cards</td>
+                                <td>We Want To Dispute Anything Negative On Our Personal Credit & Use Primary Tradelines
+                                    To Lower Our Utiliazation Or An Authorized User Account. So that we can have a 680+
+                                    Fico Score with 5 or less inquiries and no derogatories.
+                                </td>
+                                <td>Business Credit Cards are a great option! Because we can have a high balance on them
+                                    and it doesn’t report to the personal credit bureau other than the inquiry and if
+                                    you were to ever default on your minimum payment. Also, most business credit cards
+                                    we have in our system have 0% apr rates that can benefit you by essentially getting
+                                    you free use of money for that promotional period while also allowing you to get
+                                    cashback and rewards. Which is almost like getting paid to use your business credit
+                                    card.
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tbody>
+                            <tr>
+                                <td>Revenue Lending</td>
+                                <td>You will need to be in business for at least 3 months and make at least $4,200 per
+                                    month for 3 months and have no to very minimal NSF’s and keep a daily bank account
+                                    balance of at least $500
+                                </td>
+                                <td>Revenue lending loans are great for short term needs. This loan usually has much
+                                    higher interest rates and shorter terms. This is really the last option for your
+                                    business if you need the money and you can not qualify for a term loan or SBA loan.
+                                    Because they will place a UCC filing on your business which is a blanket lien on all
+                                    of your assets if you default. Once you have a UCC filing it severely hampers your
+                                    ability to get more business term or revenue lending financing
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

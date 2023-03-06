@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zxx">
+    <head>{% load static %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/bootstrap.min.css' %}">
+        <!-- Animate CSS --> 
+        <link rel="stylesheet" href="{% static 'banking/assets/css/animate.min.css' %}">
+        <!-- Meanmenu CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/meanmenu.css' %}">
+        <!-- Boxicons CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/boxicons.min.css' %}">
+        <!-- Flaticon CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/flaticon.css' %}">
+        <!-- Nice Select CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/nice-select.min.css' %}">
+        <!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.carousel.min.css' %}">
+        <!-- Owl Carousel Default CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/owl.theme.default.min.css' %}">
+        <!-- Odometer CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/odometer.min.css' %}">
+        <!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/magnific-popup.min.css' %}">
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{% static 'banking/assets/css/style.css' %}">
+        <!-- Responsive CSS -->
+		<link rel="stylesheet" href="{% static 'banking/assets/css/responsive.css' %}">
+		
+		<title>Leve - Online Banking & Payment Processing HTML Template</title>
+
+        <link rel="icon" type="image/png" href="{% static 'banking/assets/img/favicon.png' %}">
+    </head>
+
+    <body>
+        
+        <!-- Start Preloader Area -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader Area -->
+
+        <!-- Start Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <ul class="top-header-information">
+                            <li>
+                                <i class='bx bx-envelope'></i>
+                                <a href="mailto:hello@gmail.com">hello@gmail.com</a>
+                            </li>
+
+                            <li>
+                                <i class='bx bxs-phone'></i>
+                                <a href="tel:15143125678">+1 (514) 312-5678</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <ul class="top-header-others">
+                            <li>
+                                <i class='bx bxs-map'></i>
+                                <a href="atm-and-bank-locations.html">ATMs location</a>
+                            </li>
+
+                            <li class="languages-list">
+                                <select>
+                                    <option value="1">English</option>
+                                    <option value="2">العربيّة</option>
+                                    <option value="3">Deutsch</option>
+                                    <option value="3">Português</option>
+                                    <option value="3">简体中文</option>
+                                </select>
+                            </li>
+
+                            <li>
+                                <i class='bx bx-user'></i>
+                                <a href="my-account.html">Sign In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Header Area -->
+
+        {% include "banking/navbar.html" %}
+
+        <!-- Start Page Banner -->
+        <div class="page-banner-area" style="
+        position: relative;
+        z-index: 1;
+        background-image: url('{% static 'banking/assets/images/page-banner-1.jpg' %}');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        background-attachment: fixed;
+        ">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>Privacy Policy</h2>
+                    <ul>
+                        <li>
+                            <a href="{% url 'banking_home' %}">Home</a>
+                        </li>
+                        <li>Privacy policy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Page Banner -->
+        
+        <!-- Start Privacy Policy Area -->
+        <section class="privacy-policy-area ptb-100">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Leve privacy policy</h2>
+                    <p>This policy was last updated October 01, 2025.</p>
+                </div>
+
+                <div class="privacy-policy-image">
+                    <img src="{% static 'banking/assets/images/privacy-policy.jpg' %}" alt="image">
+                </div>
+
+				<div class="privacy-content">
+					<h3>Introduction</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolor fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    
+                    <h3>Credit reporting policy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat.</p>
+                    <ol>
+                        <li>It has survived not only five centuries, but also the leap into electronic typesetting.</li>
+                        <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
+                        <li>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
+                        <li>Various versions have evolved over the years, sometimes by accident sometimes on purpose.</li>
+                    </ol>
+
+                    <h3>Data protection policy</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+
+                    <h3>Personal data we collect</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+
+                    <h3>What we use personal data for</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    <ol>
+                        <li>It has survived not only five centuries, but also the leap into electronic typesetting.</li>
+                        <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
+                        <li>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</li>
+                    </ol>
+
+                    <h3>Security information</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut abore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com modo consequat.</p>
+				</div>
+            </div>
+        </section>
+        <!-- End Privacy Policy Area -->
+
+        {% include "banking/footer.html" %}
+
+        <!-- Start Copy Right Area -->
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-area-content">
+                    <p>
+                        Copyright © 2021 Leve. All Rights Reserved by
+                        <a href="https://envytheme.com/" target="_blank">EnvyTheme</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End Copy Right Area -->
+
+        <!-- Start Go Top Area -->
+        <div class="go-top">
+            <i class='bx bx-up-arrow-alt'></i>
+        </div>
+        <!-- End Go Top Area -->
+        
+        <!-- Jquery Slim JS -->
+        <script src="{% static 'banking/assets/js/jquery.min.js' %}"></script>
+        <!-- Popper JS -->
+        <script src="{% static 'banking/assets/js/popper.min.js' %}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{% static 'banking/assets/js/bootstrap.min.js' %}"></script>
+        <!-- Meanmenu JS -->
+        <script src="{% static 'banking/assets/js/jquery.meanmenu.js' %}"></script>
+        <!-- Nice Select JS -->
+        <script src="{% static 'banking/assets/js/jquery.nice-select.min.js' %}"></script>
+        <!-- Owl Carousel JS -->
+        <script src="{% static 'banking/assets/js/owl.carousel.min.js' %}"></script>
+        <!-- Magnific Popup JS -->
+        <script src="{% static 'banking/assets/js/jquery.magnific-popup.min.js' %}"></script>
+        <!-- Odometer JS -->
+        <script src="{% static 'banking/assets/js/odometer.min.js' %}"></script>
+        <!-- Jquery Appear JS -->
+        <script src="{% static 'banking/assets/js/jquery.appear.min.js' %}"></script>
+        <!-- Ajaxchimp JS -->
+		<script src="{% static 'banking/assets/js/jquery.ajaxchimp.min.js' %}"></script>
+		<!-- Form Validator JS -->
+		<script src="{% static 'banking/assets/js/form-validator.min.js' %}"></script>
+		<!-- Contact JS -->
+        <script src="{% static 'banking/assets/js/contact-form-script.js' %}"></script>
+        <!-- Wow JS -->
+        <script src="{% static 'banking/assets/js/wow.min.js' %}"></script>
+        <!-- Custom JS -->
+        <script src="{% static 'banking/assets/js/main.js' %}"></script>
+    </body>
+</html>

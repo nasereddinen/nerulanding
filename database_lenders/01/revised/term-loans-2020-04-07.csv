@@ -1,0 +1,91 @@
+id,lender_name,personal_credit_score,time_in_business,business_revenue,term_length,apr,strategy
+90,	LOAN BUILDER,550 or above,	9 months,	$42.000 PER YEAR,	13-42 Weeks,8%+,-
+89,	LENDIO,	550,	6months,	$10k per month,	1-2 years,	8-24%,-
+88,OnDeck,-,-,-,-,-,-
+87,	FUNDATION,	660,	12 months,	$100.000 per year,	1 – 4 years,8%+,-
+86,	IOU FINANCIAL,	600,12 Months,	$120.000 per year and $3.000 avg. daily balance over a 3-month period,	6. 9. 12. 15. or 18 months (minimum $80.000 for loans of 18 months),8%+,-
+85,	SMARTBIZ,	650,2 Years,	150,	10 years,	Variable. prime rate + 3.75% (loans of $30K – $49K),-
+84,	BREAKOUT CAPITAL,	600,	1 year,	$10.000 per month,	Up to 24 months,8%+,-
+83,	BLUE VINE,	530,	3Months,	$100.000 per year,-,8%+,-
+82,	FUND BOX,-,	No specific time in business,	$50K per year,	12 - 24 months,8%+,-
+81,	AMERICAN EXPRESS,	Unknown,	12Months,	$50.000 per year,	6. 12. or 24 months,8%+,-
+80,	STREET SHARES,	$620,	2years and sometimes 6months,	$100.000,	3-36months,8%+,-
+79,	FUNDERA,-,	No specific requiremens,-,-,8%+,-
+78,	ABLE,	600,	12months,	$100k per year,	1-5Years,	8% – 23%,-
+77,	ACCION,	575 (550 in some places),-,Must have sufficient cash flow to repay the loan,	Varies by product,	7% – 34% APR,-
+76,	AMAZON,-,-,-,-,8%+,-
+75,	APPLE PIE CAPITAL,-,-,-,3 - 7 years,8%+,-
+74,	AVANT,	Minimum 580 (but 600 - 700 is typical),-,	N/A,	2 - 5 years,8%+,-
+73,	BACKED,	Minimum of 660,	Minimum of 6 months,Minimum of $18K annually,	1 – 3 years,	2.24% – 14.54%,-
+72,	BALBOA CAPITAL,	N/A,	12Months,	$300K/yr (STL),	3 -24 months (STL,8%+,-
+71,	BEHALF,-,-,-,-,8%+,-
+70,	BENETRENDS,-,-,-,	Up to 25years,8%+,-
+69,	BEST EGGS,	640,-,	N/A,	3-5Years,	Unknown,-
+68,	BFS CAPITAL,	550,	12months,	$100k per year,	4-21months,8%+,-
+67,	BIZ2CREDIT,-,-,-,-,8%+,-
+66,	BOND STREET,	640,	2Years,	$200k per year,	1-3years,	6%-22%,-
+65,	CAN CAPITAL,	550,	4months,	$4.5k per month,	6 – 18 months,8%+,-
+64,	CAPFUSION,	500,	12 months,	$10K/mo, 3 – 12 months,x1.18 – x1.24,-
+63,	CAPITFY,	UNKNOWN,	12 months,-,	6-15 months,8%+,-
+62,	CAPITAL ONE,-,-,-,	1 – 5 years,	Fixed monthly payments,-
+61,	CASHBLOOM,	Unknown,	1 month (MCA),	$5000 Per month,	3-24months,8%+,-
+60,	CELTIC BANK,	640,-,	Varies by loan amount,	Up to 25 years,Variable,-
+59,	CHASE BUSINESS,	unknown,Varies by product,	unknown,12-24months,	variable,-
+58,	CHASE EQUIPMENT FINANCING,	UNKNOWN,	UNKNOWN,	$20 million – $20 billion ,-,8%+,-
+57,	CIT DIRECT CAPITAL EQUIPMENT,	680,	2years,	$100K/mo,	6 – 72 months,8%+,-
+56,	CITI BANK,	unknown,2Years,	unknown,-,8%+,-
+55,	CREDIBILITY CAPITAL,	Strong personal credit,	24Months,	Currently generating revenue,1. 2. or 3 years,	7.99% – 20%,-
+54,	CREDIBLY,	500,	6Months,	$15.000 per month,	6 - 18 months,8%+,-
+53,	CURRENCY,585,	6Months,	$75K/year,	12 – 60 months,	6% – 24%,-
+52,	DEALSTRUCK,	600,	1Year,	$150K/year,	1 – 4 years,8%+,-
+51,	DISCOVER PERSONAL LOANS,	At least 660,	N/A,	N/A,	3 – 7 years,	6.99%-24.99%,-
+50,	EQUITY NET,-,-,-,-,8%+,-
+49,	EXCEL CAPITAL,	unknown,6Months,	$5000 per month,	No maturity date (MCA) and 6-15months(STL),8%+,-
+48,	FORA FINANCIAL,	unknown,	6Months,	$5.000,-,8%+,-
+47,FORWARD LINE,	540,12Months,	$100k per year,	6.9.12 or 15 months or 1-5 years,	x1.12 – x1.3,-
+46,	FUNDING CIRCLE,	620,2YEARS,Not specified,	6 months – 5 years,4.99% – 27.79%,-
+45,	FUNDWISE,	680,	None,	N/A,	6 -18 months,0% for 9 – 15 months. 1% – 2%/month after,-
+44,	GUIDANT FINANCIAL,690+,	UNKNOWN,UNKNOWN,	Revolving,12%-18%,-
+43,	HARVEST,-,	640,-,-,8%+,-
+42,	HEADWAY CAPITAL,-,1Year,	$50K/Year,	12. 18. or 24 months,	3.33% – 6% per month,-
+41,	KABBAGE,	N/A,12Months,	$50.000 per year,	6 or 12 months,8%+,-
+40,	KIVA,	N/A,	N/A,	N/A,	6-36Months,	0%,-
+39,	LEADING CLUB,	Not specified,	12MONTHS,	$50.000 per year,1 – 5 years,5.99% – 29.99%,-
+38,	LENDING POINT,-,-,-,-,8%+,-
+37,	LENDING TREE,-,-,-,-,8%+,-
+36,	LENDOOR,	N/A,	N/A,	N/A,	6 months – 3 years,0% – 8%,-
+35,	LIGHTER CAPITAL,	N/A,	N/A,$200.000 per year,	3 – 5 years,8%+,-
+34,	LIVE OAK BANK,unknown,3years,	Varies by loan amount,	Up to 25 years,	unknown,-
+33,	LOAN BACK,-,-,-,	0-40Years,Any,-
+32,	LOAN DEPOT,	At least 660,	N/A,	N/A,	3 – 5 years,5.67% – 24.98%,-
+31,	LoanMe,	500,	2months,	N/A,-,8%+,-
+30,-,-,-,-,	2-10Years,24% – 149%,-
+29,	MicroVentures,-,-,-,-,8%+,-
+28,	NATIONAL BUSINESS CAPITAL,	N/A,	6Months,	$15K/mo,	6 months – 10 years,	Unknown,-
+27,	NEWTEK,-,-,-,-,8%+,-
+26,	OPPLOANS,-,	2 months,-,-,8%+,-
+25,	P2BINVESTOR,-,	6 Months,	$500.000 per year,1 year revolving,High teens,-
+24,	PayPal,	N/A,	3 months,	$20K annually for Premier accounts. $15K annually for Business accounts,Max. 18 months,8%+,-
+23,	PNC BANK,	650,	3YEARS,	UNKNOWN,	Up to 2 years,	Fixed rate,-
+22,PROSPER,	640,	N/A,	N/A,3 or 5 years,8%+,-
+21,	QUARTER SPOT,	550,12 MONTHS,$200K/yr,6. 9. 12. 15. or 18 months,8%+,-
+20,	QUICK BOOKS,	580,	N/A,	$50.000/year,	3 – 6 months,1.25% – 6.87%,-
+19,	RAPID ADVANCE,	640 or above,	2 years,	net worth of $15Million or less,	10-20years,	Fixed,-
+18,RELIANT FUNDING,	Better credit,	6months,	$10.000/mo,	6-18months,8%+,-
+17,	ROCKET LOANS,	640,	N/A,	N/A,	3 or 5 years,	5% – 24.9%,-
+16,	SEED INVEST,-,-,-,-,8%+,-
+15,	SEEK CAPITAL,	630,	1Year,$180.000,-,8%+,-
+14,	SHOPIFY,	N/A,	N/A,	N/A,	No maturity date,8%+,-
+13,	SNAPCAP,	500,	6Months,	$8.500/yr,	3 – 36 months,x1.05 – x1.4,-
+12,	SOFI PERSONAL,	Non specified,	N/A,	N/A,	3. 5. or 7 years,	6.99% – 14.87%,-
+11,	STRATEGIC FUNDING,	Unknown,	6Months,	N/A,	3 months – 2 years,x1.15 – x1.3,-
+10,	SWIFT CAPITAL,	500,	12Months,	$100K/year,	3 – 12 months,8%+,-
+9,	TD BANK,	680 (for some products),2YEARS,	Unknown,	3-5years,	unknown,-
+8,	THE BUSINESS BACKER,	550,	12Months,	$180K/year,4 – 24 months (MCA) 1 – 2 years (LoC) Up to 18 months (STL) 1 – 5 years (MTL) Up to 1 year. revolving (Startup) 10 – 25 years (SBA) Variable (CRE),x1.07 – x1.5 (MCA) 9.99%+ (LoC) x1.12 – x1.48 (STL) 5.49%+ (MTL) 5% – 12% (SBA) 7% – 15% (CRE),-
+7,	US BANK,	unknown,	2years,	varies by product,	Up to 80 months,	3.49% and up (lower with automatic payments from U.S. Bank account)	,-
+6,	Upstart,	Minimum 620,	N/A,	N/A,	3-5years,	8.16% – 27.99%,-
+5,	US BUSINESS,	Unknown,	2years,	Unknown,	Up to 10years,8%+,-
+4,	WE FUNDER,-,-,-,-,8%+,-
+3,	WELLS FARGO,	640,	Varies by product,	$1.50 in cash flow for every $1 borrowed,1-5years,7.25% – 22.9%,-
+2,	WORLD BUSINESS LENDERS,	N/A,6Months,	Unknown,3-6months,	x1.3 – x1.5 (MCAs),-
+1,	YELLOW STONE CAPITAL,-,-,-,	Variable (usually 2-8 months),8%+,-
